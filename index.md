@@ -6,13 +6,13 @@ Seriously. So does Azure Data Explorer (it is simply the public name of this ama
 
 Why not start with a couple of videos:
 
-### Microsoft Ignite, Orlando, September 2018
+#### Microsoft Ignite, Orlando, September 2018
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s)
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s)
 - [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on youtube](https://www.youtube.com/watch?v=GT4C84yrb68)
 
-### Techorama, The Netherlands, October 2018
+#### Techorama, The Netherlands, October 2018
 
 - [Scott Guthrie](https://en.wikipedia.org/wiki/Scott_Guthrie) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
 
@@ -30,7 +30,12 @@ There's lots to learn and read about. I'd recommend starting with the following 
 
 The posts below will include examples and practices which combine Kusto's rich query and management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
+#### Queries
+
+- [Just another Kusto hacker (*JAKH*)](jakh.md)
+- ... More to follow ...
+
+#### Data Management
 - [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
-- [Just another Kusto hacker (*JAKH*)](jakh.md)
 - ... More to follow ...
