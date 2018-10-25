@@ -33,3 +33,4 @@ The posts below will include examples and practices which combine Kusto's rich q
 - [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
 - [Just another Kusto hacker (*JAKH*)](jakh.md)
+- ... More to follow ...
