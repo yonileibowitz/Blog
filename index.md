@@ -30,6 +30,6 @@ There's lots to learn and read about. I'd recommend starting with the following 
 
 The posts below will include examples and practices which combine Kusto's rich query and management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
-1. [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
-2. [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
-3. [Just another Kusto hacker (*JAKH*)](jakh.md)
+- [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
+- [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
+- [Just another Kusto hacker (*JAKH*)](jakh.md)
