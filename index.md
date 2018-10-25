@@ -1,7 +1,23 @@
 # Kusto Rocks!
+
 Seriously. So does Azure Data Explorer (it is simply the public name of this amazing big data platform).
 
-## Haven't heard of it?
+## Haven't seen it yet?
+
+Why not start with a couple of videos:
+
+### Microsoft Ignite, Orlando, September 2018
+
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s)
+- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s)
+- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on youtube](https://www.youtube.com/watch?v=GT4C84yrb68)
+
+### Techorama, The Netherlands, October 2018
+
+- [Scott Guthrie](https://en.wikipedia.org/wiki/Scott_Guthrie) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
+
+## Haven't read about it yet?
+
 There's lots to learn and read about. I'd recommend starting with the following links:
 
 - [Introducing Azure Data Explorer (Uri Barash @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/introducing-azure-data-explorer)
@@ -11,6 +27,8 @@ There's lots to learn and read about. I'd recommend starting with the following 
 - [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/kusto)
 
 ## Other things I think you should know
+
+The posts below will include examples and practices which combine Kusto's rich query and management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
 1. [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 2. [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
