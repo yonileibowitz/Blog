@@ -1,6 +1,6 @@
 # Kusto Rocks!
 
-Seriously. So does Azure Data Explorer (it is simply the public name of this amazing big data platform).
+Seriously. So does **Azure Data Explorer** (which is simply the public name of this amazing big data platform).
 
 ## Haven't seen it yet?
 
