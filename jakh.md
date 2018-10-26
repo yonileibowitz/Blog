@@ -3,7 +3,7 @@
 Back in 2017, the Azure Data Explorer (Kusto) team came up with yet another brilliant idea:
 Many people simply love our query language, why don't we challenge them with writing creative, thought-provoking,
 and even crazy queries, which will all be required to output the same string: `Just another Kusto hacker`
-(following the well-known, and similar-in-spirit, [Just another Perl hacker]((https://en.wikipedia.org/wiki/Just_another_Perl_hacker)).
+(following the well-known, and similar-in-spirit, [Just another Perl hacker](https://en.wikipedia.org/wiki/Just_another_Perl_hacker)).
 
 When we started this contest, we had no expectation that the queries it would yield will be so impressive and amazing.
 Dozens of people within Microsoft participated in the contest (even though the prizes we offered were rather modest).
