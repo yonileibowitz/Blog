@@ -71,7 +71,7 @@ We can actually go ahead and store this as a [function](https://docs.microsoft.c
 
 Great! Now, how can we have this function process the data as it gets ingested?
 
-## Defining the update policy
+## Setting up the update policy
 
 I need to have 2 tables in my Kusto database:
 - The *source* table - This table will have a single string-typed column, into which I will ingest the source data, as-is.
