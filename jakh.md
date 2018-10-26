@@ -64,7 +64,7 @@ of `Keep Calm and Kusto on`, with the desired result rendered as a scatter-chart
 
 ## 3rd place (#1):
 
-The "Emoji query" below shows some genuine magic.  
+The "Emoji query" below (from [Joaquín Ruales](https://joaquin.rual.es/) shows some genuine magic.  
 It looks simple and perhaps like a bluff, until a light touch of `abracadabra` turns the emojis into a real message.
 Oh, you don't believe it works? Try it yourself!
 
