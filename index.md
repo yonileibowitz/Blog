@@ -1,10 +1,18 @@
-# Kusto Rocks!
+Kusto rocks. Seriously. So does **Azure Data Explorer** (which is simply the public name of this amazing big data platform).
 
-Seriously. So does **Azure Data Explorer** (which is simply the public name of this amazing big data platform).
+## Wait, what is... ?
 
-## Haven't seen it yet?
+There's lots to learn and read about. I'd recommend starting with the following links:
 
-Why not start with a couple of videos:
+- [Introducing Azure Data Explorer (Uri Barash @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/introducing-azure-data-explorer)
+- [Azure Data Explorer Technology 101 (Ziv Caspi @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/azure-data-explorer-technology-101)
+- [Azure Data Explorer: Whitepaper (Evgeney Ryzhyk @ Microsoft Azure resource center)](https://azure.microsoft.com/en-us/resources/azure-data-explorer)
+- [Azure Data Explorer: Quickstarts and tutorials](https://docs.microsoft.com/en-us/azure/data-explorer)
+- [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/kusto)
+
+## Haven't seen it in action yet?
+
+Why not start off with a couple of videos:
 
 #### Microsoft Ignite, Orlando, September 2018
 
@@ -15,16 +23,6 @@ Why not start with a couple of videos:
 #### Techorama, The Netherlands, October 2018
 
 - [Scott Guthrie](https://en.wikipedia.org/wiki/Scott_Guthrie) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
-
-## Haven't read about it yet?
-
-There's lots to learn and read about. I'd recommend starting with the following links:
-
-- [Introducing Azure Data Explorer (Uri Barash @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/introducing-azure-data-explorer)
-- [Azure Data Explorer Technology 101 (Ziv Caspi @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/azure-data-explorer-technology-101)
-- [Azure Data Explorer: Whitepaper (Evgeney Ryzhyk @ Microsoft Azure resource center)](https://azure.microsoft.com/en-us/resources/azure-data-explorer)
-- [Azure Data Explorer: Quickstarts and tutorials](https://docs.microsoft.com/en-us/azure/data-explorer)
-- [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/kusto)
 
 ## Other things I think you should know
 
