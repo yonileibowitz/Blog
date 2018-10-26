@@ -130,7 +130,7 @@ Defining your [update policy](https://docs.microsoft.com/en-us/azure/kusto/conce
 
 If you're specifying [ingestion properties](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#ingestion-properties), such as [*extent tags*](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#extent-tagging) and/or *creation time* as part of your ingestion (see [other blog post](advanced-data-management.md) as well), you can easily have them propagate to the [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) created in the *target* table, and not just apply to the extents created in the *source* table - Simply define your [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) with `PropagateIngestionProperties` set to `true`.
 
-### Retaining the data in its original form (or not)
+## Retaining the data in its original form (or not)
 
 In some cases, depending on which purpose your [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) serves, you may want to retain the data in its original format for other use cases. If youre have different flows with different requirements consuming the data in both tables, you may want to consider setting [retention policies](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy) and/or [caching policies](https://docs.microsoft.com/en-us/azure/kusto/concepts/cachepolicy) on both the *source* and *target* tables, and define them according to your use case.
 
