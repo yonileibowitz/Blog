@@ -106,8 +106,7 @@ verify my query actually creates the desired schema):
 
 ```
 .set MyTargetTable <| 
-   print value = ""
-   | parse value with "[" Timestamp:datetime "] [ThreadId:" ThreadId:int "] [ProcessId:" ProcessId:int "] TimeSinceStartup: " TimeSinceStartup:timespan " Message: " Message:string
+   ExtractMyLogs()
    | limit 0
 ```
 
