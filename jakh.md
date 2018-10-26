@@ -53,13 +53,13 @@ print L = " JKacehknorstu"
 This query (from [Ben Martens](https://blogs.msdn.microsoft.com/ben/)) excited us with its ASCII-art-creation
 of `Keep Calm and Kusto on`, with the desired result rendered as a scatter-chart.
 
-Query screenshot:
+**Query screenshot:** (too long to paste as text :-) )
 
 ![](./resources/images/jakh-2nd-place-query-screenshot.png)
 
 See query [as CSL file](./resources/csl/jakh-2nd-place-query.csl)
 
-Result:
+**Output:**
 
 ![](./resources/images/jakh-2nd-place-output-screenshot.png)
 
