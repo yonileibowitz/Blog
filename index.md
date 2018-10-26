@@ -32,7 +32,7 @@ The posts below will include examples and practices which combine Kusto's rich q
 
 #### Queries
 
-- [Just another Kusto hacker (*JAKH*)](jakh.md)
+- [Just another Kusto hacker *(JAKH)*](jakh.md)
 - ... More to follow ...
 
 #### Data Management
