@@ -111,6 +111,8 @@ verify my query actually creates the desired schema):
    | limit 0
 ```
 
+*Note: the `limit 0` suffix is meant to make sure the command actually appends no records to the target table*
+
 ### Defining the update policy
 
 > TODO: Continue
