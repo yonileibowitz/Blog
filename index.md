@@ -22,7 +22,7 @@ Why not start off with a couple of videos:
 
 #### Techorama, The Netherlands, October 2018
 
-- [Scott Guthrie](https://en.wikipedia.org/wiki/Scott_Guthrie) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
 
 ## Other things I think you should know
 
