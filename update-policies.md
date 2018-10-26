@@ -2,14 +2,14 @@
 
 Azure Data Explorer (Kusto) is super fast and efficient in getting your data ingested (, and then queried).
 
-It's usually recommended that your data is formatted to begin with in either of the [supported
+It's usually recommended that your data is formatted to begin with, in either of the [supported
 data formats](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#supported-data-formats),
-with [CSV](https://tools.ietf.org/html/rfc4180) being the superior choice, in terms of the standard definition of the format, as well the best performance at ingestion time.
+with [CSV](https://tools.ietf.org/html/rfc4180) being the superior choice, in terms of both the clear definition of the format, as well the best performance at ingestion time.
 
-In some cases, however, you have no control on the format of the data, but you still want to store it an
+In some cases, however, you have no control over the format of the data, but you still want to store it an
 efficient manner. In other cases, you may want to enrich the data as it gets ingested into Kusto (e.g. by joining the new records with a static dimension table which is already in your Kusto database). For both of these cases, using an [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) is a very common and powerful practice.
 
-In this post, I will demonstrate how you can leverage an update policy, to take data which is 'structured' in a non-standard format, and restructure it at ingestion time, so that your queries will end up being much more efficient - You will pay a slight (usually negligible) overhead for manipulating the data at ingestion time, however you will gain a
+In this post, I will demonstrate how you can leverage an [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy), to take data which is 'structured' in a non-standard format, and restructure it at ingestion time, so that your queries will end up being much more efficient - You will pay a slight (usually negligible) overhead for manipulating the data at ingestion time, however you will gain a
 lot in the efficiency of all the queries which will run against your data set.
 
 ## The source data
@@ -26,13 +26,13 @@ The source data in this example will look as follows:
 [2018-10-25 08:19:31.1234567Z] [ThreadId:8945] [ProcessId:598] TimeSinceStartup: 3.14:11:15.123 Message: Shutdown sequence complete. See ya.
 ```
 
-As you can see above, each line is a single record, which includes a timestamp, and a few other fields, of different types - numerics, strings, timespans, etc.
+As you can see above, each line is a single record, which includes a timestamp, and a few other fields of different types - numerics, strings, and timespans.
 
-I could, theoretically, ingest everything into a single column in a Kusto table, then use Kusto's strong query capabilities to parse all records at query time. However, as my data grows and becomes Big Data, query performance will degrade.
+I could, theoretically, ingest everything into a single column in a Kusto table, then use Kusto's strong query capabilities to parse all records at query time. However, as my data grows and becomes Big Data, query performance will degrade, regarless of the fact it'll make exploring the data and working with it a little less "natural". 
 
 ## The desired schema
 
-It's quite simple to derive a schema from the data above, and fortunately - it's also very simple to parse it into that schema using Kusto's query language (in this case - using [parse operator](https://docs.microsoft.com/en-us/azure/kusto/query/parseoperator)):
+It's quite simple to derive a schema from the data above. Fortunately - it's also very simple to parse it into that schema using Kusto's query language (in this case - using [parse operator](https://docs.microsoft.com/en-us/azure/kusto/query/parseoperator)):
 
 Running this:
 ```
@@ -69,15 +69,15 @@ We can actually go ahead and store this as a [function](https://docs.microsoft.c
 }
 ```
 
-Great! Now, how can we have this function process the data as it gets ingested?
+Great! Now, how can we use this function to process the data as it gets ingested?
 
 ## Setting up the update policy
 
-I need to have 2 tables in my Kusto database:
+I will setup 2 tables in my Kusto database:
 - The *source* table - This table will have a single string-typed column, into which I will ingest the source data, as-is.
-- The *target* table - This table will have my desired schema. This is the table I define the update policy on.
+- The *target* table - This table will have my desired schema. This is the table I define the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) on.
 
-Each time records get ingestion into my *source* table, the query I will define in my update policy will run on them (and only them - other records in my source table aren't visible to the update policy when it runs), and the results of the query will be appended to my *target* table.
+Each time records get ingested into my *source* table, the query I define in my [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) will run on them (and only them - other records in my source table aren't visible to the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) when it runs), and the results of the query will be appended to my *target* table.
 
 Simple, right? Let's do it!
 
@@ -114,12 +114,29 @@ verify my query actually creates the desired schema):
 
 ### Defining the update policy
 
-> TODO: Continue
+Now that we have all the "building blocks" (*source* table, *target* table, function for running at ingestion time), we can define the policy:
 
-### Retaining the raw data (or not)
+```
+.alter table MyTargetTable policy update 
+@'[{ "IsEnabled": true, "Source": "MySourceTable", "Query": "ExtractMyLogs()", "IsTransactional": false, "PropagateIngestionProperties": false}]'
+```
 
-> TODO: Continue
+#### Transactional or not
 
-### Advanced stuff
+Defining your [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) as transactional (by having `IsTransactional` set to `true`) will help in guaranteeing consistency between the data in the *source* table and in the *target* table. Doing so, however, comes with a risk that if your policy is defined incorrectly, data will not be ingested neither to the *source* table nor to the *target* table.
+- An example for such a case can be a mismatch between the output schema of your query and the *target* table, caused, for example, by dropping (accidentally, or not) a column from the *target* table, or by altering the function so that its output schema is altered as well.
 
-> TODO: Continue
+#### Propagating ingestion properties
+
+If you're specifying [ingestion properties](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#ingestion-properties), such as [*extent tags*](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#extent-tagging) and/or *creation time* as part of your ingestion (see [other blog post](advanced-data-management.md) as well), you can easily have them propagate to the [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) created in the *target* table, and not just apply to the extents created in the *source* table - Simply define your [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) with `PropagateIngestionProperties` set to `true`.
+
+### Retaining the data in its original form (or not)
+
+In some cases, depending on which purpose your [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) serves, you may want to retain the data in its original format for other use cases. If youre have different flows with different requirements consuming the data in both tables, you may want to consider setting [retention policies](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy) and/or [caching policies](https://docs.microsoft.com/en-us/azure/kusto/concepts/cachepolicy) on both the *source* and *target* tables, and define them according to your use case.
+
+In other cases (like in the example in this blog post), the data in its original format has no value to us, and being cost-aware - we can simply define that it shouldn't be retained at all, once ingestion completes. This can be achieved by:
+
+1. Defining the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) with `IsTransactional` set to `true`.
+2. Defining the retention policy on the source table to have `0` as its `SoftDeletePeriod`.
+
+With these defined, the data in its original format never becomes visible to any query (exlucing the query which is run as part of the update policy), and does not get persisted on the cluster's nodes nor in persistent storage. Thus, this also serves better performance at ingestion time.
