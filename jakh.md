@@ -1,4 +1,4 @@
-# Just another Kusto hacker (*JAKH*)
+# Just another Kusto hacker *(JAKH)*
 
 What would you guess the following query prints?
 
