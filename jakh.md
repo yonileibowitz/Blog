@@ -18,7 +18,7 @@ Now, are *you* up for the challenge?
 The 1st place was given to a query that impressed us with its naive looks,
 yet brave brute-force explosion of all possible 5-grams coming from the string `JKacehknorstu`.  
 
-The query forms a table with 14^5 (537,824) rows using [mvexpand](TODO), over the 'L'-string characters. 
+The query forms a table with 14^5 (537,824) rows using [mvexpand](https://docs.microsoft.com/en-us/azure/kusto/query/mvexpandoperator), over the 'L'-string characters.
 This table represents all possible combinations of the 5-grams of these characters.
 Then, 5 elements that have the 'right' combinations are selected using hash values, to form the final 25 character output.
 
