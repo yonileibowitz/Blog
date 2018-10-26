@@ -636,7 +636,7 @@ print Message = 'JaKhunuasosctttk hoe e r r      '
 | extend Message = replace(@'(\ )+',' ',Message)
 ```
 
-## 17. Jackdaws love my big sphinx of quartz (Nayan Shah)
+## 17. Jackdaws love my big sphinx of quartz
 
 The query uses the 'Data' table below to mix strings using 'ID' and 'Weight', to get a correct combination of the base64 string.
 
