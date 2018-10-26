@@ -212,7 +212,7 @@ This query was the most complicated query we've received in this contest (or eve
 We had to get the author's comments (below) in order to really understand it. Enjoy!
 
 > Basics [of the query] are:
->- Some needed constants are stored, delimited by |, in a base64-encoded string  
+>- Some needed constants are stored, pipe-delimited, in a base64-encoded string  
 >    - One of those constants is a run-length-encoded binary string of the characters to print
 >        - Another constant is a series of binary nibbles which gets used to build a mapping table to decimal
 >        - The other constant is a list of characters – basically an ASCII table but only the alphabet and space
