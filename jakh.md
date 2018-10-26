@@ -303,7 +303,7 @@ datatable(h:datetime, J:string, K:dynamic, [' ']:guid, o:string, k:string)[]
 
 ## 2. Kuskii Art
 
-This query uses an encoded string to translate it to rows consisting of "'" and "|" symbols, that form the message over 19 rows: 
+This query uses an encoded string to translate it to rows consisting of `'` and `|` symbols, that form the message over 19 rows: 
 
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA61WTY/bIBC951egqhKmciWDv1XlUPXYW9Wemj24Dut145DI9rbZapXfXoYYDHbcKu0qiYBhmPfmMRAa3qOPj92urj8cthytUXds6t5b4cCPz1T+Aj9Mhg60NNuIyxQNpImpHh0mYz2nlg0tzYdOZIVxPFPtySYGF1C50KFjDIED4/gCYA6dcNlH50bjG3w0L/gMYkSQILUdlT5xNOWZaDlSHS3SU6l2jjLZYRSCU2MzwUONF7PF4MqSgE++iKK0BJ+Q2pbYgQ1hLyRk4Gf29kFApYK9F2Nqsk1hQrkoiGiKnmrweBk8colZJOYeOj0GHRZYtDSr2FoL7BJHCJrbUQzNcKCpOJmwk72JJ6zU9rPzpGxppqe0j0OTzogbNnbdaRXUoRtL01FKST47Mk5tMGpzUCfPrLqETpdYpLN9upZ/ZiNOty9eaGdY4/G2ZxyVnBOmDt1I3VElc66Cq6r85Yox5y0xUNls09Sp+ofyeEF9zDm4cIws/HQmyy1Vc4s+GjGxZWfGN9ZVBFPhldwji0B2jdlLizXe/ufxCsumqHSRz38plQ1K5dcZgVCRfXVc/gDsQsostn+SxlQrXbxr3IJ28kq1C5A117u5NVQnXxSB6eVurbEh+Rk2G69fvPLxRmDybnVsa9EjfHm1oPefPuPVMzq2h++87FEpnzDje8ZHjRy3hai4F/ioaNviqeGi6h+80Ym8pT6iRAbZ/+CnYyG2qJQL5Zifeg4j8yySdnzGBDm+gF60HUe7WmzXLa/4Cd03RdWtv8ilP+v+QTbYx0gg/BqjNxZbYNcfmoOovIb4CmgYlnIoxqEgI50WUuLHpii5h79uNvJ7599hSU3++kPXS30qT3rwQjEWhExW1/f3XrleS0VMnADWbyBCSywzBfOzskKM7nG/L9r6F1dh9sWON3XXey1B356UYjqxGb9Xc4KE/Aao/u98fQoAAA==)
 ```
