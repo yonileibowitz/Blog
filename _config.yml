@@ -1,2 +1,11 @@
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      comments: true
 comments:
- provider: "facebook"
+  provider: "facebook"
+  facebook:
+    num_po: 10
+    colors: "light"
