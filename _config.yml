@@ -1,8 +1,1 @@
-breadcrumbs: true  # disabled by default
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      comments: true
+breadcrumbs: true
