@@ -28,7 +28,7 @@ There's lots to learn and read about. I'd recommend starting with the following 
 
 ## Other things I think you should know
 
-The posts below will include examples and practices which combine Kusto's rich query and management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
+The posts below includes examples and practices which combine Kusto's rich query and data management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
 #### Queries
 
