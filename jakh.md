@@ -1,4 +1,4 @@
-# Just Another Kusto Hacker *(JAKH)*
+# Just another Kusto hacker *(JAKH)*
 
 Back in 2017, the Azure Data Explorer (Kusto) team came up with yet another brilliant idea:
 Many people simply love our query language, why don't we challenge them with writing creative, thought-provoking,
