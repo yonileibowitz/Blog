@@ -35,10 +35,18 @@ Ane example use case could be when you want to replace a subset of the data in y
 1. Let's assume your table name it `T`.
 2. You can create a new table, `T_temp` as shown in the previous section. This table will have the same schema as `T`.
 3. Ingest all your data into `T_temp`, and specify unique [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags when ingesting this data (so that in the future, you'll be able to identify and replace it, according to this tag).
+    - Multiple ingestion methods allow you to the `tags` [ingestion property](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#ingestion-properties).
+    - For this example, let's use `drop-by:2018-10-26` as our tag.
 4. When all ingestion completes successfully, use the [.replace extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#replace-extents) command to:
     1. Move all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T_temp` to `T`
     2. Drop all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T`.
-5. Both the *move* and *drop* operations are done in a single transaction, so throughout your entire ingestion process and after it, the full data set in `T` remains available for queries.
+    - Here's how the command would look like:
+        ```
+        .replace extents in table T <| 
+        { .show table T extents where tags has 'drop-by:2018-10-26' },
+        { .show table T_Temp extents where tags has 'drop-by:2018-10-26' }
+        ```
+5. Both the *move* and *drop* operations are performed in a single transaction, so throughout your entire ingestion process and after it, the full data set in `T` remains available for queries.
 6. Assuming the tagged data shards that were originally in `T` are no longer of interest, simply drop the `T_temp` table using the [.drop table](https://docs.microsoft.com/en-us/azure/kusto/management/tables#drop-table) command. Or, if you have additional flows utilizing it for the same purpose in parallel - drop the specific [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) from it, using the [.drop extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extents) command.
 
 
