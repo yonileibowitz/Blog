@@ -1,6 +1,4 @@
-Kusto rocks. Seriously. So does **Azure Data Explorer** (which is simply the public name of this amazing big data platform).
-
-## Wait, what is... ?
+## Wait, what is Kusto (Azure Data Explorer) ?
 
 There's lots to learn and read about. I'd recommend starting with the following links:
 
@@ -10,7 +8,7 @@ There's lots to learn and read about. I'd recommend starting with the following 
 - [Azure Data Explorer: Quickstarts and tutorials](https://docs.microsoft.com/en-us/azure/data-explorer)
 - [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/kusto)
 
-## Haven't seen it in action yet?
+## Haven't seen it in action yet ?
 
 Why not start off with a couple of videos:
 
