@@ -137,6 +137,6 @@ In some cases, depending on which purpose your [update policy](https://docs.micr
 In other cases (like in the example in this blog post), the data in its original format has no value to us, and being cost-aware - we can simply define that it shouldn't be retained at all, once ingestion completes. This can be achieved by:
 
 1. Defining the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) with `IsTransactional` set to `true`.
-2. Defining the retention policy on the source table to have `0` as its `SoftDeletePeriod`.
+2. Defining the [retention policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy) on the source table to have `0` as its `SoftDeletePeriod`.
 
 With these defined, the data in its original format never becomes visible to any query (exlucing the query which is run as part of the update policy), and does not get persisted on the cluster's nodes nor in persistent storage. Thus, this also serves better performance at ingestion time.

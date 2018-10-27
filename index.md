@@ -30,10 +30,12 @@ The posts below includes examples and practices which combine Kusto's rich query
 
 #### Queries
 
+- [Query best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
 - [Just another Kusto hacker *(JAKH)*](jakh.md)
 - ... More to follow ...
 
 #### Data Management
+- [Schema best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
 - [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
 - ... More to follow ...
