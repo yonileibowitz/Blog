@@ -38,8 +38,8 @@ Ane example use case could be when you want to replace a subset of the data in y
     - Multiple ingestion methods allow you to the `tags` [ingestion property](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#ingestion-properties).
     - For this example, let's use `drop-by:2018-10-26` as our tag.
 4. When all ingestion completes successfully, use the [.replace extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#replace-extents) command to:
-    1. Move all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T_temp` to `T`
-    2. Drop all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T`.
+    1. Drop all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T`.
+    2. Move all [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) with the relevant [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tags from `T_temp` to `T`.
     - Here's how the command would look like:
         ```
         .replace extents in table T <| 
