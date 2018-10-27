@@ -1,6 +1,6 @@
 # Advanced data management in Azure Data Explorer (Kusto)
 
-The following sections describe techniques and practices which you may be useful for your day-to-day data ingestion and data management flows.
+The following sections describe techniques and practices which you may find useful for your day-to-day data ingestion and data management flows.
 
 ## Committing multiple bulks of data in a single transaction
 
