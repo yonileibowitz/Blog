@@ -1,3 +1,5 @@
+--
+
 ## Wait, what is Kusto (Azure Data Explorer) ?
 
 There's lots to learn and read about. I'd recommend starting with the following links:
