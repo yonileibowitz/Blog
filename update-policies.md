@@ -139,7 +139,7 @@ In other cases (like in the example in this blog post), the data in its original
 1. Defining the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) with `IsTransactional` set to `true`.
 2. Defining the [retention policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy) on the source table to have `0` as its `SoftDeletePeriod`.
 
-With these defined, the data in its original format never becomes visible to any query (exlucing the query which is run as part of the update policy), and does not get persisted on the cluster's nodes nor in persistent storage. Thus, this also serves better performance at ingestion time.
+With these defined, the data in its original format never becomes visible to any query (excluding the query which is run as part of the update policy), and does not get persisted on the cluster's nodes nor in persistent storage. Thus, this also serves better performance at ingestion time.
 
 ## See it in action
 

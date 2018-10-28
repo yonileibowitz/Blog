@@ -49,7 +49,6 @@ Ane example use case could be when you want to replace a subset of the data in y
 5. Both the *move* and *drop* operations are performed in a single transaction, so throughout your entire ingestion process and after it, the full data set in `T` remains available for queries.
 6. Assuming the tagged data shards that were originally in `T` are no longer of interest, simply drop the `T_temp` table using the [.drop table](https://docs.microsoft.com/en-us/azure/kusto/management/tables#drop-table) command. Or, if you have additional flows utilizing it for the same purpose in parallel - drop the specific [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) from it, using the [.drop extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extents) command.
 
-
 > *Important Note:* there could be a downside to over-using extent tagging (e.g. if you tag each ingestion operation with a unique [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tag). Make sure you're familiar with the performance notes in [this document](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#extent-tagging). If you do find you use them excessively, it's recommended you use the [.drop extent tags](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extent-tags) command to remove tags which are no longer required.
 
 ## Back-filling data
