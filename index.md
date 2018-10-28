@@ -1,5 +1,7 @@
 --
 
+(In a hurry? Jump directly to the [blog posts](#blog-posts))
+
 ## Wait, what is Kusto (Azure Data Explorer) ?
 
 There's lots to learn and read about. I'd recommend starting with the following links:
@@ -28,14 +30,20 @@ Why not start off with a couple of videos:
 
 The posts below includes examples and practices which combine Kusto's rich query and data management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
-#### Queries
+### Hightlights from Azure Data Explorer (Kusto) documentation
 
 - [Query best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
+- [Schema best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
+- [Ingestion best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)
+
+### Blog posts
+
+#### Queries
+
 - [Just another Kusto hacker *(JAKH)*](jakh.md)
 - ... More to follow ...
 
 #### Data Management
-- [Schema best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
 - [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
 - ... More to follow ...
