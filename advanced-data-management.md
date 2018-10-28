@@ -52,7 +52,13 @@ Ane example use case could be when you want to replace a subset of the data in y
 5. Both the *move* and *drop* operations are performed in a single transaction, so throughout your entire ingestion process and after it, the full data set in `T` remains available for queries.
 6. Assuming the tagged data shards that were originally in `T` are no longer of interest, simply drop the `T_temp` table using the [.drop table](https://docs.microsoft.com/en-us/azure/kusto/management/tables#drop-table) command. Or, if you have additional flows utilizing it for the same purpose in parallel - drop the specific [extents (data shards)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview) from it, using the [.drop extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extents) command.
 
-> *Important Note:* there could be a downside to over-using extent tagging (e.g. if you tag each ingestion operation with a unique [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tag). Make sure you're familiar with the performance notes in [this document](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#extent-tagging). If you do find you use them excessively, it's recommended you use the [.drop extent tags](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extent-tags) command to remove tags which are no longer required.
+> **Important Note:** there could be a downside to over-using extent tagging (e.g. if you tag each ingestion operation with a unique [drop-by](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#drop-by-extent-tags) tag). Make sure you're familiar with the performance notes in [this document](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview#extent-tagging). If you do find you use them excessively, it's recommended you use the [.drop extent tags](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#drop-extent-tags) command to remove tags which are no longer required.
+
+### Moving extents (data shards) between tables
+
+If, however, you're simply in need of adding new data to your table, without replacing or dropping existing data, but you still want all the new data to become available to queries at once, I would suggest:
+1. Ingesting into a "temporary" table (`T_temp`)
+2. Using the (.move extents)[https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#move-extents] command, after all ingestions have completed, to move the newly created extents (data shards) from `T_temp` to your target table (`T`).
 
 ## Back-filling data
 
