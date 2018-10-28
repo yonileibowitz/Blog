@@ -12,6 +12,9 @@ efficient manner. In other cases, you may want to enrich the data as it gets ing
 In this post, I will demonstrate how you can leverage an [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy), to take data which is 'structured' in a non-standard format, and restructure it at ingestion time, so that your queries will end up being much more efficient - You will pay a slight (usually negligible) overhead for manipulating the data at ingestion time, however you will gain a
 lot in the efficiency of all the queries which will run against your data set.
 
+* TOC
+{:toc}
+
 ## The source data
 
 The source data in this example will look as follows:

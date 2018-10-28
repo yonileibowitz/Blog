@@ -1,6 +1,3 @@
-* TOC
-{:toc}
-
 # Just another Kusto hacker *(JAKH)*
 
 Back in 2017, the Azure Data Explorer (Kusto) team came up with yet another brilliant idea:
@@ -12,6 +9,9 @@ When we started this contest, we had no expectation that the queries it would yi
 Dozens of people within Microsoft participated in the contest (even though the prizes we offered were rather modest). They have proven they are true **Kusto hackers**.
 
 Now, are *you* up for the challenge?
+
+* TOC
+{:toc}
 
 # And the Prize goes to ...
 
