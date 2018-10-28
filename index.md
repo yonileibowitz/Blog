@@ -32,6 +32,7 @@ The posts below includes examples and practices which combine Kusto's rich query
 
 ### Highlights from Azure Data Explorer (Kusto) documentation
 
+- [Creating a cluster and databases](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal)
 - [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
 - [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
 - [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)

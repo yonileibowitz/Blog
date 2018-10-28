@@ -163,7 +163,7 @@ The file I will ingest is called `sample.txt` and has the following content (tot
 [2018-10-25 08:19:31.1234567Z] [ThreadId:8945] [ProcessId:598] TimeSinceStartup: 3.14:11:15.123 Message: Shutdown sequence complete. See ya.
 ```
 
-On my cluster, I've created a database named `UpdatePolicyBlogPost`, and in it I've created (as explained above):
+I've [created](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal) a cluster named `yonilkusto` and a database named `UpdatePolicyBlogPost`, and in it I've created (as explained above):
 1. `MySourceTable` - the source table.
 2. `MyTargetTable` - the target table
 3. `ExtractMyLogs()` - the function for parsing the data in `MySourceTable`, the output of which will be appended to `MyTargetTable`.
