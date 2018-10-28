@@ -1,3 +1,6 @@
+* TOC
+{:toc}
+
 # Just another Kusto hacker *(JAKH)*
 
 Back in 2017, the Azure Data Explorer (Kusto) team came up with yet another brilliant idea:
