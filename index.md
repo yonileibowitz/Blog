@@ -30,11 +30,11 @@ Why not start off with a couple of videos:
 
 The posts below includes examples and practices which combine Kusto's rich query and data management capabilities, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
-### Hightlights from Azure Data Explorer (Kusto) documentation
+### Highlights from Azure Data Explorer (Kusto) documentation
 
-- [Query best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
-- [Schema best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
-- [Ingestion best practices for Azure Data Explorer (Kusto)](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)
+- [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
+- [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
+- [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)
 
 ### Blog posts
 
@@ -46,4 +46,7 @@ The posts below includes examples and practices which combine Kusto's rich query
 #### Data Management
 - [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
+    - [Committing multiple bulks of data in a single transaction](advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
+    - [Back-filling data](advanced-data-management.md#back-filling-data)
+
 - ... More to follow ...
