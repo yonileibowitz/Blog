@@ -140,3 +140,39 @@ In other cases (like in the example in this blog post), the data in its original
 2. Defining the [retention policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy) on the source table to have `0` as its `SoftDeletePeriod`.
 
 With these defined, the data in its original format never becomes visible to any query (exlucing the query which is run as part of the update policy), and does not get persisted on the cluster's nodes nor in persistent storage. Thus, this also serves better performance at ingestion time.
+
+## See it in action
+
+Finally, I will ingest a sample file, to show you how it all works together. For doing so, I'll be using [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer)'s feature for easily [importing a local file](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer#importing-a-local-file-into-a-kusto-table).
+
+The file I will ingest is called `sample.txt` and has the following content (total of 4 records):
+
+```
+[2018-10-25 04:24:31.1234567Z] [ThreadId:1364] [ProcessId:771] TimeSinceStartup: 0.00:15:12.345 Message: Starting. All systems go.
+[2018-10-25 04:26:31.1234567Z] [ThreadId:1364] [ProcessId:771] TimeSinceStartup: 0.00:17:12.345 Message: All components initialized successfully.
+[2018-10-25 08:18:31.1234567Z] [ThreadId:8945] [ProcessId:598] TimeSinceStartup: 3.14:10:15.123 Message: Shutting down. Thanks for flying.
+[2018-10-25 08:19:31.1234567Z] [ThreadId:8945] [ProcessId:598] TimeSinceStartup: 3.14:11:15.123 Message: Shutdown sequence complete. See ya.
+```
+
+On my cluster, I've created a database named `UpdatePolicyBlogPost`, and in it i've created (as explained above):
+1. The *source* table
+2. The *target* table
+3. The `ExtractMyLogs()` function
+
+![](./resources/images/update-policy-demo-connections-panel.png)
+
+I've chosen to set my update policy with `IsTranactional` = `true`, and have the original records not retained in the source table (by setting a retention policy with `0` as its `SoftDeletePeriod` on it):
+
+![](./resources/images/update-policy-demo-target-table-update-policy.png)
+
+![](./resources/images/update-policy-demo-source-table-retention-policy.png)
+
+And now, I will ingest the `sample.txt` file:
+
+![](./resources/images/update-policy-demo-ingestion-completed.png)
+
+And see that the *source* table has no records (as expected), and the *target* table has 4 records parsed into my 5 strongly-typed columns:
+
+![](./resources/images/update-policy-demo-source-table-count.png)
+
+![](./resources/images/update-policy-demo-target-table-records.png)
