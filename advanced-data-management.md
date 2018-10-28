@@ -58,7 +58,7 @@ Ane example use case could be when you want to replace a subset of the data in y
 
 If, however, you're simply in need of adding new data to your table, without replacing or dropping existing data, but you still want all the new data to become available to queries at once, I would suggest:
 1. Ingesting into a "temporary" table (`T_temp`)
-2. Using the (.move extents)[https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#move-extents] command, after all ingestions have completed, to move the newly created extents (data shards) from `T_temp` to your target table (`T`).
+2. Using the [.move extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#move-extents) command, after all ingestions have completed, to move the newly created extents (data shards) from `T_temp` to your target table (`T`).
 
 ## Back-filling data
 
