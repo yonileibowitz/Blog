@@ -31,7 +31,7 @@ The source data in this example will look as follows:
 
 As you can see above, each line is a single record, which includes a timestamp, and a few other fields of different types - numerics, strings, and timespans.
 
-I could, theoretically, ingest everything into a single column in a Kusto table, then use Kusto's strong query capabilities to parse all records at query time. However, as my data grows and becomes Big Data, query performance will degrade, regarless of the fact it'll make exploring the data and working with it a little less "natural". 
+I could, theoretically, ingest everything into a single column in a Kusto table, then use Kusto's strong query capabilities to parse all records at query time. However, as my data grows and becomes Big Data, query performance will degrade, regardless of the fact it'll make exploring the data and working with it a little less "natural". 
 
 ## The desired schema
 
@@ -77,6 +77,7 @@ Great! Now, how can we use this function to process the data as it gets ingested
 ## Setting up the update policy
 
 I will setup 2 tables in my Kusto database:
+
 - The *source* table - This table will have a single string-typed column, into which I will ingest the source data, as-is.
 - The *target* table - This table will have my desired schema. This is the table I define the [update policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/updatepolicy) on.
 
