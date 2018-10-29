@@ -1,4 +1,4 @@
-# Update policies in Azure Data Explorer (Kusto)
+# Update policies for in-place ETL in Azure Data Explorer (Kusto)
 
 Azure Data Explorer (Kusto) is super fast and efficient in getting your data ingested (, and then queried).
 

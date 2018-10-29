@@ -45,7 +45,8 @@ The posts below includes examples and practices which combine Kusto's rich query
 - ... More to follow ...
 
 #### Data Management
-- [Update policies in Azure Data Explorer (Kusto)](update-policies.md)
+
+- [Update policies for in-place ETL in Azure Data Explorer (Kusto)](update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
     - [Committing multiple bulks of data in a single transaction](advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
     - [Back-filling data](advanced-data-management.md#back-filling-data)
