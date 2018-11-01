@@ -27,7 +27,7 @@ Then, 5 elements that have the 'right' combinations are selected using hash valu
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA1VRS2vDMAy+51eYXOpAO2zZsZ3BYMeyZece2g681LRp8yJ2tzL24yd3ZTQyWEjfp/cw1l0gJXkiKXl5tZU7nLp+9OGcJj9kGPujq/5gdwmjrYJtGjqjD9lsTsrsnsKRU6ITblrctLzpPGoMaD/dZbDdLkZMTJiaYmrKqZnflV5hZh/GygZa8thBrB4rx6qxR2zdYdASeQfrD3SVxWTHvu5IQhOCsrMB30fjCF0+Nn23R0b0r68/SrqQioERWuVcGzAFKCbSOfnHDS9EIXOmCgUStGb6Hl0o0EpIrgoOQnAFAGqCG5aDZkUBgkklMRmbhvNcg9KSG8GEkFoanV7RbZKRviNLnMef29aO9bcjb857u3c47uiGBm9Kn2fr983Xxm/xbClmDj0urO72tLUn19Q+4E6y7BdMe23hDAIAAA==)
 ```
 print L = " JKacehknorstu"
-| project L = extractall('(.)', L)
+| project L = extract_all('(.)', L)
 | project L1 = L, L2 = L, L3 = L, L4 = L, L5 = L
 | mvexpand L1 
 | mvexpand L2 
@@ -74,7 +74,7 @@ Oh, you don't believe it works? Try it yourself!
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA01OS4rCQBDde4omm+7GIAgy4EKYC8wJVKSSFBLMj3QrIl5AycKFCxGZIAgK6hxhzpQjzOvBhYvXVbxfdVHGmRU0kE192DT17qep9w/MJ/AL7oh5BW5NXTnuDHwDd/igV1t4kNkhs4deOZ/jnQ/Zwwn7BUCmusvWWvDSchbhIpaSQktJoqTqaOkL0tDTBS8Lco53s5kHxuKrUxWQ4Y/ehLMwj/jFYYRklaQAjRS58V+nfdHtu1IzT1Mq4xWLLzaGpjwouUgoZPUph+0xzFLgeSOHnj8aO8HzfGHz16GUZpzExip0a/0HguPVQDwBAAA=)
 ```
 print a='😉🐮🔬🐭🐾😚🐧🐨🌭🐡🐞🐫🔾🌊😮🐬🔭🌨🌾🌡🐚😜🌤🌞🌫'
-| extend a=extractall('(.)', a)
+| extend a=extract_all('(.)', a)
 | mvexpand a
 | extend a=substring(base64_encodestring(strcat('abracadabra', a)), 19)
 | summarize Message=replace(@'[+]', ' ', replace(@'[[",\]]', "", tostring(makelist(a))))
@@ -93,7 +93,7 @@ Want to see it break? Reduce N to '1000' and check the output.
 let N = 1000000;
 let alphabet = " abcdefghijklmnopqrstuvwxyz";
 print Alphabet = strcat(alphabet, toupper(alphabet))
-| extend Letters = extractall(@"([\w ])", Alphabet)
+| extend Letters = extract_all(@"([\w ])", Alphabet)
 | extend Numbers = range(0, 2 * strlen(alphabet) - 1, 1)
 | extend Zipped = zip(Letters, Numbers)
 | mvexpand Zipped
@@ -155,7 +155,7 @@ Here, there's no real "inline" data. The query uses what the engine gives, excep
 datatable(h:datetime, J:string, K:dynamic, [' ']:guid)[] 
 | getschema
 | summarize l=strcat(makelist(DataType), makelist(ColumnName))
-| extend a=extractall('^.{4}(.)(.)(.).{3}(.).{18}(.).(.).{11}(.).{3}(.).{12}(.).{6}(.).{3}(.).{3}(.).{3}(.)', l)[0] 
+| extend a=extract_all('^.{4}(.)(.)(.).{3}(.).{18}(.).(.).{11}(.).{3}(.).{12}(.).{6}(.).{3}(.).{3}(.).{3}(.)', l)[0] 
 | project r1=strcat(a[10], a[8], a[0], a[1], a[12], a[3], a[5], tolower(a[6]), a[1], a[9], a[2], a[4], a[12]), r2=strcat(a[11], a[8], a[0], a[1], tolower(a[6]), a[12], a[9], a[3], a[7], tolower(a[11]), a[2], a[4])
 | project result=strcat(r1, r2)
 ```
@@ -199,7 +199,7 @@ print 'Please give me some prize you awesome Kustodians!'
     | where isnotempty(Wish)
     | summarize xFactors = tostring(split(replace(@'[\[",\]]', '', tostring(makeset(Wish))), 'f'))
     | parse xFactors with * '["' x '","' y '"]'
-    | project punk = extractall('(.)', strcat(replace('hw', 're', x), replace('da', 'kc', y), replace('da', 'ah', y)))
+    | project punk = extract_all('(.)', strcat(replace('hw', 're', x), replace('da', 'kc', y), replace('da', 'ah', y)))
     | extend numbers = range(0, arraylength(punk)-1, 1)
     | mvexpand punk, numbers to typeof(long)
     | order by numbers desc
@@ -248,7 +248,7 @@ let B = datatable(I:string) [
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
 ] | extend J = range(0, arraylength(A)-1, 1) | mvexpand C = A, D = J to typeof(long);
-let C = extractall('(.)', toscalar(B | where D == 2 | project strcat(C) | limit 1));
+let C = extract_all('(.)', toscalar(B | where D == 2 | project strcat(C) | limit 1));
 let D = datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
@@ -256,13 +256,13 @@ let D = datatable(I:string) [
 ] | extend L = range(0, arraylength(C)-1, 1) | mvexpand K = C to typeof(string), L to typeof(long) limit 256;
 let E = D | where tolong(K) > 1 | extend T = range(0, tolong(K)-1, 1) | mvexpand T to typeof(long) limit 256 | extend U = 0;
 let F = toscalar(D | where tolong(K) <= 1 | project U = tolong(K), L, T = 0 | union E | sort by L asc, T asc | summarize W = makelist(U, 256) | project replace(@'[\[\"\,\]]', "", tostring(W)) | limit 1);
-let G = B | where D == 0 | project I = strcat(C) | extend Y = extractall('(....)', I) | extend J = range(0, 15, 1) | mvexpand Y to typeof(string), J to typeof(long) | project Y, Z = tohex(J), H=1;
-let H = extractall('(........)', F);
+let G = B | where D == 0 | project I = strcat(C) | extend Y = extract_all('(....)', I) | extend J = range(0, 15, 1) | mvexpand Y to typeof(string), J to typeof(long) | project Y, Z = tohex(J), H=1;
+let H = extract_all('(........)', F);
 datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend J = range(0, arraylength(H)-1, 1) | mvexpand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extractall('(.)', P) | extend M = range(0, arraylength(Q)-1, 1)
+] | extend J = range(0, arraylength(H)-1, 1) | mvexpand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extract_all('(.)', P) | extend M = range(0, arraylength(Q)-1, 1)
   | mvexpand Q to typeof(string), M to typeof(long) | project Q, M | extend O = tohex(M, 2) | join (G | join kind=inner (G) on H | project P = strcat(Y, Y1), I = strcat(Z, Z1)
   | sort by I asc) on $left.O == $right.I) on $left.N == $right.P | order by J asc | summarize W = makelist(Q)
   | project TheRequiredString = replace(@'[\[\"\,\]]', "", tostring(W))
@@ -285,7 +285,7 @@ let shrink=99999999;
 datatable(h:datetime, J:string, K:dynamic, [' ']:guid, o:string, k:string)[] 
 | getschema
 | summarize l=strcat(makelist(DataType), makelist(ColumnName))
-| project chars=extractall('(.)', l), indices=range(0, 122, 1)
+| project chars=extract_all('(.)', l), indices=range(0, 122, 1)
 | mvexpand chars to typeof(string), indices to typeof(int64)
 | where indices in (4, 5, 6, 10, 29, 31, 47, 60, 99, 103, 107, 111, 115, 119)
 | summarize a=makelist(chars)
@@ -386,7 +386,7 @@ let scrambled = datatable(a:int,c:int,e:int,h:int,J:int,K:int,k:int,n:int,o:int,
 ];
 scrambled 
 | find where a > 0 project pack(*) 
-| project haha=replace('"',"",replace(@"{|}|:\d+|,","",tostring(pack_))), ii = extractall(@"(\d+)",tostring(pack_))
+| project haha=replace('"',"",replace(@"{|}|:\d+|,","",tostring(pack_))), ii = extract_all(@"(\d+)",tostring(pack_))
 | mvexpand ii
 | project c=substring(haha,tolong(ii),1), haha, ii
 | summarize makelist(c) 
@@ -457,7 +457,7 @@ These 2 queries use numerous string opreators to manipulate input string(s) into
 ```
 let m="uJtsa onhtreK suoth caek r";
 range x from 0 to strlen(m) step 2
-|extend M=extractall('(.)', m)
+|extend M=extract_all('(.)', m)
 |extend Result = strcat(M[(x+1)],M[x])
 |summarize Message=replace(@'[\[\"\,\]]',"", tostring(makelist(Result)))
 ```
@@ -469,7 +469,7 @@ let m2 = 'Yes,Hacking Kusto Is:GREAT&&Fun!';
 let m3 = 'RtunT,GAhuEa ,nRGuh,kTgeE';
 let m=translate(m2, m1, m3);
 range x from 0 to strlen(m) step 2
-|extend M=extractall('(.)', m)
+|extend M=extract_all('(.)', m)
 |extend Result = strcat(M[(x+1)],M[x])
 |summarize Message=replace(@'[\[\"\,\]]',"", tostring(makelist(Result)))
 ```
@@ -525,7 +525,7 @@ let Addresses=datatable(Address:string)
 'https://tumblr.com/rstu?width=100&height=120',
 '201.6.52.117', 
 '160.0.0.0'];
-let paths=toscalar(Addresses | project p=parse_url(Address) | summarize l=makelist(p.Path) | project s=strcat(' ', replace(@'[^\w ]', '', tostring(l))) | project extractall('(.)', s));
+let paths=toscalar(Addresses | project p=parse_url(Address) | summarize l=makelist(p.Path) | project s=strcat(' ', replace(@'[^\w ]', '', tostring(l))) | project extract_all('(.)', s));
 Addresses
 | project longIP=parse_ipv4(Address)
 | where longIP > 0
@@ -579,7 +579,7 @@ let artifact = "Jouster chain!";
 let fixguid = (g: string) { replace("[f-]", "", g) };
 datatable(guid: string, zero: int) [ "f023f47a-c14f-95f6-7d7f9af8fd56", 0 ]
 | extend raw = translate(hex, artifact, fixguid(guid))
-| project parts = extractall("([^!]+)", raw), zero
+| project parts = extract_all("([^!]+)", raw), zero
 | join (
     datatable(Kusto: int, k: int) [ 0, 0 ]
     | getschema
@@ -599,7 +599,7 @@ print  M1 = 'dCxlcix0byxy'
 | extend M3 = 'dSxvLHUsYw=='
 | extend M4 = 'SixhbixLLGhh'
 | extend l1 = base64_decodestring(M1), l2 = base64_decodestring(M2), l3 = base64_decodestring(M3), l4 = base64_decodestring(M4)
-| extend M1 = extractall(@"(\w+)", l1), M2 = extractall(@"(\w+)", l2), M3 = extractall(@"(\w+)", l3), M4 = extractall(@"(\w+)", l4) 
+| extend M1 = extract_all(@"(\w+)", l1), M2 = extract_all(@"(\w+)", l2), M3 = extract_all(@"(\w+)", l3), M4 = extract_all(@"(\w+)", l4) 
 | extend M5 = pack_array(" "," "," "," ") 
 | extend z = zip(M1,M2,M3, M4,M5)
 | extend R = range(0, arraylength(z)-1, 1)
@@ -630,7 +630,7 @@ print Message="Jazz backup acquits aircraft. ask corn beacon ancient bluefish ac
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA62QwWrDMAyG73sKMRi2mVdW2LXQ85ace6h7UDPNCXXsYCujKX34qqPbcthxEgIhfr5f0pC7yFBTKegJVqBe8a0d44gllYaZD9AmAoIs+RXq7gx0ZIrvUIte2owNYwha6YVR9ptlfnXVKmP0pJ8tYM44BYqeW12bp6WF5VXYf9JxwCvSQgWcgKeB0ocOKfoZaCOG1cOLDMrY95i7E8Fs90xDwIb0Wm3d1t0763Y7WUhJcSosl3rd44FCV1jcjYH9BJv/od2OFubsP3+wtAPzqKwCZX8edQEFNsdThAEAAA==)
 ```
 print Message = 'JaKhunuasosctttk hoe e r r      '
-| extend M = extractall('(.)', Message)
+| extend M = extract_all('(.)', Message)
 | extend L=range(0, arraylength(M)-1, 1)
 | mvexpand M, L to typeof(long)
 | extend W = L%4
@@ -657,7 +657,7 @@ let Data = datatable (Id:int, Key:string, Weight:int, Value: string)
     8,  'quartz',     44, 'IHNpb=BaGFja2Vy0==aGUgY=29Bvd==GhlciBhb=mltYWx=zLCB3',
 ];
 let Aggregated = Data
-        | extend KeyTokens = extractall('(\\w)', Key) 
+        | extend KeyTokens = extract_all('(\\w)', Key) 
         | mvexpand (KeyTokens)
         | summarize Freq = count() by tostring(KeyTokens), Weight
         | where binary_xor(binary_xor(Weight, Freq), 42) > 3
@@ -745,11 +745,11 @@ print "try"
 | extend x = base64_decodestring(x)
 | extend y = translate("ghosts are less scary", "=EgOhO VST tT00 0UVSF", "ahlcahtyesarcogg")
 | extend y = base64_decodestring( y)
-| extend z1 = extractall("(.)",substring(x,0,4)), z2 = extractall("(.)",substring(x,4,4)), z3 = extractall("(.)",substring(x,8,4))
+| extend z1 = extract_all("(.)",substring(x,0,4)), z2 = extract_all("(.)",substring(x,4,4)), z3 = extract_all("(.)",substring(x,8,4))
 | join kind= inner (
     print "try"
 | extend x = base64_decodestring( "VEtUVEhFT0VSUg==")
-| extend z1 = extractall("(.)",substring(x,0,4)), z2 = extractall("(.)",substring(x,4,3)), z3 = extractall("(.)",substring(x,7,2)), z4 = extractall("(.)",substring(x,9,1))
+| extend z1 = extract_all("(.)",substring(x,0,4)), z2 = extract_all("(.)",substring(x,4,3)), z3 = extract_all("(.)",substring(x,7,2)), z4 = extract_all("(.)",substring(x,9,1))
 ) on print_0 
 | project-away print_0, x, y, print_01, x1
 | mvexpand z1, z2, z3, z11, z21, z31, z4
