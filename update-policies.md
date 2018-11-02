@@ -29,7 +29,7 @@ The source data in this example will look as follows:
 [2018-10-25 08:19:31.1234567Z] [ThreadId:8945] [ProcessId:598] TimeSinceStartup: 3.14:11:15.123 Message: Shutdown sequence complete. See ya.
 ```
 
-As you can see above, each line is a single record, which includes a timestamp, and a few other fields of different types - numerics, strings, and timespans.
+As you can see above, each line is a single record, which includes a timestamp, and a few other fields of different types - numerals, strings, and timespans.
 
 I could, theoretically, ingest everything into a single column in a Kusto table, then use Kusto's strong query capabilities to parse all records at query time. However, as my data grows and becomes Big Data, query performance will degrade, regardless of the fact it'll make exploring the data and working with it a little less "natural". 
 
