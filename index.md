@@ -1,6 +1,6 @@
 --
 
-(In a hurry? Jump directly to the [blog posts](#blog-posts))
+**(In a hurry? Jump directly to the [blog posts](#blog-posts))**
 
 ## Wait, what is Kusto (Azure Data Explorer) ?
 
@@ -41,14 +41,14 @@ The posts below includes examples and practices which combine Kusto's rich query
 
 #### Queries
 
-- [Just another Kusto hacker *(JAKH)*](jakh.md)
+- [Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)
 - ... More to follow ...
 
 #### Data Management
 
-- [Update policies for in-place ETL in Azure Data Explorer (Kusto)](update-policies.md)
-- [Advanced data management in Azure Data Explorer (Kusto)](advanced-data-management.md)
-    - [Committing multiple bulks of data in a single transaction](advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
-    - [Back-filling data](advanced-data-management.md#back-filling-data)
+- [Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)
+- [Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)
+    - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
+    - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
 
 - ... More to follow ...
