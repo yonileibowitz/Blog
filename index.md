@@ -37,7 +37,7 @@ The posts below includes examples and practices which combine Kusto's rich query
 - [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
 - [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)
 
-### Blog posts
+## Blog posts
 
 #### Queries
 
