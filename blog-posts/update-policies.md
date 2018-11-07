@@ -168,28 +168,28 @@ I've [created](https://docs.microsoft.com/en-us/azure/data-explorer/create-clust
 2. `MyTargetTable` - the target table
 3. `ExtractMyLogs()` - the function for parsing the data in `MySourceTable`, the output of which will be appended to `MyTargetTable`.
 
-![](./resources/images/update-policy-demo-connections-panel.png)
+![](../resources/images/update-policy-demo-connections-panel.png)
 
 I've chosen to set my update policy with `IsTransactional` = `true`:
 
-![](./resources/images/update-policy-demo-target-table-update-policy.png)
+![](../resources/images/update-policy-demo-target-table-update-policy.png)
 
 I've also chosen to have the original records not retained in the source table (by setting a retention policy with `0` as its `SoftDeletePeriod` on it):
 
-![](./resources/images/update-policy-demo-source-table-retention-policy.png)
+![](../resources/images/update-policy-demo-source-table-retention-policy.png)
 
 Now, I will ingest the `sample.txt` file:
 
-![](./resources/images/update-policy-demo-ingestion-completed.png)
+![](../resources/images/update-policy-demo-ingestion-completed.png)
 
 And, *voila* - I can see that:
 
 1. The *source* table has no records (as expected)
 
-    ![](./resources/images/update-policy-demo-source-table-count.png)
+    ![](../resources/images/update-policy-demo-source-table-count.png)
 
 2. The *target* table has 4 records parsed into my 5 strongly-typed columns:
 
-    ![](./resources/images/update-policy-demo-target-table-records.png)
+    ![](../resources/images/update-policy-demo-target-table-records.png)
 
 Our work here is done. Now - go ahead and try it out yourself!

@@ -55,15 +55,15 @@ print L = " JKacehknorstu"
 This query (from [Ben Martens](https://blogs.msdn.microsoft.com/ben/)) got us excited with its ASCII-art-creation
 of `Keep Calm and Kusto on`, with the desired result rendered as a scatter-chart.
 
-*Download the query as a [CSL file](./resources/csl/jakh-2nd-place-query.csl)*
+*Download the query as a [CSL file](../resources/csl/jakh-2nd-place-query.csl)*
 
 **Query screenshot:** (too long to paste as text :-) )
 
-![](./resources/images/jakh-2nd-place-query-screenshot.png)
+![](../resources/images/jakh-2nd-place-query-screenshot.png)
 
 **Output:**
 
-![](./resources/images/jakh-2nd-place-output-screenshot.png)
+![](../resources/images/jakh-2nd-place-output-screenshot.png)
 
 ## 3rd place (#1):
 
@@ -326,7 +326,7 @@ print 'Kuskii ART'
 | project replace('[\\[\\],"]', '', tostring(r))
 ```
 
-![](./resources/images/jakh-additional-queries-2-output-screenshot.png)
+![](../resources/images/jakh-additional-queries-2-output-screenshot.png)
 
 ## 3. I ❤ Kusto
 
