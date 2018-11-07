@@ -52,3 +52,5 @@ The posts below includes examples and practices which combine Kusto's rich query
     - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
 
 - ... More to follow ...
+
+{% include  share.html %}
