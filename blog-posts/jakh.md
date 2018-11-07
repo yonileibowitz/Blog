@@ -762,3 +762,5 @@ print "try"
 | summarize Message = replace(@'[\[\"\]]', '', tostring(makelist(temp)))
 | extend Message = replace(@',', ' ', Message)
 ```
+
+**[Go back home](../index.md)**

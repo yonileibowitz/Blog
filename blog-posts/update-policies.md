@@ -193,3 +193,5 @@ And, *voila* - I can see that:
     ![](../resources/images/update-policy-demo-target-table-records.png)
 
 Our work here is done. Now - go ahead and try it out yourself!
+
+**[Go back home](../index.md)**
