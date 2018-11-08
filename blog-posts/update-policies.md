@@ -1,3 +1,6 @@
+---
+title: Update policies for in-place ETL in Azure Data Explorer (Kusto) | kusto.blog
+---
 **[Go back home](../index.md)**
 
 {% include  share.html %}

@@ -1,3 +1,6 @@
+---
+title: Advanced data management in Azure Data Explorer (Kusto) | kusto.blog
+---
 **[Go back home](../index.md)**
 
 {% include  share.html %}

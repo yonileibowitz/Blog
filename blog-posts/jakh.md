@@ -1,3 +1,6 @@
+---
+title: Just another Kusto hacker (JAKH) | kusto.blog
+---
 **[Go back home](../index.md)**
 
 {% include  share.html %}
