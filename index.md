@@ -20,13 +20,13 @@ Why not start off with a couple of videos:
 
 #### Microsoft Ignite, Orlando, September 2018
 
-- [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s)
-- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s)
-- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68)
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s){:target="_blank"}
+- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s){:target="_blank"}
+- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
 
 #### Techorama, The Netherlands, October 2018
 
-- [Scott Guthrie](https://www.linkedin.com/in/guthriescott) demoing Kusto - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott) demoing Kusto - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074){:target="_blank"}
 
 ---
 ## Other things I think you should know
@@ -50,10 +50,10 @@ The posts below includes examples and practices which combine Kusto's rich query
 
 ### Highlights from Azure Data Explorer (Kusto) documentation
 
-- [Creating a cluster and databases](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal)
-- [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)
-- [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices)
-- [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices)
+- [Creating a cluster and databases](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal){:target="_blank"}
+- [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices){:target="_blank"}
+- [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices){:target="_blank"}
+- [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices){:target="_blank"}
 
 
 {% include  share.html %}
