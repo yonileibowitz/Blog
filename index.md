@@ -1,4 +1,4 @@
---
+{% include  share.html %}
 
 **(In a hurry? Jump directly to the [blog posts](#blog-posts))**
 
