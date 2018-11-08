@@ -17,7 +17,7 @@ An example use case could be when you want to ingest an entire table which conta
 
 1. Let's assume you want the data to be queryable in a table named `T` (whether or not `T` exists before we begin).
 2. You can create a new table, named `T_temp` (for example), which has the same schema as `T`.
-    - A simple way to do so is using a [.set command](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#set-append-set-or-append-set-or-replace):
+    - A simple way to do so is using a [.set command](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/ingest-from-query):
         ```
         .set T_temp <| T | limit 0
         ```

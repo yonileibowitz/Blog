@@ -105,7 +105,7 @@ Explicitly defining the schema:
 
 Or - using the query to define the schema for me:
 
-Using a [.set command](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#set-append-set-or-append-set-or-replace), I can create a table with the output schema of my query (this can help me
+Using a [.set command](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/ingest-from-query), I can create a table with the output schema of my query (this can help me
 verify my query actually creates the desired schema):
 
 ```
