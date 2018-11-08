@@ -1,3 +1,5 @@
+**[Go back home](../index.md)**
+
 {% include  share.html %}
 
 # Just another Kusto hacker *(JAKH)*

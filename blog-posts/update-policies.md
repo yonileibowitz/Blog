@@ -1,3 +1,5 @@
+**[Go back home](../index.md)**
+
 {% include  share.html %}
 
 # Update policies for in-place ETL in Azure Data Explorer (Kusto)

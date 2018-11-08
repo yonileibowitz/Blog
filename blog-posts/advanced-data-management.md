@@ -1,3 +1,5 @@
+**[Go back home](../index.md)**
+
 {% include  share.html %}
 
 # Advanced data management in Azure Data Explorer (Kusto)
