@@ -1,5 +1,5 @@
 ---
-title: Advanced data management in Azure Data Explorer (Kusto) | kusto.blog
+title: Advanced data management in Azure Data Explorer (Kusto)
 ---
 **[Go back home](../index.md)**
 

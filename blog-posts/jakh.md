@@ -1,5 +1,5 @@
 ---
-title: Just another Kusto hacker (JAKH) | kusto.blog
+title: Just another Kusto hacker (JAKH)
 ---
 **[Go back home](../index.md)**
 
