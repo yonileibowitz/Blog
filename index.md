@@ -18,13 +18,13 @@ Why not start off with a couple of videos:
 
 #### Microsoft Ignite, Orlando, September 2018
 
-- [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s)
-- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on youtube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s)
-- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on youtube](https://www.youtube.com/watch?v=GT4C84yrb68)
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s)
+- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s announcement - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s)
+- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68)
 
 #### Techorama, The Netherlands, October 2018
 
-- [Scott Guthrie](https://www.linkedin.com/in/guthriescott) demoing Kusto - [watch on youtube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
+- [Scott Guthrie](https://www.linkedin.com/in/guthriescott) demoing Kusto - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074)
 
 ## Other things I think you should know
 
