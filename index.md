@@ -46,6 +46,7 @@ The posts below includes examples and practices which combine Kusto's rich query
 - [Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)
     - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
     - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
+- [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
 - *... More to follow ...*
 
 ### Highlights from Azure Data Explorer (Kusto) documentation
