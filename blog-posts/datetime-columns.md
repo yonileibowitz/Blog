@@ -39,7 +39,22 @@ The same is true if you want to query historical data, e.g. a specific week's wo
 
 3. Due to the fact only the minimum and maximum values for datetime column are stored in the extent's metadata (as previously explained), if you have skewed values *from the past or future* being ingested alongside ones from the present, this can limit the ability to pre-filter irrelevant extents at query planning time.
     - In case you're back-filling historical data - have a look at [this post](advanced-data-management.md#back-filling-data), which refers to the `creationTime` ingestion property.
-
+    - If you're not sure whether or not your datetime values are skewed, a query like the following one can help you figure that out:
+        ```
+        MyTable
+        | where ingestion_time() > ago(3h)
+        | summarize count() by bin(DateTimeColumnIWantToCheck, 1h)
+        ```
+        If my data is OK, I'd expect to get 3 or 4 hourly buckets (depending on when I run the query). For instance, if run the query above at `2018-11-09 05:17:31`, I'll get:
+        
+        |DateTimeColumnIWantToCheck  |count_        |
+        |----------------------------|--------------|
+        |2018-11-09 05:00:00.0000000 |1,707,930,236 |
+        |2018-11-09 04:00:00.0000000 |8,363,683,151 |
+        |2018-11-09 03:00:00.0000000 |8,353,791,287 |
+        |2018-11-09 02:00:00.0000000 |6,545,498,120 |
+        
+    
 **[Go back home](../index.md)**
 
 {% include  share.html %}
