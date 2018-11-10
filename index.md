@@ -2,16 +2,14 @@
 
 ---
 
-## Kusto.Blog posts
-
 The posts below includes examples and practices which combine the rich query and data management capabilities of **Azure Data Explorer (Kusto)**, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
-### Queries
+## Queries
 
 - [Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)
 - *... More to follow ...*
 
-### Data Management
+## Data Management
 
 - [Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)
 - [Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)
@@ -20,7 +18,7 @@ The posts below includes examples and practices which combine the rich query and
 - [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
 - *... More to follow ...*
 
-## Wait, let's start over - what is Kusto (Azure Data Explorer) ?
+## Wait, let's start over - what is Azure Data Explorer (Kusto)?
 
 ### Haven't seen it in action yet ?
 
@@ -30,7 +28,7 @@ Why not start off with a couple of videos:
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s){:target="_blank"}
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s session - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s){:target="_blank"}
-- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Kusto - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
+- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32)'s introduction to Azure Data Explorer (Kusto) - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
 
 #### Techorama, The Netherlands, October 2018
 
