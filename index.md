@@ -18,6 +18,8 @@ The posts below includes examples and practices which combine the rich query and
 - [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
 - *... More to follow ...*
 
+---
+
 ## Wait, let's start over - what is Azure Data Explorer (Kusto)?
 
 ### Haven't seen it in action yet ?
@@ -37,7 +39,9 @@ Why not start off with a couple of videos:
 #### PASS Summit, Seattle, November 2018
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=XOzn0O_7tR0&feature=youtu.be&list=PLoGAcXKPcRvZxpEUZGz_4vVWKtK5vChlw&t=4705){:target="_blank"}
 
-## Read more about it
+---
+
+### Read more about it
 
 There's lots to learn and read about. I'd recommend starting with the following links:
 
