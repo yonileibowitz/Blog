@@ -36,9 +36,6 @@ Why not start off with a couple of videos:
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074){:target="_blank"}
 
-#### PASS Summit, Seattle, November 2018
-- [Rohan Kumar](https://www.linkedin.com/in/rohankumar)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=XOzn0O_7tR0&feature=youtu.be&list=PLoGAcXKPcRvZxpEUZGz_4vVWKtK5vChlw&t=4705){:target="_blank"}
-
 ---
 
 ### Read more about it
