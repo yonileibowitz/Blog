@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+remote_theme: jekyll/minima
 markdown: kramdown
 plugins:
   - jekyll-feed
