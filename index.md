@@ -7,16 +7,16 @@ The posts below includes examples and practices which combine the rich query and
 ## Queries
 
 - [Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)
-- *... More to follow ...*
 
 ## Data Management
 
 - [Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)
+
+- [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
+
 - [Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)
     - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
     - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
-- [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
-- *... More to follow ...*
 
 ---
 
