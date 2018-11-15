@@ -4,17 +4,17 @@
 
 The posts below includes examples and practices which combine the rich query and data management capabilities of **Azure Data Explorer (Kusto)**, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
 
-## Queries
+## **Queries**
 
-- [Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)
+- **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)**
 
-## Data Management
+## **Data Management**
 
-- [Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)
+- **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
 
-- [Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)
+- **[Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)**
 
-- [Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)
+- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)**
     - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
     - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
 
