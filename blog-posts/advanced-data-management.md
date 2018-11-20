@@ -67,6 +67,22 @@ If, however, you're simply in need of adding new data to your table, without rep
 1. Ingesting into a "temporary" table (`T_temp`)
 2. Using the [.move extents](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#move-extents){:target="_blank"} command, after all ingestions have completed, to move the newly created extents (data shards) from `T_temp` to your target table (`T`).
 
+### Background processes and how they affect moving and replacing extents
+
+As you may have read [here](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview){:target="_blank"}, an extent's lifetime may include it getting merged or rebuilt with other extents, to reach some optimum size. Such operations, as well as operation run for enforcing the [data retention policy]({:target="_blank"}){:target="_blank"}, are run in the background of the cluster, and can at times conflict with other operations that you run at extent level, include [moving](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#move-extents){:target="_blank"} and [replacing](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands#replace-extents){:target="_blank"} extents.
+
+The two latter work in an "all-or-nothing" manner, meaning that in case one of the source extents that existed at the beginning of the operation no longer exists when the operation is about to be committed, the entire `.move` or `.replace` operation will fail. This can happen, for example, if the source extent was dropped due to retention, or merged with another extent, as part of another parallel operation.
+
+It's important that you handle such potential failure cases accordingly, by interpreting the output of the commands correctly, and be ready to retry the operation in cases where it makes sense to do so.
+
+- The output of both commands is documented [here](https://docs.microsoft.com/en-us/azure/kusto/management/extents-commands
+){:target="_blank"}.
+
+- If you're running the command in `async` mode, simply follow its `State` when you run `.show operations <operation_id>` to see whether it succeeds or fails (there is no partial success, as explained above).
+- Alterntively, when not running in `async` mode, you will get a more detailed result set back once the execution completes:
+
+    - In case `ResultExtentId` is not `null` (which it will be, for extents being dropped as part of a `.replace` command), and it can't be parsed as a GUID, it means the extent failed to be moved, and the operation did not complete successfully (thus, none of the extents were moved).
+
 ## Back-filling data
 
 In some cases, you want to ingest historical data into your table(s), however you still want it to be managed according to the policies (e.g. [retention policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy){:target="_blank"}, [caching policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/cachepolicy){:target="_blank"}) you have defined.
