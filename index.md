@@ -2,7 +2,9 @@
 
 ---
 
-The posts below includes examples and practices which combine the rich query and data management capabilities of **Azure Data Explorer (Kusto)**, providing you with real-life and proven-in-production methodologies, for making the most out of Kusto.
+The posts below include examples and practices which combine the rich query and data management capabilities of **Azure Data Explorer (Kusto)**.
+They will provide you with real-life best practices and methodologies, which have all been repeatedly proven in large-scale production environments,
+and will help you make sure you make the most out of your Kusto cluster.
 
 ## **Queries**
 
