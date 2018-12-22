@@ -114,6 +114,8 @@ different in both):
 - I didn't include the extra columns (`FileName`, `ApplicationName`) in my original table's definition.
 That's OK - they will be automatically appended to my table's schema, as my ingestion commands include
 an ingestion mapping.
+- If your source data is formatted as JSON, a [JSON mapping](https://docs.microsoft.com/en-us/azure/kusto/management/mappings#json-mapping){:target="_blank"} will allow you to specify 2 special transformations: `SourceLocation` and `SourceLineNumber`, which
+enable you to enrich your records with both the name of the file that included the record, and the line number of that record in the source file.
 
 **[Go back home](../index.md)**
 
