@@ -105,8 +105,8 @@ different in both):
     ```
     | Name | Hits |
     |------|------|
+    | John | 16   |
     | Jack | 7    |
-    | Fred | 3    |
     ```
     
 ## Notes
