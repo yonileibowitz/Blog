@@ -14,13 +14,13 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 - **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
 
-- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)**
-    - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
-    - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
-
 - **[Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)**
 
 - **[Specifying metadata at ingestion time](blog-posts/ingestion-time-metadata.md)**
+
+- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)**
+    - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
+    - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
 
 ---
 
