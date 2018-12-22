@@ -112,7 +112,7 @@ different in both):
 ## Notes
 - In step #1 chose to create the table upfront, but as I'm using an ingestion mapping in my commands, I could have let the table be automatically created.
 - I didn't include the extra columns (`FileName`, `ApplicationName`) in my original table's definition.
-That's OK, as they will be automatically appended to my table's schema, as my ingestion commands include
+That's OK - they will be automatically appended to my table's schema, as my ingestion commands include
 an ingestion mapping.
 
 **[Go back home](../index.md)**
