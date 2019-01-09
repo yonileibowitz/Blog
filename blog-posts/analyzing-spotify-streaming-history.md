@@ -112,7 +112,7 @@ The format used in the files provided by [Spotify](https://www.spotify.com){:tar
 
 Now, hit `Start` and your data will be ingested quickly into the destination table.
 
-## Step 3: Analyzing the data
+## Analyzing the data
 
 Let's see how the data looks like in Kusto:
 
@@ -190,7 +190,7 @@ SpotifyStreamingHistory
 | evaluate activity_counts_metrics(ArtistName, EndTime, datetime(2018-10-01), datetime(2019-01-01), 1d)
 ```
 
-![](../resources/images/spotify-artist-activity-count-metrics.png)
+![](../resources/images/spotify-artist-activity-count-metrics.PNG)
 
 I can also look at the daily/weekly active artists I'm listening to, very easily using the `` plugin:
 
@@ -201,7 +201,7 @@ SpotifyStreamingHistory
 | render timechart 
 ```
 
-![](../resources/images/spotify-artist-activity-engagement.png)
+![](../resources/images/spotify-artist-activity-engagement.PNG)
 
 #### Streaks / Binge listening
 
@@ -238,7 +238,7 @@ SpotifyStreamingHistory
 | render columnchart
 ```
 
-![](../resources/images/spotify-days-activity.png)
+![](../resources/images/spotify-days-activity.PNG)
 
 | Day | count_ |
 |-----|--------|
@@ -262,7 +262,7 @@ SpotifyStreamingHistory
 
 And let's zoom into active listening hours:
 
-![](../resources/images/spotify-hours-activity.png)
+![](../resources/images/spotify-hours-activity.PNG)
 
 
 | Day | count_ |
