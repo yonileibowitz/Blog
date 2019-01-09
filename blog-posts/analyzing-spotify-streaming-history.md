@@ -231,7 +231,7 @@ SpotifyStreamingHistory
 
 ### Activity days / hours
 
-It looks like weekends are a litter less saturated with music, but all-in-all, music is always on:
+It looks like weekends are a litter less active, but all-in-all, music is pretty much always on:
 
 ```
 SpotifyStreamingHistory 
@@ -252,7 +252,7 @@ SpotifyStreamingHistory
 | 6   | 2598   |
 | 7   | 1233   |
 
-It looks like weekends are a litter less saturated with music, but all-in-all, music is always on:
+And let's zoom into active listening hours - Wanna try and guess what are the hours I go running, or use my headphones at the open space where I work?
 
 ```
 SpotifyStreamingHistory 
@@ -261,8 +261,6 @@ SpotifyStreamingHistory
          by Hour = hourofday(EndTime - 8h)
 | render columnchart 
 ```
-
-And let's zoom into active listening hours:
 
 ![](../resources/images/spotify-hours-activity.PNG)
 
