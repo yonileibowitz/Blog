@@ -66,7 +66,7 @@ makes it super easy to [ingest](https://docs.microsoft.com/en-us/azure/kusto/too
 
 For this specific file, it's as simple as:
 
-### 1. Creating the target table
+**1. Creating the target table**
 
 I'll do so using the [`.create table`](https://docs.microsoft.com/en-us/azure/kusto/management/tables#create-table){:target="_blank"} command. You can choose a different table name, or different column names / order.
 
@@ -74,7 +74,7 @@ I'll do so using the [`.create table`](https://docs.microsoft.com/en-us/azure/ku
 .create table SpotifyStreamingHistory (ArtistName:string, TrackName:string, EndTime:datetime, MillisecondsPlayed:long)
 ```
 
-### 2. Verifying the [JSON ingestion mapping](https://docs.microsoft.com/en-us/azure/kusto/management/mappings#json-mapping){:target="_blank"}
+**2. Verifying the [JSON ingestion mapping](https://docs.microsoft.com/en-us/azure/kusto/management/mappings#json-mapping){:target="_blank"}**
 
 [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer){:target="_blank"}
 does the heavy-lifting for you and auto-populates the `Mapping` field. Tou should just make sure the column names match the ones you specified when you created the table.
@@ -106,7 +106,7 @@ Here's the mapping I used:
 ]
 ```
 
-### 3. Specifying the `multijson` 
+**3. Specifying the `multijson` format**
 
 The format used in the files provided by [Spotify](https://www.spotify.com){:target="_blank"} is [supported](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/index#supported-data-formats){:target="_blank"} by Kusto, you simply need to choose `multijson` in the `Format` field.
 
