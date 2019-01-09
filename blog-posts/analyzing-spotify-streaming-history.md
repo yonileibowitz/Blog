@@ -135,7 +135,7 @@ analytical capabilities. It goes without saying, all of these queries complete *
 *(BTW, any comments about my musical taste are more than
 welcome - I'm always open to embarrassing myself in public and get recommendations for better music!*
 
-*(Got suggestions for more interesting queries? Let me know and I'll update the post with them)*
+*(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
 
 ### Artists I'm listening to
 
@@ -327,7 +327,7 @@ SpotifyStreamingHistory
 |-----------------|-----------------------|------------------|
 | 1842            | 146                   | 7.92616720955483 |
 
-*(Got suggestions for more interesting queries? Let me know and I'll update the post with them)*
+*(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
 
 **[Go back home](../index.md)**
 
