@@ -10,6 +10,8 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 - **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)**
 
+- **[Analyzing Spotify streaming history in Kusto (Azure Data Explorer)](blog-posts/analyzing-spotify-streaming-history.md)**
+
 ## **Data Ingestion & Management**
 
 - **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
