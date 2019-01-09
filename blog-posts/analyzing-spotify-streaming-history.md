@@ -179,7 +179,7 @@ SpotifyStreamingHistory
 | Alesso       |
 | Clean Bandit |
 
-#### Artist analytics
+### Artist analytics
 
 The wide set of [User Analytics plugins](https://docs.microsoft.com/en-us/azure/kusto/query/useranalytics){:target="_blank"} can be very useful and easy-to-use with these kinds of data sets. Here's an example using the [`activity_counts_metrics`](https://docs.microsoft.com/en-us/azure/kusto/query/activity-counts-metrics-plugin){:target="_blank"} plugin, which allows me to look at the total number of artists, and the number of new artists I listen to, on a daily basis, over time:
 
@@ -203,7 +203,7 @@ SpotifyStreamingHistory
 
 ![](../resources/images/spotify-artist-activity-engagement.PNG)
 
-#### Streaks / Binge listening
+### Streaks / Binge listening
 
 Let's see who are the artists with the longest streaks I've binge listening to:
 
