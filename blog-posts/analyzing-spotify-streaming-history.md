@@ -295,7 +295,7 @@ How about days where my listening duration was longest:
 
 ### Random facts
 
-Apparently, I prefer artists whose first character is in(`S`,`L`,`A`,`M`,`S`). If you would have asked me before, I'd put my money on (`K`,`U`,`S`,`T`,`O`).
+Apparently, I prefer artists whose first character is in(`S`,`L`,`A`,`M`,`J`). If you would have asked me before, I'd put my money on (`K`,`U`,`S`,`T`,`O`).
 
 ```
 SpotifyStreamingHistory 
