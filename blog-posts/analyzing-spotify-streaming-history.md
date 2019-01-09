@@ -1,11 +1,11 @@
 ---
-title: Analyzing Spotify streaming history in Kusto (Azure Data Explorer)
+title: Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 ---
 **[Go back home](../index.md)**
 
 {% include  share.html %}
 
-# Analyzing Spotify streaming history in Kusto (Azure Data Explorer)
+# Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 
 Like many people out there, I love listening to music, wherever I go, whenever possible.
 And, like many others, I use a music streaming service to do so. My personal choice is [Spotify](https://www.spotify.com){:target="_blank"}.
