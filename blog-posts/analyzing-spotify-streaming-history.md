@@ -194,7 +194,7 @@ SpotifyStreamingHistory
 
 ![](../resources/images/spotify-artist-activity-count-metrics.PNG)
 
-I can also look at the daily/weekly active artists I'm listening to, very easily using the `` plugin:
+I can also look at the daily/weekly active artists I'm listening to, very easily using the [`activity_engagement`](https://docs.microsoft.com/en-us/azure/kusto/query/activity-engagement-plugin){:target="_blank"} plugin:
 
 ```
 SpotifyStreamingHistory 
