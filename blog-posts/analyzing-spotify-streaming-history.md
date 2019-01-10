@@ -341,7 +341,7 @@ And, I'm not a big fan of remixes, give me the original version please:
 
 ```
 SpotifyStreamingHistory 
-| summarize DistinctTrackes = dcount(TrackName),
+| summarize DistinctTracks = dcount(TrackName),
             DistinctRemixedTracks = dcountif(TrackName, TrackName has 'remix')
 | extend Percentage = 100.0 * DistinctRemixedTracks / DistinctTracks
 ```
