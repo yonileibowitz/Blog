@@ -263,7 +263,7 @@ SpotifyStreamingHistory
 | render columnchart
 ```
 
-![](../resources/images/spotify-days-avg-activity.PNG)
+![](../resources/images/spotify-days-avg-activity.png)
 
 | Day | AverageHoursPerDayOfWeek |
 |-----|--------------------------|
