@@ -254,7 +254,28 @@ SpotifyStreamingHistory
 | 6   | 2598   |
 | 7   | 1233   |
 
-And let's zoom into active listening hours - Wanna try and guess what are the hours I go running, or use my headphones at the open space where I work?
+```
+SpotifyStreamingHistory 
+| summarize HoursPerDay = sum(MillisecondsPlayed) * 1ms / 1h
+         by Day = startofday(EndTime)
+| summarize AverageHoursPerDayOfWeek = avg(HoursPerDay)
+         by Day = dayofweek(Day) / 1d + 1
+| render columnchart
+```
+
+![](../resources/images/spotify-days-avg-activity.PNG)
+
+| Day | AverageHoursPerDayOfWeek |
+|-----|--------------------------|
+| 1   | 3.21183141203704         |
+| 2   | 7.4968202991453          |
+| 3   | 7.66869074074074         |
+| 4   | 9.76917853535353         |
+| 5   | 11.1009045601852         |
+| 6   | 9.92619770833333         |
+| 7   | 4.02422426767677         |
+
+Now, let's zoom into active listening hours - Wanna try and guess what are the hours I go running, or use my headphones at the open space where I work?
 
 ```
 SpotifyStreamingHistory 
