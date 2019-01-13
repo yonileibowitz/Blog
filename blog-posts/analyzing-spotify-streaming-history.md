@@ -314,8 +314,6 @@ SpotifyStreamingHistory
 | 22  | 163    |
 | 23  | 26     |
 
-How about days where my listening duration was longest:
-
 ### Random facts
 
 Apparently, I prefer artists whose first character is in(`S`,`L`,`A`,`M`,`J`). If you would have asked me before, I'd put my money on (`K`,`U`,`S`,`T`,`O`).
