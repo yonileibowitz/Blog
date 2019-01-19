@@ -7,14 +7,14 @@ title: Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
 # Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
-Ride-hailing and ride-sharing has seen enormous growth and adoption, which means - there is, and there will continue to be lots of data to analyze
-about how people are using these services, as well as comparing the level of service different companies such as
+Ride-hailing and ride-sharing have seen enormous growth and adoption, which means - there is, and there will continue to be lots of data to analyze
+about how people across the world are using these services, as well as comparing the level of service different companies such as
 [Uber](https://www.uber.com){:target="_blank"}, [Lyft](https://www.lyft.com){:target="_blank"} and others provide to their riders and drivers.
 
-Having recently moved to a city where these are one of the main means of day-to-day transportation, my usage of them (as a rider) has significantly grown.
+Having recently moved to a city where these are one of the main means of day-to-day transportation, my usage of them as a rider has significantly grown.
 I decided it's time to look into some data and see what I can learn from it.
 
-Naturally, I chose Kusto (Azure Data Explorer) to look into it, and I took my personal data from [Uber](https://www.uber.com){:target="_blank"} for a ride.
+Naturally, I chose **Kusto (Azure Data Explorer)** to look into it, and I took my personal data from [Uber](https://www.uber.com){:target="_blank"} for a ride.
 
 *(Some of the data points in this post have been altered for the sake of privacy)*
 
@@ -40,6 +40,7 @@ The data I used is the one in the file named `trips_data.csv`.
 Here's an example of a few records from it:
 
 ```
+City,Product Type,Trip or Order Status,Request Time,Begin Trip Time,Begin Trip Lat,Begin Trip Lng,Begin Trip Address,Dropoff Time,Dropoff Lat,Dropoff Lng,Dropoff Address,Distance (miles),Fare Amount,Fare Currency
 San Francisco,Express Pool: MATCHED,COMPLETED,2018-08-17 03:50:18 +0000 UTC,2018-08-17 03:56:45 +0000 UTC,73.7869535,-111.3922508,"999 ... St, San Francisco, CA 94105, USA",2018-08-17 04:16:43 +0000 UTC,57.779273,-222.4352993,"1111 ... St, San Francisco, CA 81445, USA",3.30,5.1,USD
 San Francisco,UberX,COMPLETED,2018-08-15 19:27:02 +0000 UTC,2018-08-15 19:29:30 +0000 UTC,67.7790511087,-333.395617827,"444 ... St, San Francisco, CA 94107, US",2018-08-15 19:35:46 +0000 UTC,57.7772837419,-444.416049126,"1555 ... St, San Francisco, CA 41578, USA",1.58,9.86,USD
 San Francisco,Express Pool: MATCHED,COMPLETED,2018-08-12 21:20:24 +0000 UTC,2018-08-12 21:27:40 +0000 UTC,47.7792305817,-555.434557152,"1111 ... Ave, San Francisco, CA 81445, USA",2018-08-12 21:42:51 +0000 UTC,47.7870367854,-666.392240158,"999 ... St, San Francisco, CA 94105, USA",2.77,3.33,USD
@@ -92,9 +93,9 @@ this time I decided to show a different way, super-easy as well, using Kusto's [
 
 ## Analyzing the data
 
-This is by no means Big Data, and not even close to [billions of rides](https://tech.marksblogg.com/benchmarks.html),
-however it does show the capabilities of Kusto (Azure Data Explorer) very nicely. Plus, I happen to know Kusto does
-*extremely well* even for data sets with billions of rides.
+This is by no means Big Data, and not even close to [billions of rides](https://tech.marksblogg.com/benchmarks.html){:target="_blank"},
+however it does allow to see the capabilities of Kusto (Azure Data Explorer) very nicely. Plus, I happen to know Kusto does
+*extremely well* for data sets with billions of rides.
 
 *(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
 
@@ -118,7 +119,7 @@ analytical capabilities. All of these queries complete *super*-fast, no surprise
 
 ### The basics
 
-I can see what's the most popular Uber service I use:
+I can see the Uber service I use the most:
 
 ```
 UberRides
@@ -144,29 +145,23 @@ UberRides
 | project-away Row
 ```
 
-| Column                     | Value    |
-|----------------------------|----------|
-| percentile_FareAmount_50   | 4.21     |
-| percentile_FareAmount_75   | 6.25     |
-| percentile_FareAmount_90   | 24.81    |
-
-| Column                     | Value    |
-|----------------------------|----------|
-| percentile_TripDuration_50 | 00:08:09 |
-| percentile_TripDuration_75 | 00:16:23 |
-| percentile_TripDuration_90 | 00:24:35 |
-
-| Column                     | Value    |
-|----------------------------|----------|
-| percentile_WaitDuration_50 | 00:06:28 |
-| percentile_WaitDuration_75 | 00:09:09 |
-| percentile_WaitDuration_90 | 00:12:51 |
-
-| Column                       | Value  |
-|------------------------------|--------|
-| percentile_Distance_Miles_50 | 1.91   |
-| percentile_Distance_Miles_75 | 3.38   |
-| percentile_Distance_Miles_90 | 12.75  |
+| Column                       | Value    |
+|------------------------------|----------|
+| percentile_FareAmount_50     | 4.21     |
+| percentile_FareAmount_75     | 6.25     |
+| percentile_FareAmount_90     | 24.81    |
+|                              |          |
+| percentile_TripDuration_50   | 00:08:09 |
+| percentile_TripDuration_75   | 00:16:23 |
+| percentile_TripDuration_90   | 00:24:35 |
+|                              |          |
+| percentile_WaitDuration_50   | 00:06:28 |
+| percentile_WaitDuration_75   | 00:09:09 |
+| percentile_WaitDuration_90   | 00:12:51 |
+|                              |          |
+| percentile_Distance_Miles_50 | 1.91     |
+| percentile_Distance_Miles_75 | 3.38     |
+| percentile_Distance_Miles_90 | 12.75    |
 
 And, what are the most popular hours of day, and days of week I user the service:
 
