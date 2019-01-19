@@ -203,7 +203,7 @@ congested, more popular, and perhaps more pricey.
 Let's look into the wait and ride durations, and try to figure out how long in advance I should book my ride.
 
 This query shows the average wait durations and average trip durations by the hour of day, for trips taken
-in San Francsico in the last 6 months:
+in San Francisco in the last 6 months:
 
 ```
 UberRides
@@ -220,7 +220,7 @@ UberRides
 
 ![](../resources/images/uber-avg-durations-by-hour.png)
 
-The following query shows the average MPH by hour of day, for trips taken in San Francsico in the last 6 months: 
+The following query shows the average MPH by hour of day, for the same set of trips:
 
 ```
 UberRides
@@ -235,8 +235,8 @@ UberRides
 ![](../resources/images/uber-avg-speed-by-hour.png)
 
 
-You can say many things about [living in San Francisco](https://sf.curbed.com/2018/6/4/17415618/move-to-san-francisco-advice-guide), but one thing you
-can't say is that's it cheap. Choosing when to go to certain places could perhaps save you some
+You can say many things about [living in San Francisco](https://sf.curbed.com/2018/6/4/17415618/move-to-san-francisco-advice-guide){:target="_blank"},
+but one thing you can't ignore it the cost of living. Choosing when you go to certain places could perhaps save you some
 money.
 
 This query shows the average cost (USD per minute) by day of week and hour of day. You can see that for
