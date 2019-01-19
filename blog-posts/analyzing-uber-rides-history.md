@@ -251,22 +251,22 @@ UberRides
 | extend UsdPerMin = FareAmount / TripDurationMins,
          DayOfWeek = toint(dayofweek(RequestTime-8h) / 1d + 1),
          HourOfDay = hourofday(BeginTripTime-8h)
-| summarize avg(UsdPerMin) by Day_Hour = strcat(DayOfWeek, "_", HourOfDay)
-| top 10 by round(avg_UsdPerMin, 2) desc 
+| summarize round(avg(UsdPerMin),2) by Day_Hour = strcat(DayOfWeek, "_", HourOfDay)
+| top 10 by avg_UsdPerMin desc 
 ```
 
 | Day_Hour | avg_UsdPerMin     |
 |----------|-------------------|
-| 4_11     | 1.57340425531915  |
-| 6_13     | 1.30378378378378  |
-| 3_8      | 1.03397761953204  |
-| 3_18     | 0.914925373134328 |
-| 7_20     | 0.875590551181102 |
-| 6_12     | 0.76382252559727  |
-| 6_15     | 0.731054478289966 |
-| 6_20     | 0.689938398357289 |
-| 6_6      | 0.652727272727273 |
-| 3_6      | 0.622001457753827 |
+| 4_11     | 1.57              |
+| 6_13     | 1.30              |
+| 3_8      | 1.03              |
+| 3_18     | 0.91              |
+| 7_20     | 0.87              |
+| 6_12     | 0.76              |
+| 6_15     | 0.73              |
+| 6_20     | 0.68              |
+| 6_6      | 0.65              |
+| 3_6      | 0.62              |
 
 This is a similar query, which looks at the average cost (USD per mile). By this measurement, Wednesday around 11PM and Friday around 1PM are still the priciest, but in a different order than above:
 
@@ -279,22 +279,22 @@ UberRides
 | extend UsdPerMile = FareAmount / Distance_Miles,
          DayOfWeek = toint(dayofweek(RequestTime-8h) / 1d + 1),
          HourOfDay = hourofday(BeginTripTime-8h)
-| summarize avg(UsdPerMile) by Day_Hour = strcat(DayOfWeek, "_", HourOfDay)
-| top 10 by round(avg_UsdPerMile, 2) desc 
+| summarize round(avg(UsdPerMile), 2) by Day_Hour = strcat(DayOfWeek, "_", HourOfDay)
+| top 10 by avg_UsdPerMile, 2 desc 
 ```
 
 | Day_Hour | avg_UsdPerMile   |
 |----------|------------------|
-| 6_13     | 8.375            |
-| 4_11     | 6.24050632911392 |
-| 3_18     | 4.57462686567164 |
-| 6_15     | 4.33904744917995 |
-| 7_10     | 3.97093023255814 |
-| 6_12     | 3.84536082474227 |
-| 3_6      | 3.4782482305359  |
-| 6_17     | 3.29545454545455 |
-| 6_20     | 3.18181818181818 |
-| 3_8      | 3.09124087591241 |
+| 6_13     | 8.37             |
+| 4_11     | 6.24             |
+| 3_18     | 4.57             |
+| 6_15     | 4.33             |
+| 7_10     | 3.97             |
+| 6_12     | 3.84             |
+| 3_6      | 3.47             |
+| 6_17     | 3.29             |
+| 6_20     | 3.18             |
+| 3_8      | 3.09             |
 
 ### Random facts
 
