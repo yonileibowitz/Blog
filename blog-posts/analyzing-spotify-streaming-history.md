@@ -14,6 +14,8 @@ And, like many others, I use a music streaming service to do so. My personal cho
 
 I usually just push 'Play' without paying too much attention to what's playing, but I thought it would be nice to make some sense of what I've been listening to. And, I couldn't think of a simpler or better way to do that than using Kusto (Azure Data Explorer).
 
+*(Some of the data points in this post have been altered for the sake of privacy)*
+
 * TOC
 {:toc}
 
