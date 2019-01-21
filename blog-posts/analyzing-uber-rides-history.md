@@ -209,7 +209,7 @@ in San Francisco:
 UberRides
 | where Distance_Miles < 15
 | where City == "San Francisco"
-| where DropoffTime > datetime(2000-01-01)
+| where DropoffTime > datetime(2018-01-01)
 | extend WaitDuration = BeginTripTime - RequestTime,
          TripDuration = DropoffTime - BeginTripTime
 | summarize AvgWaitDurationMins = avg(WaitDuration)/1m, 
@@ -226,7 +226,7 @@ The following query shows the average MPH by hour of day, for the same set of tr
 UberRides
 | where Distance_Miles < 15
 | where City == "San Francisco"
-| where DropoffTime > datetime(2000-01-01)
+| where DropoffTime > datetime(2018-01-01)
 | extend TripDurationHrs = (DropoffTime - BeginTripTime) / 1h
 | summarize avg(Distance_Miles / TripDurationHrs) by hourofday(BeginTripTime-8h)
 | render columnchart 
@@ -246,7 +246,7 @@ my rides, Wednesday around 11PM and Friday around 1PM were the priciest, on aver
 UberRides
 | where Distance_Miles < 10
 | where City == "San Francisco"
-| where DropoffTime > datetime(2000-01-01)
+| where DropoffTime > datetime(2018-01-01)
 | extend TripDurationMins = (DropoffTime - BeginTripTime) / 1m
 | extend UsdPerMin = FareAmount / TripDurationMins,
          DayOfWeek = toint(dayofweek(RequestTime-8h) / 1d + 1),
@@ -274,7 +274,7 @@ This is a similar query, which looks at the average cost (USD per mile). By this
 UberRides
 | where Distance_Miles < 10
 | where City == "San Francisco"
-| where DropoffTime > datetime(2000-01-01)
+| where DropoffTime > datetime(2018-01-01)
 | extend TripDurationMins = (DropoffTime - BeginTripTime) / 1m
 | extend UsdPerMile = FareAmount / Distance_Miles,
          DayOfWeek = toint(dayofweek(RequestTime-8h) / 1d + 1),
