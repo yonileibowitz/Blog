@@ -203,7 +203,7 @@ congested, more popular, and perhaps more pricey.
 Let's look into the wait and ride durations, and try to figure out how long in advance I should book my ride.
 
 This query shows the average wait durations and average trip durations by the hour of day, for trips taken
-in San Francisco in the last 6 months:
+in San Francisco:
 
 ```
 UberRides
