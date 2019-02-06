@@ -14,6 +14,8 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 - **[Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](blog-posts/analyzing-spotify-streaming-history.md)**
 
+- **[Analyzing 1.5 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/nyc-taxi-rides.md)**
+
 ## **Data Ingestion & Management**
 
 - **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
