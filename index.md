@@ -55,9 +55,10 @@ Why not start off with a couple of videos:
 
 There's lots to learn and read about. I'd recommend starting with the following links:
 
-#### General availability announcement (TBA)
+#### General availability announcement (February 2019)
 
-Stay tuned !
+- [Azure Data Explorer - The fast and highly scalable data analytics service (
+Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/individually-great-collectively-unmatched-announcing-updates-to-3-great-azure-data-services/){:target="_blank"}
 
 #### Public preview announcement (September 2018)
 
