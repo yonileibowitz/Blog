@@ -160,12 +160,13 @@ Then, I can simply ask the service, using either of the following options, how l
                 State
     | extend Duration = EndTime - StartTime
     ```
-    
+
     | ClusterSize | CommandType    | State     | # Commands                | StartTime                   | EndTime                     | Duration         |
     |-------------|----------------|-----------|---------------------------|-----------------------------|-----------------------------|------------------|
     | 2xD14_v2    | DataIngestPull | Completed | 1417                      | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 | 00:47:33.2867817 |
-    | 6xD14_v2    | DataIngestPull | Completed | 1415                      | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 | 00:20:25.5162013 |    
-            
+    | 6xD14_v2    | DataIngestPull | Completed | 1415                      | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 | 00:20:25.5162013 |
+
+
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
     ```
@@ -276,13 +277,13 @@ I can simply ask the service, using either of the following options:
                 EndTime = max(LastUpdatedOn)
     | extend Duration = EndTime - StartTime
     ```
-
     
     | # Commands | StartTime                   | EndTime                     | Duration         |
     |------------|-----------------------------|-----------------------------|------------------|
     | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 | 00:02:35.0245767 |
     
-        
+
+
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
     ```
