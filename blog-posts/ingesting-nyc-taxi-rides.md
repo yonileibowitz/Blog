@@ -231,7 +231,7 @@ And here's the simple application I wrote and ran:
 public static void Main()
 {
     var kustoConnectionStringBuilder = 
-            new KustoConnectionStringBuilder(@"https://ingest-mycluster.kusto.windows.net")
+            new KustoConnectionStringBuilder(@"https://ingest-mycluster.region.kusto.windows.net")
             .WithAadApplicationKeyAuthentication(
                 "<application id>",
                 "<application key>",
