@@ -24,8 +24,8 @@ for doing spatial calculations.
 At the time of writing this post (February 2019), the available data set included:
 
 * 2.06 billion total trips
-    * 1.5 billion taxi
-    * 0.5 billion for-hire vehicle
+    * ~ 1.5 billion taxi
+    * ~ 0.5 billion for-hire vehicle
 
 This is a fair amount of records, and for getting it ingested and analyzed quickly, I made the natural choice of using **Kusto
 (Azure Data Explorer)**. This post covers ingestion of the data into Kusto, while [this post](analyzing-nyc-taxi-rides.md){:target="_blank"}
