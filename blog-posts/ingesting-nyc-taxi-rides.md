@@ -192,7 +192,7 @@ Then, I can simply ask the service, using either of the following options, how l
     | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:46:57.8493213  | 2xD14_v2    |
     | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:19:54.1510651  | 6xD14_v2    |
 
-And as you can see, it took only 20 minutes, to ingest these 1,547,471,140 records, from 1548 source files.
+And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files.
 
 ## Ingesting 0.5 Billion Taxi Trips
 
@@ -304,7 +304,7 @@ I can simply ask the service, using either of the following options:
     | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 | 00:02:25.3214546  |
     
 
-And as you can see, it took only 2.5 minutes, to ingest these 514,304,551 records, and they're now fully indexed and ready to query.
+And as you can see, **it took only 2.5 minutes**, to ingest these 514,304,551 records, and they're now fully indexed and ready to query.
 
 Now that I have all of this data ingested, [it's time to start analyzing it](analyzing-nyc-taxi-rides.md){:target="_blank"}.
 
