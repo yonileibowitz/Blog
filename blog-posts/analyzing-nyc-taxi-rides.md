@@ -153,7 +153,7 @@ Trips
 
 ## Exploring and Analyzing the data
 
-*Still Analyzing. This is quite the fun experience* 😀 *Stay tuned ...*
+*Still at it. This is quite the fun experience* 😀 *Stay tuned ...*
 
 
 **[Go back home](../index.md)**
