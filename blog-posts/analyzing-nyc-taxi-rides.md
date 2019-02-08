@@ -78,7 +78,7 @@ I used [.show queries](https://docs.microsoft.com/en-us/azure/kusto/management/q
 * The minimum execution time.
 * The 50th and 95th percentiles of the execution time.
 
-I repeated this for each of the 4 cluster sizes, and these are the results:
+I repeated this for each of the 5 cluster sizes, and these are the results:
 
 #### Q 1
 
