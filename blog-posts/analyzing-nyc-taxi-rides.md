@@ -70,7 +70,7 @@ If you're interested in the cost per hour for the different cluster sizes, check
 
 ### Results
 
-**Note:** If you're comparing these to other runs available online, make sure you're doing apples-to-apples comparison,
+**Note:** If you're comparing these to other runs available online, make sure you're doing 🍏🍏-to-🍏🍏 comparison,
 taking into account the size of the data set, the resources, and their cost.
 
 I used [.show queries](https://docs.microsoft.com/en-us/azure/kusto/management/queries){:target="_blank"} to capture, per query:
