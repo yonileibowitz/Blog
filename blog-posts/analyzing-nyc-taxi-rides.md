@@ -54,6 +54,7 @@ For the purpose of this evaluation, I used:
         |-------------|
         |1,547,471,776|
 
+
 2. Four basic aggregation queries (detailed [below](#the-results)).
 
 3. A simple application, written using
@@ -65,17 +66,17 @@ in which I replayed these queries over and over again, so that I can look at the
 ### The cost
 
 If you're interested in the cost per hour for the different cluster sizes, check out the pricing details using the
-[Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}
+[Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}.
 
 ### The results
 
 **Note:** If you're comparing these to other runs available online, make sure you're doing apples-to-apples comparison,
 taking into account the size of the data set, the resources, and their cost.
 
-I used [.show queries](https://docs.microsoft.com/en-us/azure/kusto/management/queries){:target="_blank"} to capture:
-* The number of executions, per query.
-* The minimum execution time, per query.
-* The 50th and 95th percentiles of the execution time, per query.
+I used [.show queries](https://docs.microsoft.com/en-us/azure/kusto/management/queries){:target="_blank"} to capture, per query:
+* The number of executions.
+* The minimum execution time.
+* The 50th and 95th percentiles of the execution time.
 
 I repeated this for each of the 4 cluster sizes, and these are the results:
 
