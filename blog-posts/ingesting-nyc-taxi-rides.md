@@ -15,7 +15,6 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 ![](../resources/images/nyc-taxi-theme.png)
 
-
 [Todd W. Schneider](https://github.com/toddwschneider){:target="_blank"} took this data to the next level, and in his
 [nyc-taxi-data GitHub repo](https://github.com/toddwschneider/nyc-taxi-data){:target="_blank"} made it easy to import
 the data into [PostgreSQL](https://www.postgresql.org/){:target="_blank"}, and then using [PostGIS](https://postgis.net/){:target="_blank"}
