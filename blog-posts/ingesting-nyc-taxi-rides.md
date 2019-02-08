@@ -144,7 +144,7 @@ in between:
 
 Then, I can simply ask the service, using either of the following options, how long it took for each case:
 
-* Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
+Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
 
 ```
 .show commands 
@@ -170,7 +170,7 @@ Then, I can simply ask the service, using either of the following options, how l
 | 6xD14_v2    | 00:20:25.5162013 | DataIngestPull | Completed | 1415       | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 |
 
 
-* Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
+Or, using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
 ```
 union withsource=TableName Trips, Trips2
@@ -271,7 +271,7 @@ On the client side, this runs in a matter of seconds, as it only queues the file
 
 I can simply ask the service, using either of the following options:
 
-* Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
+Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
     
 ```
 .show commands 
@@ -289,7 +289,7 @@ I can simply ask the service, using either of the following options:
 | 00:02:35.0245767 | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 |
 
 
-* Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
+Or, using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
 ```
 FHV_Trips
