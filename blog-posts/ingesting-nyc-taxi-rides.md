@@ -140,6 +140,7 @@ I ran the ingestion of the same set of blobs twice, while
 in between:
 * 2 X `D14_v2`, with a table named `Trips`
 * 6 X `D14_v2`, with a table named `Trips2`
+    * These VMs have 16 vCPUs and 112GB of RAM.
 
 Then, I can simply ask the service, using either of the following options, how long it took for each case:
 
