@@ -149,7 +149,7 @@ Trips
 | Q 4     | 6 x D14v2   | 235   | 00:00:04.025      | 00:00:04.109 |  00:00:04.391 |
 | Q 4     | 8 x D14v2   | 250   | 00:00:03.562      | 00:00:03.625 |  00:00:03.781 |
 
-*I'd say this is pretty fast, huh?*
+*I'd say that's pretty fast, huh?*
 
 ## Exploring and Analyzing the data
 
