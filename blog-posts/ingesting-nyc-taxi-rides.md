@@ -103,8 +103,8 @@ First, I created the table with a schema which matches the data I exported from 
 )
 ```
 
-For ingestion, I chose using [LightIngest](https://docs.microsoft.com/en-us/azure/kusto/tools/lightingest){:target="_blank"} a simple command line utility
-I find very useful and simple to use.
+For ingestion, I chose using [LightIngest](https://docs.microsoft.com/en-us/azure/kusto/tools/lightingest){:target="_blank"} - a simple command line utility
+I find very useful and simple to use, if you want to some ad-hoc ingestion.
 
 All I need to know is:
 * The name of my database (`TaxiRides`)
