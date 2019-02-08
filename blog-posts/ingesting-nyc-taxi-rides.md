@@ -242,6 +242,7 @@ public static void Main()
     var estimatedFileSize = (int)Math.Pow(10, 9);
     var ingestionProperties = new KustoIngestionProperties(databaseName: "TaxiRides", tableName: "FHV_Trips")
     {
+         // I specify this because the provided source CSV files include a header line with the column names
         IgnoreFirstRecord = true
     };
 
@@ -251,8 +252,8 @@ public static void Main()
         {
             var uri = $"https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_{dt.ToString("yyyy-MM")}.csv";
             ingestClient.IngestFromSingleBlob(
-                blobUri: uri, 
-                deleteSourceOnSuccess: false, 
+                blobUri: uri,
+                deleteSourceOnSuccess: false,
                 ingestionProperties: ingestionProperties,
                 rawDataSize: estimatedFileSize);
         }
