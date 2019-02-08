@@ -110,7 +110,7 @@ I find very useful and simple to use.
 All I need to know is:
 * The name of my database (`TaxiRides`)
 * The name of my table (`Trips`)
-* The URL of my data management cluster (`ingest-myclustername`)
+* The name and region for my data management cluster (`ingest-myclustername.region`)
 * The path to my Azure blob container (`https://taxirides.blob.core.windows.net/taxirides;<storage_key>`)
 * The format my files were created with (`CSV`, Gzip-compressed).
 
@@ -118,7 +118,7 @@ And then I run the command:
 
 ```
 LightIngest.exe
-   https://ingest-<yourclustername>.<yourregion>.kusto.windows.net;fed=true
+   https://ingest-<myclustername>.<region>.kusto.windows.net;fed=true
    -database:TaxiRides
    -table:Trips
    -source:https://taxirides.blob.core.windows.net/taxirides;<storage_key>
