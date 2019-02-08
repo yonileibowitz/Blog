@@ -6,7 +6,7 @@ The posts below include examples and practices which combine the rich query and 
 They will provide you with real-life best practices and methodologies, which have all been repeatedly proven in large-scale production environments,
 and will help you make sure you make the most out of your Kusto cluster.
 
-{% last_modified_at %}
+{{ page.last_modified_at }}
 
 ![](resources/images/adx-logo.png)
 
