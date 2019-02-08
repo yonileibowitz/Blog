@@ -247,7 +247,7 @@ public static void Main()
         IgnoreFirstRecord = true
     };
 
-    using (var ingestClient = KustoIngestFactory.CreateQueuedIngestClient(kcsb))
+    using (var ingestClient = KustoIngestFactory.CreateQueuedIngestClient(kustoConnectionStringBuilder))
     {
         for (var dt = startTime; dt < endTime; dt = dt.AddMonths(1))
         {
