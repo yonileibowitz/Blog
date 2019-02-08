@@ -41,7 +41,7 @@ For the purpose of this evaluation, I used:
     * I created this cluster using the [Azure Portal](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal){:target="_blank"}
     * In this cluster, I [created a database](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal#create-a-database){:target="_blank"}
       named `TaxiRides`.
-    * In this database, I created the `Trips` table, and ingested the data into it, as mentioned in the [previous post](ingesting-nyc-taxi-rides.md).
+    * In this database, I created the `Trips` table, and ingested the data into it, as I've detailed in a [previous post](ingesting-nyc-taxi-rides.md).
     * I have applied no tweaks / tricks nor during ingestion neither during queries - this is a    fully managed service which takes care of everything for you.
     * The `Trips` table includes **1,547,471,776** records.
 
