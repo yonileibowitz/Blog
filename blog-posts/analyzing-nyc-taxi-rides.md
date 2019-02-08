@@ -55,7 +55,7 @@ For the purpose of this evaluation, I used:
         |1,547,471,776|
 
 
-2. Four basic aggregation queries (detailed [below](#the-results)).
+2. Four basic aggregation queries (detailed [below](#results)).
 
 3. A simple application, written using
 [Kusto's .NET client library](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/about-kusto-data){:target="_blank"},
