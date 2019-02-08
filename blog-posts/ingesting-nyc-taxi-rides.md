@@ -41,7 +41,7 @@ covers analyzing the data, post-ingestion.
 To prepare this data set, I mostly followed the instructions by [Todd W. Schneider](https://github.com/toddwschneider){:target="_blank"}
 on his [nyc-taxi-data GitHub repo](https://github.com/toddwschneider/nyc-taxi-data){:target="_blank"}. As the process is a little
 tricky and time consuming (using PostgreSQL on a single virtual machine), I've included a section with a few tips at the bottom of this post:
-[Appendix: Tips for preparing the Yellow/Green Taxi trips data set](ingesting-nyc-taxi-rides.md#appendix-tips-for-preparing-the-yellowgreen-taxi-trips-data-set).
+[Appendix: Tips for preparing the Yellow/Green Taxi trips data set](#appendix-tips-for-preparing-the-yellowgreen-taxi-trips-data-set).
 
 ### Ingesting the files from Azure blob storage
 
@@ -194,7 +194,7 @@ Then, I can simply ask the service, using either of the following options, how l
 
 And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files.
 
-## Ingesting 0.5 Billion Taxi Trips
+## Ingesting 0.5 Billion For-Hire-Vehicle Trips
 
 To demonstrate how easy it is to use Kusto's client libraries to ingest data in
 [supported formats](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#supported-data-formats){:target="_blank"},
@@ -335,6 +335,9 @@ data prepared, before ingesting it.
     * I installed it using the instructions provided [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest){:target="_blank"}.
     * I uploaded the entire local directory to my container using the
       [az storage blob upload-batch](https://docs.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest#az-storage-blob-upload-batch){:target="_blank"} command.
+
+* The process is long - It took approximately 2 days to run on my VM.
+    * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-0.5-billion-for-hire-vehicle-trips)).
 
 **[Go back home](../index.md)**
 
