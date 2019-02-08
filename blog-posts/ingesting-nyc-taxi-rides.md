@@ -164,10 +164,10 @@ Then, I can simply ask the service, using either of the following options, how l
     | extend Duration = EndTime - StartTime
     ```
 
-    | ClusterSize | CommandType    | State     | # Commands                | StartTime                   | EndTime                     | Duration         |
-    |-------------|----------------|-----------|---------------------------|-----------------------------|-----------------------------|------------------|
-    | 2xD14_v2    | DataIngestPull | Completed | 1417                      | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 | 00:47:33.2867817 |
-    | 6xD14_v2    | DataIngestPull | Completed | 1415                      | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 | 00:20:25.5162013 |
+    | ClusterSize | Duration         | CommandType    | State     | # Commands | StartTime                   | EndTime                     |
+    |-------------|------------------|----------------|-----------|------------|-----------------------------|-----------------------------|
+    | 2xD14_v2    | 00:47:33.2867817 | DataIngestPull | Completed | 1417       | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 |
+    | 6xD14_v2    | 00:20:25.5162013 | DataIngestPull | Completed | 1415       | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 |
 
 
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
@@ -187,10 +187,10 @@ Then, I can simply ask the service, using either of the following options, how l
     | project-away TableName
     ```
 
-    | TotalTrips | EarliestTrip                | LatestTrip                  | IngestionDuration | ClusterSize |
-    |------------|-----------------------------|-----------------------------|-------------------|-------------|
-    | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:46:57.8493213  | 2xD14_v2    |
-    | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:19:54.1510651  | 6xD14_v2    |
+    | ClusterSize | IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
+    |-------------|-------------------|------------|-----------------------------|-----------------------------|
+    | 2xD14_v2    | 00:46:57.8493213  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
+    | 6xD14_v2    | 00:19:54.1510651  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
 
 And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files.
 
@@ -281,9 +281,9 @@ I can simply ask the service, using either of the following options:
     | extend Duration = EndTime - StartTime
     ```
     
-    | # Commands | StartTime                   | EndTime                     | Duration         |
-    |------------|-----------------------------|-----------------------------|------------------|
-    | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 | 00:02:35.0245767 |
+    | Duration         | # Commands | StartTime                   | EndTime                     |
+    |------------------|------------|-----------------------------|-----------------------------|
+    | 00:02:35.0245767 | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 |
     
 
 
@@ -299,9 +299,9 @@ I can simply ask the service, using either of the following options:
         IngestionDuration = max(ingestion_time()) - min(ingestion_time())
     ```
     
-    | TotalTrips | EarliestTrip                | LatestTrip                  | IngestionDuration |
-    |------------|-----------------------------|-----------------------------|-------------------|
-    | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 | 00:02:25.3214546  |
+    | IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
+    |-------------------|------------|-----------------------------|-----------------------------|
+    | 00:02:25.3214546  | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 |
     
 
 And as you can see, **it took only 2.5 minutes**, to ingest these 514,304,551 records, and they're now fully indexed and ready to query.
