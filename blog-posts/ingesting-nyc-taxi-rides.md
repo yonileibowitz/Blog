@@ -146,51 +146,52 @@ Then, I can simply ask the service, using either of the following options, how l
 
 * Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
 
-    ```
-    .show commands 
-    | where StartedOn > datetime(2019-02-04 06:00)
-    | where CommandType == "DataIngestPull"
-    | where Text contains 'into Trips'
-    | parse Text with * "into " TableName " (" *
-    | extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
-                                TableName == "Trips2", "6xD14_v2",
-                                "N/A")
-    | summarize ['# Commands'] = count(), 
-                StartTime = min(StartedOn), 
-                EndTime = max(LastUpdatedOn)
-             by ClusterSize,
-                CommandType, 
-                State
-    | extend Duration = EndTime - StartTime
-    ```
+```
+.show commands 
+| where StartedOn > datetime(2019-02-04 06:00)
+| where CommandType == "DataIngestPull"
+| where Text contains 'into Trips'
+| parse Text with * "into " TableName " (" *
+| extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
+                            TableName == "Trips2", "6xD14_v2",
+                            "N/A")
+| summarize ['# Commands'] = count(), 
+            StartTime = min(StartedOn), 
+            EndTime = max(LastUpdatedOn)
+            by ClusterSize,
+            CommandType, 
+            State
+| extend Duration = EndTime - StartTime
+```
 
-    | ClusterSize | Duration         | CommandType    | State     | # Commands | StartTime                   | EndTime                     |
-    |-------------|------------------|----------------|-----------|------------|-----------------------------|-----------------------------|
-    | 2xD14_v2    | 00:47:33.2867817 | DataIngestPull | Completed | 1417       | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 |
-    | 6xD14_v2    | 00:20:25.5162013 | DataIngestPull | Completed | 1415       | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 |
+| ClusterSize | Duration         | CommandType    | State     | # Commands | StartTime                   | EndTime                     |
+|-------------|------------------|----------------|-----------|------------|-----------------------------|-----------------------------|
+| 2xD14_v2    | 00:47:33.2867817 | DataIngestPull | Completed | 1417       | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 |
+| 6xD14_v2    | 00:20:25.5162013 | DataIngestPull | Completed | 1415       | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 |
 
 
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
-    ```
-    union withsource=TableName Trips, Trips2
-    | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
-    | summarize 
-        TotalTrips = count(),
-        EarliestTrip = min(pickup_datetime),
-        LatestTrip = max(pickup_datetime),
-        IngestionDuration = max(ingestion_time()) - min(ingestion_time())
-    by TableName 
-    | extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
-                                TableName == "Trips2", "6xD14_v2",
-                                "N/A")
-    | project-away TableName
-    ```
+```
+union withsource=TableName Trips, Trips2
+| where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
+| summarize 
+    TotalTrips = count(),
+    EarliestTrip = min(pickup_datetime),
+    LatestTrip = max(pickup_datetime),
+    IngestionDuration = max(ingestion_time()) - min(ingestion_time())
+by TableName 
+| extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
+                            TableName == "Trips2", "6xD14_v2",
+                            "N/A")
+| project-away TableName
+```
 
-    | ClusterSize | IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
-    |-------------|-------------------|------------|-----------------------------|-----------------------------|
-    | 2xD14_v2    | 00:46:57.8493213  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
-    | 6xD14_v2    | 00:19:54.1510651  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
+| ClusterSize | IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
+|-------------|-------------------|------------|-----------------------------|-----------------------------|
+| 2xD14_v2    | 00:46:57.8493213  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
+| 6xD14_v2    | 00:19:54.1510651  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
+
 
 And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files.
 
@@ -272,39 +273,38 @@ I can simply ask the service, using either of the following options:
 
 * Using the [.show commands](https://docs.microsoft.com/en-us/azure/kusto/management/commands){:target="_blank"} command:
     
-    ```
-    .show commands 
-    | where StartedOn > datetime(2019-02-04 06:00)
-    | where CommandType == "DataIngestPull"
-    | where Text has 'ingest async into FHV_Trips'
-    | summarize ['# Commands'] = count(), 
-                StartTime = min(StartedOn), 
-                EndTime = max(LastUpdatedOn)
-    | extend Duration = EndTime - StartTime
-    ```
-    
-    | Duration         | # Commands | StartTime                   | EndTime                     |
-    |------------------|------------|-----------------------------|-----------------------------|
-    | 00:02:35.0245767 | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 |
-    
+```
+.show commands 
+| where StartedOn > datetime(2019-02-04 06:00)
+| where CommandType == "DataIngestPull"
+| where Text has 'ingest async into FHV_Trips'
+| summarize ['# Commands'] = count(), 
+            StartTime = min(StartedOn), 
+            EndTime = max(LastUpdatedOn)
+| extend Duration = EndTime - StartTime
+```
+
+| Duration         | # Commands | StartTime                   | EndTime                     |
+|------------------|------------|-----------------------------|-----------------------------|
+| 00:02:35.0245767 | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 |
 
 
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
 
-    ```
-    FHV_Trips
-    | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
-    | summarize 
-        TotalTrips = count(),
-        EarliestTrip = min(pickup_datetime),
-        LatestTrip = max(pickup_datetime),
-        IngestionDuration = max(ingestion_time()) - min(ingestion_time())
-    ```
-    
-    | IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
-    |-------------------|------------|-----------------------------|-----------------------------|
-    | 00:02:25.3214546  | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 |
-    
+```
+FHV_Trips
+| where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
+| summarize 
+    TotalTrips = count(),
+    EarliestTrip = min(pickup_datetime),
+    LatestTrip = max(pickup_datetime),
+    IngestionDuration = max(ingestion_time()) - min(ingestion_time())
+```
+
+| IngestionDuration | TotalTrips | EarliestTrip                | LatestTrip                  |
+|-------------------|------------|-----------------------------|-----------------------------|
+| 00:02:25.3214546  | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 |
+
 
 And as you can see, **it took only 2.5 minutes**, to ingest these 514,304,551 records, and they're now fully indexed and ready to query.
 

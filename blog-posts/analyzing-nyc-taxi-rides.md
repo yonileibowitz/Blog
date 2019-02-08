@@ -153,6 +153,11 @@ Trips
 
 ## Exploring and Analyzing the data
 
+For the purpose of this exploration, I've used an
+[Azure Notebook](https://notebooks.azure.com/){:target="_blank"}
+with the [KQL magic](https://docs.microsoft.com/en-us/azure/data-explorer/kqlmagic){:target="_blank"} library.
+You could use a [Jupyter notebook](https://jupyter.org/){:target="_blank"} in a similar manner.
+
 *Still at it. This is quite the fun experience* 😀 *Stay tuned ...*
 
 
