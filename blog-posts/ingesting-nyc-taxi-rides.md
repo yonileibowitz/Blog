@@ -15,17 +15,17 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 [Todd W. Schneider](https://github.com/toddwschneider){:target="_blank"} took this data to the next level, and in his
 [nyc-taxi-data GitHub repo](https://github.com/toddwschneider/nyc-taxi-data){:target="_blank"} made it easy to import
-the data into [PostgreSQL](https://www.postgresql.org/){:target="_blank"}, then using [PostGIS](https://postgis.net/){:target="_blank"}
+the data into [PostgreSQL](https://www.postgresql.org/){:target="_blank"}, and then using [PostGIS](https://postgis.net/){:target="_blank"}
 for doing spatial calculations.
 
 At the time of writing this post (February 2019), the available data set included:
 
 * 2.06 billion total trips
-    * ~1.5 billion taxi
-    * ~0.5 billion for-hire vehicle
+    * 1.5 billion taxi
+    * 0.5 billion for-hire vehicle
 
-This is a fair amount of records, and for getting it ingested and analyzed quickly, I made the natural choice of using Kusto
-(Azure Data Explorer). This post covers ingestion of the data into Kusto, while [this post](analyzing-nyc-taxi-rides.md){:target="_blank"}
+This is a fair amount of records, and for getting it ingested and analyzed quickly, I made the natural choice of using **Kusto
+(Azure Data Explorer)**. This post covers ingestion of the data into Kusto, while [this post](analyzing-nyc-taxi-rides.md){:target="_blank"}
 covers analyzing the data, post-ingestion.
 
 * TOC
@@ -152,7 +152,7 @@ Then, I can simply ask the service, using either of the following options, how l
     | extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
                                 TableName == "Trips2", "6xD14_v2",
                                 "N/A")
-    | summarize NumberOfIngestionCommands = count(), 
+    | summarize ['# Commands'] = count(), 
                 StartTime = min(StartedOn), 
                 EndTime = max(LastUpdatedOn)
              by ClusterSize,
@@ -161,7 +161,7 @@ Then, I can simply ask the service, using either of the following options, how l
     | extend Duration = EndTime - StartTime
     ```
     
-    | ClusterSize | CommandType    | State     | NumberOfIngestionCommands | StartTime                   | EndTime                     | Duration         |
+    | ClusterSize | CommandType    | State     | # Commands                | StartTime                   | EndTime                     | Duration         |
     |-------------|----------------|-----------|---------------------------|-----------------------------|-----------------------------|------------------|
     | 2xD14_v2    | DataIngestPull | Completed | 1417                      | 2019-02-04 06:00:39.4265609 | 2019-02-04 06:48:12.7133426 | 00:47:33.2867817 |
     | 6xD14_v2    | DataIngestPull | Completed | 1415                      | 2019-02-08 03:34:09.6342569 | 2019-02-08 03:54:35.1504582 | 00:20:25.5162013 |    
@@ -173,8 +173,8 @@ Then, I can simply ask the service, using either of the following options, how l
     | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
     | summarize 
         TotalTrips = count(),
-        EarliestTripStartTime = min(pickup_datetime),
-        LatestTripStartTime = max(pickup_datetime),
+        EarliestTrip = min(pickup_datetime),
+        LatestTrip = max(pickup_datetime),
         IngestionDuration = max(ingestion_time()) - min(ingestion_time())
     by TableName 
     | extend ClusterSize = case(TableName == "Trips", "2xD14_v2",
@@ -183,7 +183,7 @@ Then, I can simply ask the service, using either of the following options, how l
     | project-away TableName
     ```
 
-    | TotalTrips | EarliestTripStartTime       | LatestTripStartTime         | IngestionDuration | ClusterSize |
+    | TotalTrips | EarliestTrip                | LatestTrip                  | IngestionDuration | ClusterSize |
     |------------|-----------------------------|-----------------------------|-------------------|-------------|
     | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:46:57.8493213  | 2xD14_v2    |
     | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 | 00:19:54.1510651  | 6xD14_v2    |
@@ -271,16 +271,16 @@ I can simply ask the service, using either of the following options:
     | where StartedOn > datetime(2019-02-04 06:00)
     | where CommandType == "DataIngestPull"
     | where Text has 'ingest async into FHV_Trips'
-    | summarize NumberOfIngestionCommands = count(), 
+    | summarize ['# Commands'] = count(), 
                 StartTime = min(StartedOn), 
                 EndTime = max(LastUpdatedOn)
     | extend Duration = EndTime - StartTime
     ```
 
     
-    | NumberOfIngestionCommands | StartTime                   | EndTime                     | Duration         |
-    |---------------------------|-----------------------------|-----------------------------|------------------|
-    | 21                        | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 | 00:02:35.0245767 |
+    | # Commands | StartTime                   | EndTime                     | Duration         |
+    |------------|-----------------------------|-----------------------------|------------------|
+    | 21         | 2019-02-08 04:10:40.9281504 | 2019-02-08 04:13:15.9527271 | 00:02:35.0245767 |
     
         
 * Using the [ingestion_time()](https://docs.microsoft.com/en-us/azure/kusto/query/ingestiontimefunction){:target="_blank"} function:
@@ -290,12 +290,12 @@ I can simply ask the service, using either of the following options:
     | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
     | summarize 
         TotalTrips = count(),
-        EarliestTripStartTime = min(pickup_datetime),
-        LatestTripStartTime = max(pickup_datetime),
+        EarliestTrip = min(pickup_datetime),
+        LatestTrip = max(pickup_datetime),
         IngestionDuration = max(ingestion_time()) - min(ingestion_time())
     ```
     
-    | TotalTrips | EarliestTripStartTime       | LatestTripStartTime         | IngestionDuration |
+    | TotalTrips | EarliestTrip                | LatestTrip                  | IngestionDuration |
     |------------|-----------------------------|-----------------------------|-------------------|
     | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 | 00:02:25.3214546  |
     
@@ -325,7 +325,7 @@ data prepared, before ingesting it.
 
 * Once the database was ready, I exported it to CSV files with GZip compression, using the [COPY command](https://www.postgresql.org/docs/9.2/sql-copy.html){:target="_blank"}.
     * I chose to generate files with 1,000,000 records each, so I ended up with 1,548 `*.csv.gz` files.
-    * I made sure I deleted the source CSV files from the SSD before starting the `COPY` to have enough available disk space.
+    * I made sure I deleted the source CSV files from the SSD before starting the `COPY`, to have enough available disk space.
 
 * Once the export was complete, I used Azure CLI for uploading the files to an Azure storage blob container.
     * I installed it using the instructions provided [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest){:target="_blank"}.
