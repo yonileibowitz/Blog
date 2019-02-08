@@ -63,7 +63,7 @@ in which I replayed these queries over and over again, so that I can look at the
     - Needless to say, that C# is just one of the languages in which the 
       [client libraries](https://docs.microsoft.com/en-us/azure/kusto/api/){:target="_blank"} are available.
 
-### Cost
+### Cost 💲
 
 If you're interested in the cost per hour for the different cluster sizes, check out the pricing details using the
 [Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}.
