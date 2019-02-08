@@ -15,9 +15,9 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 ![](../resources/images/nyc-taxi-theme-2.png)
 
-In a [previous post](ingesting-nyc-taxi-rides.md), I detailed how simple and efficient ingesting this data set into **Kusto (Azure Data Explorer)**.
+In a [previous post](ingesting-nyc-taxi-rides.md), I detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)**.
 
-A quick Google search will show you many people took a 1.x Billion taxi rides data set for a ride, both for:
+A quick Google search will show you many people took a 1.x Billion taxi rides data set for a ride, for:
 * Comparing query performance of multiple data platforms with different topologies.
 * Gaining insights from the data about topics like rush hour traffic, popular work hours for investment bankers,
   how [Uber](analyzing-uber-rides-history.md){:target="_blank"}, Lyft and their competitors are changing the landscape for taxis, etc.
@@ -31,7 +31,7 @@ In this post, I will do some of both.
 
 ## Query Performance
 
-### The setup
+### Setup
 
 For the purpose of this evaluation, I used:
 
@@ -63,12 +63,12 @@ in which I replayed these queries over and over again, so that I can look at the
     - Needless to say, that C# is just one of the languages in which the 
       [client libraries](https://docs.microsoft.com/en-us/azure/kusto/api/){:target="_blank"} are available.
 
-### The cost
+### Cost
 
 If you're interested in the cost per hour for the different cluster sizes, check out the pricing details using the
 [Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}.
 
-### The results
+### Results
 
 **Note:** If you're comparing these to other runs available online, make sure you're doing apples-to-apples comparison,
 taking into account the size of the data set, the resources, and their cost.
