@@ -9,6 +9,8 @@ plugins:
   - jemoji
   - jekyll-mentions
   - jekyll-include-cache
+gems:
+  - jekyll-last-modified-at
 google_site_verification: HtqjvGpOO7zMqHjzMmE6bM658bRZqGQewz_h-QyRnns
 social:
   name: Yoni Leibowitz
