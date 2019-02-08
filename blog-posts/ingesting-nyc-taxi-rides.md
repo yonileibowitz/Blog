@@ -203,7 +203,7 @@ and ingesting it using a Queue Ingestion client, which is available in
 languages in which the [client libraries](https://docs.microsoft.com/en-us/azure/kusto/api/){:target="_blank"}  are available.
 
 Looking at the [NYC Taxi & Limousine Commission's site](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page){:target="_blank"}, it's easy to dynamically build
-a list of URLs for these CSV files, and have them ingested from Amazon S3, where they were made available.
+a list of URLs for these CSV files, and have them ingested from **Amazon S3**, where they were made available.
 
 For the purpose of this ingestion I used:
 
