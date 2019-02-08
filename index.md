@@ -8,7 +8,6 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 ![](resources/images/adx-logo.png)
 
-
 ## **Queries**
 
 - **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)**
@@ -17,9 +16,11 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 - **[Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](blog-posts/analyzing-spotify-streaming-history.md)**
 
-- **[Analyzing 1.5 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/nyc-taxi-rides.md)**
+- **[Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/analyzing-nyc-taxi-rides.md)**
 
 ## **Data Ingestion & Management**
+
+- **[Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)](blog-posts/ingesting-nyc-taxi-rides.md)**
 
 - **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
 
