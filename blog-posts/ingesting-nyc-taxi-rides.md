@@ -207,9 +207,10 @@ Looking at the [NYC Taxi & Limousine Commission's site](https://www1.nyc.gov/sit
 a list of URLs for these CSV files, and have them ingested from Amazon S3, where they were made available.
 
 For the purpose of this ingestion I used:
-    * An Azure Data Explorer cluster with 6 `D14_v2` nodes (it was over-provisioned for the purpose of the previous section, 
-      I [scaled](https://docs.microsoft.com/en-us/azure/data-explorer/manage-cluster-scale-out){:target="_blank"} it down later).
-    * The [Microsoft.Azure.Kusto.Ingest.NETStandard](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) NuGet package.
+
+* An Azure Data Explorer cluster with 6 `D14_v2` nodes (it was over-provisioned for the purpose of the previous section, 
+  I [scaled](https://docs.microsoft.com/en-us/azure/data-explorer/manage-cluster-scale-out){:target="_blank"} it down later).
+* The [Microsoft.Azure.Kusto.Ingest.NETStandard](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) NuGet package.
 
 Based on the schema provided on the site, I created the following table in my database:
 
