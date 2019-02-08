@@ -49,8 +49,8 @@ First, I created the table with a schema which matches the data I exported from 
 
 ```
 .create table Trips (
-trip_id:long,
-vendor_id:string,
+    trip_id:long,
+    vendor_id:string,
     pickup_datetime:datetime,
     dropoff_datetime:datetime,
     store_and_fwd_flag:string,
