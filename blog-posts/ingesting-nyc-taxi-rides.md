@@ -319,7 +319,7 @@ In case you're going to perform this on an Azure VM, you may find the following 
 **Note**: These are  not related to Kusto (Azure Data Explorer), but they may help you get the
 data prepared, before ingesting it.
 
-* I used an `Ubuntu Server 16.04 LTS` virtual machine, sized to a [D5_v2](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dv2-series){:target="_blank"}
+* I used an `Ubuntu Server 16.04 LTS` [D5_v2](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dv2-series){:target="_blank"} virtual machine.
 
     ![](../resources/images/ubuntu-16-04.png)
 
