@@ -339,7 +339,7 @@ data prepared, before ingesting it.
       [az storage blob upload-batch](https://docs.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest#az-storage-blob-upload-batch){:target="_blank"} command.
 
 * The process is long - It took approximately 2 days to run on my VM.
-    * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-0.5-billion-for-hire-vehicle-trips)).
+    * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-05-billion-for-hire-vehicle-trips)).
 
 **[Go back home](../index.md)**
 
