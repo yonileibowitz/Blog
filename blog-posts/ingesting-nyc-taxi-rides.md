@@ -137,7 +137,7 @@ I actually ran this with 2 different configuration, to demonstrate Kusto's abili
 its ingestion capacity, depending on the number and kind of nods the cluster has.
 
 I ran the ingestion of the same set of blobs twice, while
-[changing the number of the instances my cluster had]((https://docs.microsoft.com/en-us/azure/data-explorer/manage-cluster-scale-out){:target="_blank"})
+[changing the number of the instances my cluster had](https://docs.microsoft.com/en-us/azure/data-explorer/manage-cluster-scale-out){:target="_blank"})
 in between:
 * 2 X `D14_v2`, with a table named `Trips`
 * 6 X `D14_v2`, with a table named `Trips2`
