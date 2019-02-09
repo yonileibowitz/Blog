@@ -388,6 +388,7 @@ Trips
 
 *Still at it. This is quite the fun experience* 😀 *Stay tuned ...*
 
+*(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
 
 **[Go back home](../index.md)**
 
