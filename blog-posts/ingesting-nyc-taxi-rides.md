@@ -196,7 +196,8 @@ by TableName
 | 6xD14_v2    | 00:19:54.1510651  | 1547471140 | 2009-01-01 00:00:00.0000000 | 2018-07-01 00:00:00.0000000 |
 
 
-And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files.
+And as you can see, **it took only 20 minutes**, to ingest these 1,547,471,140 records, from 1548 source files, with 9.5 years' worth of data.
+And they're now fully indexed and ready to query.
 
 ## Ingesting 0.5 Billion For-Hire-Vehicle Trips
 
@@ -309,7 +310,8 @@ FHV_Trips
 | 00:02:25.3214546  | 514304551  | 2015-01-01 00:00:00.0000000 | 2018-06-30 23:59:59.0000000 |
 
 
-And as you can see, **it took only 2.5 minutes**, to ingest these 514,304,551 records, and they're now fully indexed and ready to query.
+And as you can see, **it took only 2.5 minutes**, to ingest these 514,304,551 records, with 3.5 years' worth of data.
+And they're now fully indexed and ready to query.
 
 Now that I have all of this data ingested, [it's time to start analyzing it](analyzing-nyc-taxi-rides.md){:target="_blank"}.
 
