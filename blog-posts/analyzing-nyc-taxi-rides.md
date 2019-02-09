@@ -167,13 +167,13 @@ as any kind of official or meaningful research*
 in a matter of seconds.
 
 Yellow cabs pretty much dominated the scene up until a few years ago.
-In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, and both contributed
+In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, contributed
 to an overall rise in the use of taxis, but also took some of the 'market share' from the
 yellow ones.
 
 ![](../resources/images/nyc-taxi-yellow-vs-green.PNG)
 
-Later on, FHVs became increasingly more popular, taking a shot at both the Yellow cabs and Green Taxis.
+Later on, FHVs became increasingly popular, taking a swing at both the Yellow cabs and Green Taxis.
 
 ![](../resources/images/nyc-taxi-uber-and-lyft-vs-green.png)
 
@@ -186,7 +186,7 @@ Tying them all together, show Yellow cabs and Green taxis are continuing their d
 
 ![](../resources/images/nyc-taxi-overall-count-over-time.png)
 
-Here's the query I used to render this timeline chart:
+Here's the query I used to render this time chart:
 
 ```
 %%kql
@@ -222,7 +222,7 @@ The `Shared` flag started to appear in the data only since July 2017, so I'll be
 1 year period for this section.
 
 There are 3 players in the shared rides area: Uber, Lyft and Via.
-While all 3 offer both private and shared options, Via's shared option is more popular than it's
+While all 3 offer both private and shared options, Via's shared option is more popular than its
 private one, which makes sense as it is a *ride-sharing* company:
 
 ![](../resources/images/nyc-taxi-via.png)
@@ -231,7 +231,7 @@ While for Lyft and Uber, it's the other way around:
 
 ![](../resources/images/nyc-taxi-shared-uber-lyft.png)
 
-BTW, now this query runs in a daily resolution, so you can easily identify the seasonality that
+BTW, this query runs in a daily resolution, so you can easily identify the seasonality that
 shows weekends are usually lower in demand than weekdays.
 
 This is the query I used for the charts above:
@@ -256,7 +256,8 @@ MemberBase // Small dimension table; Data taken from: http://www.nybcf.org/membe
 | project-away Base, Base1
 | render timechart 
 ```
-and all-in-all, it does seem that shared rides are on the rise, but are still behind private
+
+Overall, it does seem that shared rides are on the rise, but are still behind private
 ones, which are rising as well:
 
 ```
@@ -278,7 +279,7 @@ New York City encompasses five county-level administrative divisions called boro
 
 ![](../resources/images/nyc-taxi-boroughs.png)
 
-Let's see where FHV rides are trending by their pickup and dropoff locations, and how it compares
+Let's see where FHV rides are being used according to their pickup and dropoff locations, and how it compares
 to Yellow cabs and Green taxis:
 
 #### FHV pickups & dropoffs
