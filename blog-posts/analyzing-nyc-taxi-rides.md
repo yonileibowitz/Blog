@@ -254,11 +254,10 @@ MemberBase // Small dimension table; Data taken from: http://www.nybcf.org/membe
 (
     FHV_Trips
     | where pickup_datetime between(datetime(2017-07-01) .. datetime(2018-07-01))
-    | summarize count() by Base = Dispatching_base_num, Shared = Shared_Ride_Flag, bin(pickup_datetime, 1d)
-    | where count_ > 1750 // filtering out the smaller players
-) on Base
+) on $left.Base == $right.Dispatching_base_num 
+| summarize count() by Name, Shared = Shared_Ride_Flag, bin(pickup_datetime, 1d)
+| where count_ > 1750 // filtering out the smaller players
 | extend Name = iff(Shared == true, strcat(Name, "_Shared"), Name)
-| project-away Base, Base1
 | render timechart 
 ```
 
