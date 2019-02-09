@@ -17,8 +17,8 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 [Todd W. Schneider](https://github.com/toddwschneider){:target="_blank"} took this data to the next level, and in his
 [nyc-taxi-data GitHub repo](https://github.com/toddwschneider/nyc-taxi-data){:target="_blank"} made it easy to import
-the data into [PostgreSQL](https://www.postgresql.org/){:target="_blank"}, and then using [PostGIS](https://postgis.net/){:target="_blank"}
-for doing spatial calculations.
+the data into [PostgreSQL](https://www.postgresql.org/){:target="_blank"}, and then use [PostGIS](https://postgis.net/){:target="_blank"}
+for doing spatial calculations on top of it.
 
 At the time of writing this post (February 2019), the available data set included:
 
@@ -27,7 +27,10 @@ At the time of writing this post (February 2019), the available data set include
     * ~ 0.5 billion for-hire vehicle, from from 2015-01-01 to 2018-06-30.
 
 This is a fair amount of records, and for getting it ingested and analyzed quickly, I made the natural choice of using **Kusto
-(Azure Data Explorer)**. This post covers ingestion of the data into Kusto, while [this post](analyzing-nyc-taxi-rides.md){:target="_blank"}
+(Azure Data Explorer)**. After preparing the data set in PostgreSQL, I easily exported it to blobs in CSV format, and made it 
+available for Kusto to consume. 
+
+This post covers ingestion of the data into Kusto, while [another post](analyzing-nyc-taxi-rides.md){:target="_blank"}
 covers analyzing the data, post-ingestion.
 
 * TOC
