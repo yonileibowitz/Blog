@@ -302,6 +302,7 @@ TaxiZoneLookup // Small dimension table; Data taken from: https://raw.githubuser
 #### Yellow / Green pickups and dropoffs
 
 ```
+%%kql
 Trips
 | where isnotempty(dropoff_boroname) // for some records, this data point is missing in the original data set
 | summarize count() by dropoff_boroname 
