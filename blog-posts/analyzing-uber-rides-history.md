@@ -95,7 +95,7 @@ this time I decided to show a different way, super-easy as well, using Kusto's [
 
 This is by no means Big Data, and not even close to Billions of rides, which I've covered in [another post](analyzing-nyc-taxi-rides.md){:target="_blank"},
 however it does allow to see the capabilities of Kusto (Azure Data Explorer) very nicely. Plus, if you hop over to that other post after reading this on,
-you'll see that Kusto performs *extremely* good for data sets with billions of rides.
+you'll see that Kusto performs great for data sets with billions of rides too.
 
 *(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
 
