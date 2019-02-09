@@ -312,6 +312,76 @@ Trips
 
 ![](../resources/images/nyc-taxi-yellow-green-pickups-by-boro.png) ![](../resources/images/nyc-taxi-yellow-green-dropoffs-by-boro.png)
 
+### Taxi: Cash or card?
+
+As one would expect, there's been a decline in the use of cash in favor of using a credit card.
+Both are declining as this is data for Yellow / Green taxis, which are both getting hit by FHVs:
+
+```
+%%kql
+datatable(code:string, meaning:string) [
+'1', "Credit card", 
+'2', "Cash",
+'Cas', "Cash",
+'CAS', "Cash",
+'Cash', "Cash",
+'CASH', "Cash",
+'CRD', "Credit card",
+'Cre', "Credit card",
+'CRE', "Credit card",
+'Credit', "Credit card",
+'CREDIT', "Credit card",
+'CSH', "Cash",
+]
+| join hint.strategy = broadcast 
+(
+    Trips
+    | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
+) on $left.code == $right.payment_type
+| summarize count() by payment_type = meaning, bin(pickup_datetime, 7d)
+| render timechart 
+```
+
+![](../resources/images/nyc-taxi-cash-or-card.png)
+
+BTW, you can also see that while the cost-per-minute has stayed roughly flat over the last few years,
+the cost-per-minute has just slightly increased, for Yellow & Green taxi rides:
+
+```
+%%kql
+Trips
+| where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
+| extend dollars_per_mile = 1.0 * total_amount / trip_distance,
+         dollars_per_minute = 1.0 * total_amount / ((dropoff_datetime - pickup_datetime) / 1m)
+| summarize percentile(dollars_per_mile, 50),
+            percentile(dollars_per_minute, 50)
+         by cab_type, bin(pickup_datetime, 7d)
+| render timechart 
+```
+
+![](../resources/images/nyc-taxi-dollars-per-mile.png)
+
+![](../resources/images/nyc-taxi-dollars-per-minute.png)
+
+
+### Traffic
+
+You could try to guess in which Borough Yellow / Green taxi's ride the slowest, but could you explain
+why the speed in Staten Island significantly decreased in 2016?
+
+```
+%%kql
+Trips
+| where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
+| where isnotempty(pickup_boroname) // some records in the original data set do not have this data point
+| where pickup_boroname != "New Jersey"
+| extend miles_per_hour = 1.0 * trip_distance / ((dropoff_datetime - pickup_datetime) / 1h)
+| summarize percentile(miles_per_hour, 50)
+         by pickup_boroname, bin(pickup_datetime, 7d)
+| render timechart  
+```
+
+![](../resources/images/nyc-taxi-speed-over-time.png)
 
 ### More to follow ...
 
