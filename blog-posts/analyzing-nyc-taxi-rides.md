@@ -232,7 +232,7 @@ private one, which makes sense as it is a *ride-sharing* company:
 
 ![](../resources/images/nyc-taxi-via.png)
 
-While for Lyft and Uber, it's the other way around:
+While for Lyft and Uber, it's the other way around, with Uber's private service far ahead:
 
 ![](../resources/images/nyc-taxi-shared-uber-lyft.png)
 
