@@ -272,6 +272,45 @@ FHV_Trips
 
 ![](../resources/images/nyc-taxi-fhv-growth.png)
 
+### [Boroughs of New York City](https://en.wikipedia.org/wiki/Boroughs_of_New_York_City){:target="_blank"}
+
+New York City encompasses five county-level administrative divisions called boroughs: The Bronx, Brooklyn, Manhattan, Queens, and Staten Island.
+
+![](../resources/images/nyc-taxi-boroughs.png)
+
+Let's see where FHV rides are trending by their pickup and dropoff locations, and how it compares
+to Yellow cabs and Green taxis:
+
+#### FHV pickups & dropoffs
+
+```
+%%kql
+TaxiZoneLookup // Small dimension table; Data taken from: https://raw.githubusercontent.com/fivethirtyeight/uber-tlc-foil-response/master/uber-trip-data/taxi-zone-lookup.csv
+| join hint.strategy = broadcast 
+(
+    FHV_Trips
+    | where isnotempty(Pickup_location_ID) // for some records, this data point is missing in the original data set            
+    | summarize count() by Pickup_location_ID
+) on $left.LocationId == $right.Pickup_location_ID
+| where Borough !in ("Unknown", "EWR")
+| summarize sum(count_ ) by Borough
+| render piechart with(title = "Pickups")
+```
+
+![](../resources/images/nyc-taxi-fhv-pickups-by-boro.png) ![](../resources/images/nyc-taxi-fhv-dropoffs-by-boro.png)
+
+#### Yellow / Green pickups and dropoffs
+
+```
+Trips
+| where isnotempty(dropoff_boroname) // for some records, this data point is missing in the original data set
+| summarize count() by dropoff_boroname 
+| where dropoff_boroname !in ("New Jersey")
+| render piechart with(title = "Dropoffs")
+```
+
+![](../resources/images/nyc-taxi-yellow-green-pickups-by-boro.png) ![](../resources/images/nyc-taxi-yellow-green-dropoffs-by-boro.png)
+
 
 ### More to follow ...
 
