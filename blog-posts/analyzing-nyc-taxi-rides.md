@@ -158,14 +158,14 @@ For the purpose of this exploration, I've used an
 with the [KQL magic](https://docs.microsoft.com/en-us/azure/data-explorer/kqlmagic){:target="_blank"} library.
 You could use a [Jupyter notebook](https://jupyter.org/){:target="_blank"} in a similar manner.
 
-**Caveats:**
-
-* The following suggestive insights are based only on the available data, and should not be taken
-as any kind of official or meaningful research.
-* I have no official education or knowledge beyond what's available online about NYC
-transportation, Taxi companies and operators, and ride-hailing or ride-sharing companies.
-* My main objective in publishing these is to show the rich query and analytical capabilities
-of the Kusto query language, and obviously - have lots of fun in the process of doing so 😊
+> [!IMPORTANT]
+> * The following suggestive insights are based only on the available data, and should not be taken as any kind of official
+>   or meaningful research.
+>
+> * I have no official education or knowledge beyond what's available online about NYC
+>   transportation, Taxi companies and operators, and ride-hailing or ride-sharing companies.
+> * My main objective in publishing these is to show the rich query and analytical capabilities
+> of the Kusto query language, and obviously - have lots of fun in the process of doing so 😊
 
 **Note:** All the queries shown below ran against a cluster with 2 X `D14_v2` nodes, and completed
 in a matter of seconds.
