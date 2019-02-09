@@ -158,7 +158,8 @@ For the purpose of this exploration, I've used an
 with the [KQL magic](https://docs.microsoft.com/en-us/azure/data-explorer/kqlmagic){:target="_blank"} library.
 You could use a [Jupyter notebook](https://jupyter.org/){:target="_blank"} in a similar manner.
 
-> [!IMPORTANT]
+> **Caveats**
+>
 > * The following (suggestive) insights are based only on the available data, and should not be taken as any kind
 >   of official or meaningful research.
 >
