@@ -15,7 +15,7 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 ![](../resources/images/nyc-taxi-theme-2.png)
 
-In a [previous post](ingesting-nyc-taxi-rides.md), I detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)**.
+I've detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)** in [another post](ingesting-nyc-taxi-rides.md).
 
 A quick Google search will show you many people took a 1.x Billion taxi rides data set for a ride, for:
 * Comparing query performance of multiple data platforms with different topologies.
