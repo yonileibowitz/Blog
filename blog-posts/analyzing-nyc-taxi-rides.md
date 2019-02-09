@@ -160,8 +160,11 @@ You could use a [Jupyter notebook](https://jupyter.org/){:target="_blank"} in a 
 
 ### Taxis Vs. FHVs
 
-*Caveat: the following insights are only based on the available data, and should not be taken
-as any kind of official research*
+**Caveat:** *the following insights are only based on the available data, and should not be taken
+as any kind of official or meaningful research*
+
+**Note:** *All the queries shown below ran against a cluster with 2 X `D14_v2` nodes, and completed
+in a matter of seconds*
 
 Yellow cabs pretty much dominated the scene up until a few years ago.
 In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, and both contributed
