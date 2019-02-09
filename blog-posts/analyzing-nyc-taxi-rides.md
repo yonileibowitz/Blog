@@ -168,7 +168,7 @@ In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, and both 
 to an overall rise in the use of taxis, but also took some of the 'market share' from the
 yellow ones.
 
-![](../resources/images/nyc-taxi-yellow-vs-green.png)
+![](../resources/images/nyc-taxi-yellow-vs-green.PNG)
 
 Later on, FHVs became increasingly more popular, taking a shot at both the Yellow cabs and Green Taxis.
 
