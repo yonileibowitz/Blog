@@ -158,6 +158,120 @@ For the purpose of this exploration, I've used an
 with the [KQL magic](https://docs.microsoft.com/en-us/azure/data-explorer/kqlmagic){:target="_blank"} library.
 You could use a [Jupyter notebook](https://jupyter.org/){:target="_blank"} in a similar manner.
 
+### Taxis Vs. FHVs
+
+*Caveat: the following insights are only based on the available data, and should not be taken
+as any kind of official research*
+
+Yellow cabs pretty much dominated the scene up until a few years ago.
+In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, and both contributed
+to an overall rise in the use of taxis, but also took some of the 'market share' from the
+yellow ones.
+
+![](../resources/images/nyc-taxi-yellow-vs-green.png)
+
+Later on, FHVs became increasingly more popular, taking a shot at both the Yellow cabs and Green Taxis.
+
+![](../resources/images/nyc-taxi-uber-and-lyft-vs-green.png)
+
+Lyft's growth seems to be hiking up since 2017, and a few smaller players have also entered NYC
+in recent years:
+
+![](../resources/images/nyc-taxi-via-juno-lyft.png)
+
+Tying them all together, show Yellow cabs and Green taxis are continuing their decline, and Lyft growing at a faster pace than all other FHVs:
+
+![](../resources/images/nyc-taxi-overall-count-over-time.png)
+
+Here's the query I used to render this timeline chart:
+
+```
+%%kql
+union 
+(
+    Trips
+    | where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
+    | summarize count() by Type = cab_type, bin(pickup_datetime, 7d)
+),(
+    MemberBase // Small dimension table; Data taken from: http://www.nybcf.org/members/ 
+    | extend Name = case(Name has "Uber" or Name has "Grun" or Name has "Unter", "Uber",
+                         Base in("B02510", "B02844"), "Lyft",
+                         Name has "(Via)", "Via",
+                         Name has "Juno", "Juno",
+                         Name has "(Gett)", "Gett",
+                         Name)
+    | join hint.strategy = broadcast 
+    (
+        FHV_Trips
+        | where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
+        | summarize count() by Base = Dispatching_base_num, bin(pickup_datetime, 7d)
+        | where count_ > 25000 // filtering out the smaller players
+    ) on Base
+    | project-away Base, Base1 
+    | project-rename Type = Name
+)
+| render timechart
+```
+
+### FHVs: private or shared?
+
+The `Shared` flag started to appear in the data only since July 2017, so I'll be focusing on a
+1 year period for this section.
+
+There are 3 players in the shared rides area: Uber, Lyft and Via.
+While all 3 offer both private and shared options, Via's shared option is more popular than it's
+private one, which makes sense as it is a *ride-sharing* company:
+
+![](../resources/images/nyc-taxi-via.png)
+
+While for Lyft and Uber, it's the other way around:
+
+![](../resources/images/nyc-taxi-shared-uber-lyft.png)
+
+BTW, now this query runs in a daily resolution, so you can easily identify the seasonality that
+shows weekends are usually lower in demand than weekdays.
+
+This is the query I used for the charts above:
+
+```
+%%kql
+MemberBase // Small dimension table; Data taken from: http://www.nybcf.org/members/ 
+| extend Name = case(Name has "Uber" or Name has "Grun" or Name has "Unter", "Uber",
+                     Base in("B02510", "B02844"), "Lyft",
+                     Name has "(Via)", "Via",
+                     Name has "Juno", "Juno",
+                     Name has "(Gett)", "Gett",
+                     Name)
+| join hint.strategy = broadcast 
+(
+    FHV_Trips
+    | where pickup_datetime between(datetime(2017-07-01) .. datetime(2018-07-01))
+    | summarize count() by Base = Dispatching_base_num, Shared = Shared_Ride_Flag, bin(pickup_datetime, 1d)
+    | where count_ > 1750 // filtering out the smaller players
+) on Base
+| extend Name = iff(Shared == true, strcat(Name, "_Shared"), Name)
+| project-away Base, Base1
+| render timechart 
+```
+and all-in-all, it does seem that shared rides are on the rise, but are still behind private
+ones, which are rising as well:
+
+```
+%%kql
+FHV_Trips
+| where pickup_datetime between(datetime(2017-07-01) .. datetime(2018-07-01))
+| make-series RideCount = count() on pickup_datetime from datetime(2017-07-01) to datetime(2018-07-01) step 1d by Shared = Shared_Ride_Flag
+| extend series_fit_2lines(RideCount)
+| mvexpand RideCount to typeof(long), pickup_datetime to typeof(datetime), series_fit_2lines_RideCount_line_fit to typeof(long)
+| project pickup_datetime, Shared, RideCount, series_fit_2lines_RideCount_line_fit
+| render timechart 
+```
+
+![](../resources/images/nyc-taxi-fhv-growth.png)
+
+
+### More to follow ...
+
 *Still at it. This is quite the fun experience* 😀 *Stay tuned ...*
 
 
