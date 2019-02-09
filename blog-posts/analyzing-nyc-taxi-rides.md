@@ -185,12 +185,11 @@ Later on, FHVs became increasingly popular, taking a swing at both the Yellow ca
 
 ![](../resources/images/nyc-taxi-uber-and-lyft-vs-green.png)
 
-Lyft's growth seems to be hiking up since 2017, and a few smaller players have also entered NYC
-in recent years:
+Uber and Lyft's growth seems to be hiking up nicely since 2015, and a few smaller players have also entered NYC in recent years:
 
 ![](../resources/images/nyc-taxi-via-juno-lyft.png)
 
-Tying them all together, show Yellow cabs and Green taxis are continuing their decline, and Lyft growing at a faster pace than all other FHVs:
+Tying them all together, show Yellow cabs and Green taxis are continuing their decline, and Uber growing at a faster pace than all other FHVs, with Lyft coming in second:
 
 ![](../resources/images/nyc-taxi-overall-count-over-time.png)
 
@@ -201,7 +200,7 @@ Here's the query I used to render this time chart:
 union 
 (
     Trips
-    | where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
+    | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
     | summarize count() by Type = cab_type, bin(pickup_datetime, 7d)
 ),(
     MemberBase // Small dimension table; Data taken from: http://www.nybcf.org/members/ 
@@ -214,12 +213,10 @@ union
     | join hint.strategy = broadcast 
     (
         FHV_Trips
-        | where pickup_datetime between(datetime(2014-01-01) .. datetime(2018-07-01))
-        | summarize count() by Base = Dispatching_base_num, bin(pickup_datetime, 7d)
-        | where count_ > 25000 // filtering out the smaller players
-    ) on Base
-    | project-away Base, Base1 
-    | project-rename Type = Name
+        | where pickup_datetime between(datetime(2009-01-01) .. datetime(2018-07-01))
+    ) on $left.Base == $right.Dispatching_base_num 
+    | summarize count() by Type = Name, bin(pickup_datetime, 7d)
+    | where count_ > 25000 // filtering out the smaller players
 )
 | render timechart
 ```
