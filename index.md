@@ -8,35 +8,45 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 ![](resources/images/adx-logo.png)
 
+**Who am I, and why do I blog?**
+
+[I'm](https://www.linkedin.com/in/yonileibo/){:target="_blank"} a software engineer, fortunate and humbled to have the opportunity of being part of
+an amazing team, who is hard at work building an amazing Big Data platform. I've closely witnessed how transformative, and in some cases addictive (in a
+good way 😊), this technology has become in the lives of tens of thousands of employees of all disciplines in our company, within our partners, and among
+our customers. They (and ourselves) are using it on a regular day-to-day basis, either for ah-hoc research and investigations, or as part of high volume &
+high frequency automated flows. I believe others can leverage it in both similar and new manners, to transform their day to day work, enrich their
+(Big-)data-driven decision making processes, build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which
+makes all the above both fun, as well as simple.
+
 ## **Queries**
 
-- **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md)**
+- **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md){:target="_blank"}**
 
-- **[Analyzing Uber rides history in Azure Data Explorer (Kusto)](blog-posts/analyzing-uber-rides-history.md)**
+- **[Analyzing Uber rides history in Azure Data Explorer (Kusto)](blog-posts/analyzing-uber-rides-history.md){:target="_blank"}**
 
-- **[Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](blog-posts/analyzing-spotify-streaming-history.md)**
+- **[Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](blog-posts/analyzing-spotify-streaming-history.md){:target="_blank"}**
 
-- **[Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/analyzing-nyc-taxi-rides.md)**
+- **[Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/analyzing-nyc-taxi-rides.md){:target="_blank"}**
 
 ## **Data Ingestion & Management**
 
-- **[Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)](blog-posts/ingesting-nyc-taxi-rides.md)**
+- **[Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)](blog-posts/ingesting-nyc-taxi-rides.md){:target="_blank"}**
 
-- **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md)**
+- **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md){:target="_blank"}**
 
-- **[Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md)**
+- **[Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md){:target="_blank"}**
 
-- **[Specifying metadata at ingestion time](blog-posts/ingestion-time-metadata.md)**
+- **[Specifying metadata at ingestion time](blog-posts/ingestion-time-metadata.md){:target="_blank"}**
 
-- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md)**
-    - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction)
-    - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data)
+- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md){:target="_blank"}**
+    - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction){:target="_blank"}
+    - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data){:target="_blank"}
 
 ---
 
 ## Wait, let's start over - what is Azure Data Explorer (Kusto)?
 
-### Haven't seen it in action yet ?
+### Haven't seen it in action yet?
 
 Why not start off with a couple of videos:
 
