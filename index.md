@@ -8,7 +8,7 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 ![](resources/images/adx-logo.png)
 
-**Who am I, and why do I blog?**
+[Who am I, and why do I blog?](index.md#who-am-i-and-why-do-i-blog)
 
 ## **Queries**
 
@@ -96,7 +96,6 @@ our customers. They (and ourselves) are using it on a regular day-to-day basis, 
 high frequency automated flows. I believe others can leverage it in both similar and new manners, to transform their day to day work, enrich their
 (Big-)data-driven decision making processes, build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which
 makes all the above both fun, as well as simple.
-
 
 ---
 
