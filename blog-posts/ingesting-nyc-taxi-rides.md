@@ -7,6 +7,8 @@ title: Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Ku
 
 # Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)
 
+*Last modified: 02/09/2019*
+
 The [NYC Taxi & Limousine Commission](https://www1.nyc.gov/site/tlc/index.page){:target="_blank"} makes
 historical data about taxi trips and for-hire-vehicle trips (such as [Uber](analyzing-uber-rides-history.md){:target="_blank"},
 Lyft, Juno, Via, etc.) [available](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page){:target="_blank"}

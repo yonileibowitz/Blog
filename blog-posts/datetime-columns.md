@@ -7,6 +7,8 @@ title: DateTime columns in Azure Data Explorer (Kusto)
 
 # datetime columns in Azure Data Explorer (Kusto)
 
+*Last modified: 11/08/2018*
+
 When you ingest batches of data into Azure Data Explorer (Kusto), it gets stored in a sharded column store, where each column is compressed and indexed.
 The scope of each index is a single [data shard (extent)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview){:target="_blank"}, and the implementation of the index depends on the type of the column.
 

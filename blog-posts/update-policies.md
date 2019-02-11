@@ -7,6 +7,8 @@ title: Update policies for in-place ETL in Azure Data Explorer (Kusto)
 
 # Update policies for in-place ETL in Azure Data Explorer (Kusto)
 
+*Last modified: 11/08/2018*
+
 Azure Data Explorer (Kusto) is super fast and efficient in getting your data ingested (, and then queried).
 
 It's usually recommended that your data is formatted to begin with, in either of the [supported

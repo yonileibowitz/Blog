@@ -7,6 +7,8 @@ title: Advanced data management in Azure Data Explorer (Kusto)
 
 # Advanced data management in Azure Data Explorer (Kusto)
 
+*Last modified: 11/19/2018*
+
 The following sections describe techniques and practices which you may find useful for your day-to-day data ingestion and data management flows.
 
 * TOC

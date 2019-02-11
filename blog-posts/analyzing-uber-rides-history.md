@@ -7,6 +7,8 @@ title: Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
 # Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
+*Last modified: 02/09/2019*
+
 Ride-hailing and ride-sharing have seen enormous growth and adoption, which means - there is, and there will continue to be lots of data to analyze
 about how people across the world are using these services, as well as comparing the level of service different companies such as
 [Uber](https://www.uber.com){:target="_blank"}, [Lyft](https://www.lyft.com){:target="_blank"} and others provide to their riders and drivers.
