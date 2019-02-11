@@ -79,11 +79,11 @@ directly to the [Cost estimator](https://dataexplorer.azure.com/AzureDataExplore
 
 ### Results
 
-**Notes:** 
+**Notes:**
 
 * If you're comparing these to other runs available online, make sure you're doing 🍏🍏-to-🍏🍏 comparison,
   taking into account the size of the data set, the resources, and their cost.
-* These results are accurate to February 2019. In the competitive landscape of BigData platforms and technologies,
+* These results are accurate as of February 2019. In the competitive landscape of BigData platforms and technologies,
   I would expect these to get even better as time goes by.
 
 
