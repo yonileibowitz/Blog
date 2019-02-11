@@ -398,9 +398,9 @@ Trips
 
 ![](../resources/images/nyc-taxi-speed-over-time.png)
 
----
-
 *(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
+
+---
 
 **[Go back home](../index.md)**
 

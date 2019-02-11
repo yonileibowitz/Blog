@@ -5,6 +5,8 @@ title: Update policies for in-place ETL in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # Update policies for in-place ETL in Azure Data Explorer (Kusto)
 
 *Last modified: 11/08/2018*
@@ -202,6 +204,8 @@ And, *voila* - I can see that:
     ![](../resources/images/update-policy-demo-target-table-records.png)
 
 Our work here is done. Now - go ahead and try it out yourself!
+
+---
 
 **[Go back home](../index.md)**
 

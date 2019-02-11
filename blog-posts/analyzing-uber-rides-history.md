@@ -5,6 +5,8 @@ title: Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
 *Last modified: 02/09/2019*
@@ -351,6 +353,8 @@ UberRides
 | 11            | 1             | McAllister                  |
 
 *(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
+
+---
 
 **[Go back home](../index.md)**
 

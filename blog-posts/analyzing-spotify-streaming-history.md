@@ -5,6 +5,8 @@ title: Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 
 *Last modified: 01/19/2019*
@@ -353,6 +355,8 @@ SpotifyStreamingHistory
 | 1842            | 146                   | 7.92616720955483 |
 
 *(Got suggestions for more interesting queries? Let me know and I'll update the post based on your feedback)*
+
+---
 
 **[Go back home](../index.md)**
 

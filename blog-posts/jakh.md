@@ -5,6 +5,8 @@ title: Just another Kusto hacker (JAKH)
 
 {% include  share.html %}
 
+---
+
 # Just another Kusto hacker *(JAKH)*
 
 *Last modified: 11/08/2018*
@@ -771,6 +773,8 @@ print "try"
 | summarize Message = replace(@'[\[\"\]]', '', tostring(makelist(temp)))
 | extend Message = replace(@',', ' ', Message)
 ```
+
+---
 
 **[Go back home](../index.md)**
 

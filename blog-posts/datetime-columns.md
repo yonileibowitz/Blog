@@ -5,6 +5,8 @@ title: DateTime columns in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # datetime columns in Azure Data Explorer (Kusto)
 
 *Last modified: 11/08/2018*
@@ -57,6 +59,8 @@ The same is true if you want to query historical data, e.g. a specific week's wo
         |2018-11-09 02:00:00.0000000 |6,545,498,120 |
         
     
+---
+
 **[Go back home](../index.md)**
 
 {% include  share.html %}

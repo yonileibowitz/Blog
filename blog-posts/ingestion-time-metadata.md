@@ -5,6 +5,8 @@ title: Specifying metadata at ingestion time in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # Specifying metadata at ingestion time in Azure Data Explorer (Kusto)
 
 *Last modified: 12/21/2018*
@@ -118,6 +120,8 @@ That's OK - they will be automatically appended to my table's schema, as my inge
 an ingestion mapping.
 - If your source data is formatted as JSON, a [JSON mapping](https://docs.microsoft.com/en-us/azure/kusto/management/mappings#json-mapping){:target="_blank"} will allow you to specify 2 special transformations: `SourceLocation` and `SourceLineNumber`, which
 enable you to enrich your records with both the name of the file that included the record, and the line number of that record in the source file.
+
+---
 
 **[Go back home](../index.md)**
 

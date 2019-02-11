@@ -5,6 +5,8 @@ title: Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Ku
 
 {% include  share.html %}
 
+---
+
 # Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)
 
 *Last modified: 02/09/2019*
@@ -347,6 +349,8 @@ data prepared, before ingesting it.
 
 * The process is long - It took approximately 2 days to run on my VM.
     * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-05-billion-for-hire-vehicle-trips)).
+
+---
 
 **[Go back home](../index.md)**
 

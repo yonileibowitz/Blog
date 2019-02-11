@@ -93,6 +93,8 @@ In some cases, you want to ingest historical data into your table(s), however yo
 
 For these cases, the `creationTime` [ingestion property](https://docs.microsoft.com/en-us/azure/kusto/management/data-ingestion/#ingestion-properties){:target="_blank"} is very useful. Multiple ingestion methods allow you to specify this ingestion property, with the effect of it overriding the [extent's (data shard's)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview){:target="_blank"} creation time - This is a metadata property of the [extent (data shard)](https://docs.microsoft.com/en-us/azure/kusto/management/extents-overview){:target="_blank"}, according to which both [retention policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/retentionpolicy){:target="_blank"} and [caching policy](https://docs.microsoft.com/en-us/azure/kusto/concepts/cachepolicy){:target="_blank"} policies are applied.
 
+---
+
 **[Go back home](../index.md)**
 
 {% include  share.html %}
