@@ -68,7 +68,8 @@ in which I replayed these queries over and over again, so that I can look at the
 ### Cost 💲
 
 If you're interested in the cost per hour for the different cluster sizes, check out the pricing details using the
-[Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}.
+[Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/){:target="_blank"}, or head over
+directly to the [Cost estimator](https://dataexplorer.azure.com/AzureDataExplorerCostEstimator.html){:target="_blank"}.
 
 ### Results
 
