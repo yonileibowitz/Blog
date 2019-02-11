@@ -17,7 +17,7 @@ trip distances, itemized fares, rate types, payment types, and driver-reported p
 
 I've detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)** in [another post](ingesting-nyc-taxi-rides.md).
 
-A quick Google search will show you many people took a 1.x Billion taxi rides data set for a ride, for:
+A quick search on Google will show you many people have taken a 1.x Billion taxi rides data set for a ride, with the intention of:
 * Comparing query performance of multiple data platforms with different topologies.
 * Gaining insights from the data about topics like rush hour traffic, popular work hours for investment bankers,
   how [Uber](analyzing-uber-rides-history.md){:target="_blank"}, Lyft and their competitors are changing the landscape for taxis, etc.
