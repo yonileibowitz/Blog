@@ -59,7 +59,11 @@ For the purpose of this evaluation, I used:
         |1,547,471,776|
 
 
-2. Four basic aggregation queries (detailed [below](#results)).
+2. Four basic aggregation queries (detailed [below](#results))
+    * These are based on the queries which were [used by Mark Litwintschik](https://tech.marksblogg.com/benchmarks.html){:target="_blank"}
+       in his series of posts about 1.1 billion taxi rides with other technologies.
+    * I've used the translation of these from SQL to Kusto's query language
+      (even though you can [run SQL queries against Kusto](https://docs.microsoft.com/en-us/azure/kusto/api/tds/){:target="_blank"}).
 
 3. A simple application, written using
 [Kusto's .NET client library](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/about-kusto-data){:target="_blank"},
@@ -187,11 +191,11 @@ in a matter of seconds.
 Yellow cabs pretty much dominated the scene up until a few years ago.
 In the summer of 2013, Green taxis (AKA Boro taxis) started to appear, contributed
 to an overall rise in the use of taxis, but also took some of the 'market share' from the
-yellow ones.
+yellow ones:
 
 ![](../resources/images/nyc-taxi-yellow-vs-green.PNG)
 
-Later on, FHVs became increasingly popular, taking a swing at both the Yellow cabs and Green Taxis.
+Later on, FHVs grew increasingly popular, posing an even greater competitor than the Green Taxis:
 
 ![](../resources/images/nyc-taxi-uber-and-lyft-vs-green.png)
 
