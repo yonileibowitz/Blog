@@ -5,6 +5,8 @@ title: Advanced data management in Azure Data Explorer (Kusto)
 
 {% include  share.html %}
 
+---
+
 # Advanced data management in Azure Data Explorer (Kusto)
 
 *Last modified: 11/19/2018*

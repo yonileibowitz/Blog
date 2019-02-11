@@ -5,6 +5,8 @@ title: Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kust
 
 {% include  share.html %}
 
+---
+
 # Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)
 
 *Last modified: 02/10/2019*
