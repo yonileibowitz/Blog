@@ -1,6 +1,7 @@
 theme: jekyll-theme-cayman
 markdown: kramdown
 title: kusto.blog
+description: Get the most out of your Kusto (Azure Data Explorer) cluster
 author: yonileibowitz
 logo: resources/images/adx-logo.png
 plugins:
