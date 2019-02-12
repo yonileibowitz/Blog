@@ -1,5 +1,8 @@
 theme: jekyll-theme-cayman
 markdown: kramdown
+title: kusto.blog
+author: yonileibowitz
+logo: resources/images/adx-logo.png
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
