@@ -211,7 +211,7 @@ print 'Please give me some prize you awesome Kustodians!'
     | summarize xFactors = tostring(split(replace(@'[\[",\]]', '', tostring(makeset(Wish))), 'f'))
     | parse xFactors with * '["' x '","' y '"]'
     | project punk = extract_all('(.)', strcat(replace('hw', 're', x), replace('da', 'kc', y), replace('da', 'ah', y)))
-    | extend numbers = range(0, arraylength(punk)-1, 1)
+    | extend numbers = range(0, array_length(punk)-1, 1)
     | mvexpand punk, numbers to typeof(long)
     | order by numbers desc
     | summarize who_i_am=replace(@'[\[",\]]', '', tostring(makelist(punk)))
@@ -258,13 +258,13 @@ let B = datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend J = range(0, arraylength(A)-1, 1) | mvexpand C = A, D = J to typeof(long);
+] | extend J = range(0, array_length(A)-1, 1) | mvexpand C = A, D = J to typeof(long);
 let C = extract_all('(.)', toscalar(B | where D == 2 | project strcat(C) | limit 1));
 let D = datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend L = range(0, arraylength(C)-1, 1) | mvexpand K = C to typeof(string), L to typeof(long) limit 256;
+] | extend L = range(0, array_length(C)-1, 1) | mvexpand K = C to typeof(string), L to typeof(long) limit 256;
 let E = D | where tolong(K) > 1 | extend T = range(0, tolong(K)-1, 1) | mvexpand T to typeof(long) limit 256 | extend U = 0;
 let F = toscalar(D | where tolong(K) <= 1 | project U = tolong(K), L, T = 0 | union E | sort by L asc, T asc | summarize W = makelist(U, 256) | project replace(@'[\[\"\,\]]', "", tostring(W)) | limit 1);
 let G = B | where D == 0 | project I = strcat(C) | extend Y = extract_all('(....)', I) | extend J = range(0, 15, 1) | mvexpand Y to typeof(string), J to typeof(long) | project Y, Z = tohex(J), H=1;
@@ -273,7 +273,7 @@ datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend J = range(0, arraylength(H)-1, 1) | mvexpand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extract_all('(.)', P) | extend M = range(0, arraylength(Q)-1, 1)
+] | extend J = range(0, array_length(H)-1, 1) | mvexpand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extract_all('(.)', P) | extend M = range(0, array_length(Q)-1, 1)
   | mvexpand Q to typeof(string), M to typeof(long) | project Q, M | extend O = tohex(M, 2) | join (G | join kind=inner (G) on H | project P = strcat(Y, Y1), I = strcat(Z, Z1)
   | sort by I asc) on $left.O == $right.I) on $left.N == $right.P | order by J asc | summarize W = makelist(Q)
   | project TheRequiredString = replace(@'[\[\"\,\]]', "", tostring(W))
@@ -325,7 +325,7 @@ let KuskiiCode = split(
 '0,5~1,5~0,36~1,5~0,6~1,18\n0,5~1,10~0,25~1,11~0,6~1,5\n0,5~1,5~0,3~1,5~0,19~1,5~0,4~1,5~0,6~1,5\n0,5~1,5~0,7~1,5~0,12~1,5~0,7~1,5~0,6~1,18\n0,5~1,5~0,11~1,5~0,5~1,5~0,10~1,5~0,19~1,5\n0,5~1,5~0,14~1,9~0,13~1,5~0,19~1,5\n0,5~1,5~0,16~1,5~0,15~1,5~0,19~1,5\n0,5~1,5~0,16~1,5~0,15~1,5~0,6~1,18\n\n\n0,5~1,14~0,41~1,5~0,15~1,10~0,54~1,5~0,10~1,5~0,69~1,5~0,75~1,5~0,40~1,5~0,74~1,5~0,48~1,21\n0,14~1,5~0,41~1,5~0,13~1,14~0,52~1,5~0,10~1,5~0,69~1,5~0,10~1,6~0,59~1,5~0,40~1,5~0,74~1,5~0,11~1,6~0,31~1,5~0,11~1,5\n0,14~1,5~0,37~1,13~0,8~1,5~0,6~1,5~0,46~1,15~0,5~1,5~0,69~1,5~0,7~1,7~0,56~1,16~0,34~1,5~0,74~1,5~0,7~1,6~0,35~1,5~0,11~1,5\n0,14~1,5~0,41~1,5~0,11~1,5~0,8~1,5~0,4~1,5~0,41~1,5~0,10~1,5~0,20~1,20~0,5~1,5~0,9~1,5~0,5~1,5~0,4~1,7~0,64~1,5~0,11~1,19~0,10~1,5~0,74~1,5~0,3~1,6~0,14~1,20~0,5~1,21\n0,14~1,5~0,5~1,5~0,4~1,5~0,5~1,12~0,5~1,5~0,11~1,18~0,5~1,15~0,5~1,20~0,5~1,5~0,10~1,20~0,5~1,5~0,10~1,5~0,5~1,5~0,6~1,5~0,8~1,11~0,16~1,5~0,11~1,5~0,11~1,16~0,5~1,5~0,11~1,5~0,9~1,5~0,10~1,21~0,5~1,20~0,12~1,16~0,5~1,11~0,17~1,5~0,10~1,5~0,5~1,5~0,7~1,5\n0,14~1,5~0,5~1,5~0,4~1,5~0,5~1,8~0,9~1,5~0,11~1,5~0,8~1,5~0,5~1,5~0,5~1,5~0,5~1,5~0,10~1,5~0,5~1,5~0,10~1,5~0,10~1,5~0,5~1,20~0,5~1,5~0,4~1,5~0,10~1,10~0,17~1,5~0,11~1,5~0,11~1,8~0,13~1,5~0,11~1,5~0,9~1,5~0,10~1,5~0,11~1,5~0,5~1,5~0,10~1,5~0,12~1,5~0,16~1,10~0,18~1,20~0,5~1,5~0,11~1,6\n0,14~1,5~0,5~1,5~0,4~1,5~0,5~1,12~0,5~1,5~0,11~1,5~0,8~1,5~0,5~1,5~0,5~1,5~0,5~1,5~0,10~1,5~0,5~1,5~0,10~1,5~0,10~1,5~0,5~1,5~0,20~1,10~0,14~1,5~0,4~1,7~0,11~1,5~0,11~1,5~0,11~1,16~0,5~1,5~0,11~1,5~0,9~1,5~0,10~1,5~0,11~1,5~0,5~1,5~0,10~1,5~0,12~1,5~0,16~1,5~0,4~1,6~0,13~1,5~0,20~1,5~0,15~1,5\n0,3~1,3~0,8~1,5~0,5~1,5~0,4~1,5~0,9~1,8~0,5~1,5~0,11~1,5~0,8~1,5~0,5~1,5~0,5~1,5~0,5~1,5~0,10~1,5~0,5~1,5~0,10~1,5~0,10~1,5~0,5~1,5~0,20~1,5~0,19~1,5~0,7~1,7~0,8~1,5~0,11~1,5~0,19~1,8~0,5~1,5~0,11~1,5~0,9~1,5~0,10~1,5~0,11~1,5~0,5~1,5~0,10~1,5~0,12~1,5~0,16~1,5~0,8~1,6~0,9~1,5~0,20~1,5~0,19~1,5\n0,4~1,15~0,5~1,14~0,5~1,12~0,5~1,8~0,8~1,5~0,8~1,5~0,5~1,5~0,5~1,5~0,5~1,20~0,5~1,10~0,5~1,5~0,10~1,5~0,5~1,20~0,5~1,5~0,19~1,5~0,10~1,7~0,5~1,26~0,6~1,16~0,5~1,11~0,5~1,19~0,10~1,5~0,11~1,5~0,5~1,27~0,5~1,16~0,5~1,5~0,12~1,6~0,5~1,20~0,5~1,5~0,23~1,6~0,14'
 ,'\n');
 print 'Kuskii ART'
-| project c = KuskiiCode, l = range(0, arraylength(KuskiiCode)-1, 1)
+| project c = KuskiiCode, l = range(0, array_length(KuskiiCode)-1, 1)
 | mvexpand c, l
 | extend c = split(c, '~') 
 | mvexpand c
@@ -613,11 +613,11 @@ print  M1 = 'dCxlcix0byxy'
 | extend M1 = extract_all(@"(\w+)", l1), M2 = extract_all(@"(\w+)", l2), M3 = extract_all(@"(\w+)", l3), M4 = extract_all(@"(\w+)", l4) 
 | extend M5 = pack_array(" "," "," "," ") 
 | extend z = zip(M1,M2,M3, M4,M5)
-| extend R = range(0, arraylength(z)-1, 1)
+| extend R = range(0, array_length(z)-1, 1)
 | mvexpand z, R to typeof(long)
 | order by R desc 
 | summarize zs = makelist(z)
-| extend R = range(0, arraylength(zs)-1, 1)
+| extend R = range(0, array_length(zs)-1, 1)
 | mvexpand zs, R to typeof(long)
 | order by R desc 
 | summarize Message = replace(@'[\[\"\,\]]', '', tostring(makelist(zs)))
@@ -632,7 +632,7 @@ This query uses un-obvious string manipulations, based on the sentence below.
 print Message="Jazz backup acquits aircraft. ask corn beacon ancient bluefish acquainted assimilator. Kerbal aquanaut absolutes triumphant conservationist. happy kahunas misdirect dumbstruck performances photofinisher." 
 | mvexpand Sentences = split(replace("\\. ", ".", iff(Message endswith ".", substring(Message, 0, strlen(Message) - 1), Message)), ".")
 | extend Sentences = strcat(Sentences, " ~")
-| mvexpand Words = split(Sentences, " "), index = range(0, arraylength(split(Sentences, " ")) - 1, 1) to typeof(int64)
+| mvexpand Words = split(Sentences, " "), index = range(0, array_length(split(Sentences, " ")) - 1, 1) to typeof(int64)
 | summarize Message = replace(@'[\[\"\,\]]', '', tostring(makelist(iff(Words == "~", " ", substring(Words, iff(index == 0, 0, strlen(split(Sentences, " ")[toint(index-1)])), 1)))))
 ```
 
@@ -642,7 +642,7 @@ print Message="Jazz backup acquits aircraft. ask corn beacon ancient bluefish ac
 ```
 print Message = 'JaKhunuasosctttk hoe e r r      '
 | extend M = extract_all('(.)', Message)
-| extend L=range(0, arraylength(M)-1, 1)
+| extend L=range(0, array_length(M)-1, 1)
 | mvexpand M, L to typeof(long)
 | extend W = L%4
 | summarize  Message = replace(@'[\[\"\,\]]', '', tostring(makelist(M))) by W
