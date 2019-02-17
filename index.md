@@ -8,9 +8,11 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 <p align="center">
   <img src="resources/images/adx-logo.png">
+  <br><br>
+  <a href="#who-am-i-and-why-do-i-blog">Who am I, and why do I blog?</a>
 </p>
 
-[Who am I, and why do I blog?](index.md#who-am-i-and-why-do-i-blog)
+---
 
 ## **Queries**
 
