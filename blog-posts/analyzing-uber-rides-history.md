@@ -22,7 +22,9 @@ Naturally, I chose **Kusto (Azure Data Explorer)** to look into it, and I took m
 
 *(Some of the data points in this post have been altered for the sake of privacy)*
 
-![https://www.uber.com](../resources/images/uber-logo.jpg "Analyzing Uber rides history in Azure Data Explorer (Kusto)")
+<p align="center">
+  <img title="Analyzing Uber rides history in Azure Data Explorer (Kusto)" src="../resources/images/uber-logo.jpg">
+</p>
 
 * TOC
 {:toc}

@@ -14,7 +14,9 @@ title: Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 Like many people out there, I love listening to music, wherever I go, whenever possible.
 And, like many others, I use a music streaming service to do so. My personal choice is [Spotify](https://www.spotify.com){:target="_blank"}. 
 
-![https://www.spotify.com](../resources/images/spotify-logo.png "Analyzing Spotify streaming history in Azure Data Explorer (Kusto)")
+<p align="center">
+  <img title="Analyzing Spotify streaming history in Azure Data Explorer (Kusto)" src="../resources/images/spotify-logo.png">
+</p>
 
 I usually just push 'Play' without paying too much attention to what's playing, but I thought it would be nice to make some sense of what I've been listening to. And, I couldn't think of a simpler or better way to do that than using Kusto (Azure Data Explorer).
 

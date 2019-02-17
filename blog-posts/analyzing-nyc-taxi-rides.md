@@ -17,7 +17,9 @@ Lyft, Juno, Via, etc.) [available](https://www1.nyc.gov/site/tlc/about/tlc-trip-
 for anyone to download and analyze. These records capture pick-up and drop-off dates/times, pick-up and drop-off locations,
 trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts.
 
-![](../resources/images/nyc-taxi-theme-2.png)
+<p align="center">
+  <img title="Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)" src="../resources/images/nyc-taxi-theme-2.png">
+</p>
 
 I've detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)** in [another post](ingesting-nyc-taxi-rides.md).
 
