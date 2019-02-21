@@ -106,6 +106,11 @@ high frequency automated flows.
 I believe others can leverage it in both similar and new manners, to transform their day to day work, enrich their (Big-)data-driven decision making processes, build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which
 makes all the above both fun, as well as simple.
 
+<p align="center">
+  <img src="resources/images/kusto-mojo.jpg">
+  <br><br>
+</p>
+
 ---
 
 {% include  share.html %}
