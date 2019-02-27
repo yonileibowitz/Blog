@@ -31,7 +31,7 @@ Now, are *you* up for the challenge?
 The 1st place was given to a query that impressed us with its naive looks,
 yet brave brute-force explosion of all possible 5-grams coming from the string `JKacehknorstu`.  
 
-The query forms a table with 14^5 (537,824) rows using [mvexpand](https://docs.microsoft.com/en-us/azure/kusto/query/mvexpandoperator){:target="_blank"}, over the 'L'-string characters.
+The query forms a table with 14^5 (537,824) rows using [mv-expand](https://docs.microsoft.com/en-us/azure/kusto/query/mvexpandoperator){:target="_blank"}, over the 'L'-string characters.
 This table represents all possible combinations of the 5-grams of these characters.
 Then, 5 elements that have the 'right' combinations are selected using hash values, to form the final 25 character output.
 
@@ -40,11 +40,11 @@ Then, 5 elements that have the 'right' combinations are selected using hash valu
 print L = " JKacehknorstu"
 | project L = extract_all('(.)', L)
 | project L1 = L, L2 = L, L3 = L, L4 = L, L5 = L
-| mvexpand L1 
-| mvexpand L2 
-| mvexpand L3 
-| mvexpand L4 
-| mvexpand L5
+| mv-expand L1 
+| mv-expand L2 
+| mv-expand L3 
+| mv-expand L4 
+| mv-expand L5
 | project W = strcat(L1, L2, L3, L4, L5)
 | extend H = hash(W) 
 | join 
@@ -58,7 +58,7 @@ print L = " JKacehknorstu"
        "-6157267418303347487"
     ]
 ) on H
-| summarize Message = replace(@'[^\w\s]', "", tostring(makelist(W)))
+| summarize Message = replace(@'[^\w\s]', "", tostring(make_list(W)))
 ```
 
 ## 2nd place
@@ -86,9 +86,9 @@ Oh, you don't believe it works? Try it yourself!
 ```
 print a='😉🐮🔬🐭🐾😚🐧🐨🌭🐡🐞🐫🔾🌊😮🐬🔭🌨🌾🌡🐚😜🌤🌞🌫'
 | extend a=extract_all('(.)', a)
-| mvexpand a
+| mv-expand a
 | extend a=substring(base64_encodestring(strcat('abracadabra', a)), 19)
-| summarize Message=replace(@'[+]', ' ', replace(@'[[",\]]', "", tostring(makelist(a))))
+| summarize Message=replace(@'[+]', ' ', replace(@'[[",\]]', "", tostring(make_list(a))))
 ```
 
 ## 3rd place (#2)
@@ -107,18 +107,18 @@ print Alphabet = strcat(alphabet, toupper(alphabet))
 | extend Letters = extract_all(@"([\w ])", Alphabet)
 | extend Numbers = range(0, 2 * strlen(alphabet) - 1, 1)
 | extend Zipped = zip(Letters, Numbers)
-| mvexpand Zipped
+| mv-expand Zipped
 | extend Letter = tostring(Zipped[0])
 | extend Number = toint(Zipped[1])
 | join kind=rightouter (
     range Range from 1 to N step 1
     | extend Random = rand()
     | summarize Percs = percentiles_array(Random, dynamic([69.8,39.6,35.8,37.7,0,1.9,26.4,28.3,37.7,15.1,9.4,34,0,71.7,39.6,35.8,37.7,28.3,0,15.1,1.9,5.7,20.8,9.4,34]))
-    | mvexpand Percs
+    | mv-expand Percs
     | extend Number = toint(2.0 * strlen(alphabet) * Percs)
 ) on Number
-| summarize LetterList = makelist(Letter)
-| summarize Message = replace(@'[\[\"\,\]]', '', tostring(makelist(LetterList)))
+| summarize LetterList = make_list(Letter)
+| summarize Message = replace(@'[\[\"\,\]]', '', tostring(make_list(LetterList)))
 ```
 
 # *"Wow!"* queries
@@ -141,7 +141,7 @@ They did reach the final round of the competition, and you can definitely see wh
   'u']|extend          Pos=pos};       let space=(pos:int)              {datatable(letter:                      string) [                         ' ']|extend Pos=pos};           //////////
 //                                                                                                                                                                                          
 union(u(15)),(n(7)),(j(1)),(u(2)),(s(16)),(t(4)),(space(13)),(t(17)),(r(25)),(e(11)),(k(14)),(k(23)),(e(24)),(r(12)),(space(19)),(c(22)),(h(10)),(a(21)),(o(18)),(s(3)),(space(5)),(o(8)),(a
-(6)),(t(9)),(h(20))| extend letter=iif(Pos in (1,14),toupper(letter),letter)|order by Pos asc|summarize letters=makelist(letter)|project Message=replace(@'[\[\"\,\]]',"",tostring(letters))
+(6)),(t(9)),(h(20))| extend letter=iif(Pos in (1,14),toupper(letter),letter)|order by Pos asc|summarize letters=make_list(letter)|project Message=replace(@'[\[\"\,\]]',"",tostring(letters))
 ```
 
 ## 2. Things that fly
@@ -154,7 +154,7 @@ let f = "Hornet Butterfly Sparrow Dragonfly Owl Duck Cicada Firefly Mockingbird 
 range i from 0 to 24 step 1
 | extend h=abs(hash(tostring(split(f, " ")[i])))%40
 | join kind=leftouter (range h from 0 to 40 step 1 | extend c = substring("The King is mad, the Jester a lucky fool", h, 1)) on h
-| order by i asc | summarize replace(@'[\[\"\,\]]', '', tostring(makelist(c)))
+| order by i asc | summarize replace(@'[\[\"\,\]]', '', tostring(make_list(c)))
 ```
 
 ## 3. Schema-onl
@@ -165,7 +165,7 @@ Here, there's no real "inline" data. The query uses what the engine gives, excep
 ```
 datatable(h:datetime, J:string, K:dynamic, [' ']:guid)[] 
 | getschema
-| summarize l=strcat(makelist(DataType), makelist(ColumnName))
+| summarize l=strcat(make_list(DataType), make_list(ColumnName))
 | extend a=extract_all('^.{4}(.)(.)(.).{3}(.).{18}(.).(.).{11}(.).{3}(.).{12}(.).{6}(.).{3}(.).{3}(.).{3}(.)', l)[0] 
 | project r1=strcat(a[10], a[8], a[0], a[1], a[12], a[3], a[5], tolower(a[6]), a[1], a[9], a[2], a[4], a[12]), r2=strcat(a[11], a[8], a[0], a[1], tolower(a[6]), a[12], a[9], a[3], a[7], tolower(a[11]), a[2], a[4])
 | project result=strcat(r1, r2)
@@ -194,8 +194,8 @@ print 'Please give me some prize you awesome Kustodians!'
         )
     ),
     asks = split(truth[2], ' ')
-| mvexpand asks
-| summarize James = toint(makelist(strlen(asks))[2]), Bond = toint(makelist(strlen(asks))[1]) by TatianaRomanova
+| mv-expand asks
+| summarize James = toint(make_list(strlen(asks))[2]), Bond = toint(make_list(strlen(asks))[1]) by TatianaRomanova
 | project
          then = tostring(favorites.key), the = Ermac(us_assume, truth[0]), beautiful = Ermac(me_take, truth[1]),
     TatianaRomanova, asks = substring(truth[2], tolong(ago(1d)-now(-1d)), James-Bond)
@@ -208,13 +208,13 @@ print 'Please give me some prize you awesome Kustodians!'
     | summarize count() by Wish = extract(@'([I wIShEd foR a PrIzE])', 1, Value)
     | sort by count_ desc
     | where isnotempty(Wish)
-    | summarize xFactors = tostring(split(replace(@'[\[",\]]', '', tostring(makeset(Wish))), 'f'))
+    | summarize xFactors = tostring(split(replace(@'[\[",\]]', '', tostring(make_set(Wish))), 'f'))
     | parse xFactors with * '["' x '","' y '"]'
     | project punk = extract_all('(.)', strcat(replace('hw', 're', x), replace('da', 'kc', y), replace('da', 'ah', y)))
     | extend numbers = range(0, array_length(punk)-1, 1)
-    | mvexpand punk, numbers to typeof(long)
+    | mv-expand punk, numbers to typeof(long)
     | order by numbers desc
-    | summarize who_i_am=replace(@'[\[",\]]', '', tostring(makelist(punk)))
+    | summarize who_i_am=replace(@'[\[",\]]', '', tostring(make_list(punk)))
     | extend then = tostring(favorites.key)
 ) on then
 | project Message = strcat(the, beautiful, TatianaRomanova, ' ', asks, ' ', who_i_am)
@@ -258,24 +258,24 @@ let B = datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend J = range(0, array_length(A)-1, 1) | mvexpand C = A, D = J to typeof(long);
+] | extend J = range(0, array_length(A)-1, 1) | mv-expand C = A, D = J to typeof(long);
 let C = extract_all('(.)', toscalar(B | where D == 2 | project strcat(C) | limit 1));
 let D = datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend L = range(0, array_length(C)-1, 1) | mvexpand K = C to typeof(string), L to typeof(long) limit 256;
-let E = D | where tolong(K) > 1 | extend T = range(0, tolong(K)-1, 1) | mvexpand T to typeof(long) limit 256 | extend U = 0;
-let F = toscalar(D | where tolong(K) <= 1 | project U = tolong(K), L, T = 0 | union E | sort by L asc, T asc | summarize W = makelist(U, 256) | project replace(@'[\[\"\,\]]', "", tostring(W)) | limit 1);
-let G = B | where D == 0 | project I = strcat(C) | extend Y = extract_all('(....)', I) | extend J = range(0, 15, 1) | mvexpand Y to typeof(string), J to typeof(long) | project Y, Z = tohex(J), H=1;
+] | extend L = range(0, array_length(C)-1, 1) | mv-expand K = C to typeof(string), L to typeof(long) limit 256;
+let E = D | where tolong(K) > 1 | extend T = range(0, tolong(K)-1, 1) | mv-expand T to typeof(long) limit 256 | extend U = 0;
+let F = toscalar(D | where tolong(K) <= 1 | project U = tolong(K), L, T = 0 | union E | sort by L asc, T asc | summarize W = make_list(U, 256) | project replace(@'[\[\"\,\]]', "", tostring(W)) | limit 1);
+let G = B | where D == 0 | project I = strcat(C) | extend Y = extract_all('(....)', I) | extend J = range(0, 15, 1) | mv-expand Y to typeof(string), J to typeof(long) | project Y, Z = tohex(J), H=1;
 let H = extract_all('(........)', F);
 datatable(I:string) [
                                             //
 '[̲̅$̲̅(̲̅1̲̅2̲̅8̲̅)̲̅$̲̅]̅'
                                             //
-] | extend J = range(0, array_length(H)-1, 1) | mvexpand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extract_all('(.)', P) | extend M = range(0, array_length(Q)-1, 1)
-  | mvexpand Q to typeof(string), M to typeof(long) | project Q, M | extend O = tohex(M, 2) | join (G | join kind=inner (G) on H | project P = strcat(Y, Y1), I = strcat(Z, Z1)
-  | sort by I asc) on $left.O == $right.I) on $left.N == $right.P | order by J asc | summarize W = makelist(Q)
+] | extend J = range(0, array_length(H)-1, 1) | mv-expand N = H to typeof(string), J to typeof(long) | join kind=leftouter (B | where D == 1 | project P = strcat(C) | extend Q = extract_all('(.)', P) | extend M = range(0, array_length(Q)-1, 1)
+  | mv-expand Q to typeof(string), M to typeof(long) | project Q, M | extend O = tohex(M, 2) | join (G | join kind=inner (G) on H | project P = strcat(Y, Y1), I = strcat(Z, Z1)
+  | sort by I asc) on $left.O == $right.I) on $left.N == $right.P | order by J asc | summarize W = make_list(Q)
   | project TheRequiredString = replace(@'[\[\"\,\]]', "", tostring(W))
 ```
 
@@ -295,12 +295,12 @@ The "shrink" variable is an arbitrary mod to make the hashes smaller, without ca
 let shrink=99999999;
 datatable(h:datetime, J:string, K:dynamic, [' ']:guid, o:string, k:string)[] 
 | getschema
-| summarize l=strcat(makelist(DataType), makelist(ColumnName))
+| summarize l=strcat(make_list(DataType), make_list(ColumnName))
 | project chars=extract_all('(.)', l), indices=range(0, 122, 1)
-| mvexpand chars to typeof(string), indices to typeof(int64)
+| mv-expand chars to typeof(string), indices to typeof(int64)
 | where indices in (4, 5, 6, 10, 29, 31, 47, 60, 99, 103, 107, 111, 115, 119)
-| summarize a=makelist(chars)
-| mvexpand a to typeof(string)
+| summarize a=make_list(chars)
+| mv-expand a to typeof(string)
 | extend dummy=1
 | as Chars
 | join kind=inner(Chars) on dummy
@@ -311,7 +311,7 @@ datatable(h:datetime, J:string, K:dynamic, [' ']:guid, o:string, k:string)[]
 | extend hash=hash(fragment) % shrink
 | where hash in (3420234,23977714,42641806,56372858,88730418) 
 | order by hash asc
-| summarize l=makelist(fragment)
+| summarize l=make_list(fragment)
 | project strcat(l[4], l[3], l[0], l[2], l[1])
 ```
 
@@ -326,14 +326,14 @@ let KuskiiCode = split(
 ,'\n');
 print 'Kuskii ART'
 | project c = KuskiiCode, l = range(0, array_length(KuskiiCode)-1, 1)
-| mvexpand c, l
+| mv-expand c, l
 | extend c = split(c, '~') 
-| mvexpand c
+| mv-expand c
 | parse kind=regex flags=U c with c ',' n '$' *
 | project l = tolong(l), c = tolong(c), n = tolong(n)
 | extend r = replace('[\\[\\],]', '', tostring(repeat(c, n)))
 | extend r = iff(c==0, replace('0', '\'', r), replace('1', '|', r))
-| summarize r = makelist(r) by l
+| summarize r = make_list(r) by l
 | project replace('[\\[\\],"]', '', tostring(r))
 ```
 
@@ -398,9 +398,9 @@ let scrambled = datatable(a:int,c:int,e:int,h:int,J:int,K:int,k:int,n:int,o:int,
 scrambled 
 | find where a > 0 project pack(*) 
 | project haha=replace('"',"",replace(@"{|}|:\d+|,","",tostring(pack_))), ii = extract_all(@"(\d+)",tostring(pack_))
-| mvexpand ii
+| mv-expand ii
 | project c=substring(haha,tolong(ii),1), haha, ii
-| summarize makelist(c) 
+| summarize make_list(c) 
 | project replace('b',' ',replace(@'\[|\]|,|"',"", tostring(list_c)))
 ```
 
@@ -470,7 +470,7 @@ let m="uJtsa onhtreK suoth caek r";
 range x from 0 to strlen(m) step 2
 |extend M=extract_all('(.)', m)
 |extend Result = strcat(M[(x+1)],M[x])
-|summarize Message=replace(@'[\[\"\,\]]',"", tostring(makelist(Result)))
+|summarize Message=replace(@'[\[\"\,\]]',"", tostring(make_list(Result)))
 ```
 
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAAz2PT2uDQBDF736KqYe4S5fSmFuDUA/WtEEKIoSiHhY7NeLuGvYPSOmH74TSHIZ5zPx480ahB72FDJL3WcAJ1bBohGaBt/x4oB6skRqNd3fJPlJXOL3CH+jEQQ7zZEY4BucXeHVPZV3kzWbzEswN3l3h2gfTiDI/h0KCMHUZzmJuRiz+qcxbaZySHplOBeWh2vF9RNMRYYUvu2h4BLrivFVomOak8AJp9IOrR/MJVUbCysFLpVjCHnhCHvy2rtEF5SkMGQzSs6pl6/2W96Jq154wF7SWdvpGqNA5OWJm8aLkgOw5abu2izvR9X0i4lhQDDKhx5mWM6rJefbnzjn/BQ0ifQlOAQAA){:target="_blank"}
@@ -482,7 +482,7 @@ let m=translate(m2, m1, m3);
 range x from 0 to strlen(m) step 2
 |extend M=extract_all('(.)', m)
 |extend Result = strcat(M[(x+1)],M[x])
-|summarize Message=replace(@'[\[\"\,\]]',"", tostring(makelist(Result)))
+|summarize Message=replace(@'[\[\"\,\]]',"", tostring(make_list(Result)))
 ```
 
 ## 8. A poem
@@ -507,14 +507,14 @@ This query translates the message from [Pig Latin](https://en.wikipedia.org/wiki
 ```
 // Translate from pig latin
 print message = 'ustJay anotherway ustoKay ackerhay'
-| mvexpand split(message, ' ')
+| mv-expand split(message, ' ')
 | extend message = tostring(message) 
 | extend StartsWithVowel = message endswith 'way'
 | extend StartsWithConsanant = not(StartsWithVowel)
 | extend StartsWithVowelMessage = replace(@'(.*)way', @'\1', message)
 | extend StartsWithConsanantMessage = replace(@'(.*)(.+)ay', @'\2\1', message)
 | extend message = iff(StartsWithConsanant, StartsWithConsanantMessage, StartsWithVowelMessage)
-| summarize message = tostring(makelist(message))
+| summarize message = tostring(make_list(message))
 | extend message = replace(@'^\[(.*)\]$', @'\1', message) // Get rid of [] from list
 | extend message = replace(@'\"(\w*)\"', @'\1', message)  // Get rid of "" from list 
 | extend message = replace(@',', @' ', message)           // Get rid of ,  from list
@@ -536,16 +536,16 @@ let Addresses=datatable(Address:string)
 'https://tumblr.com/rstu?width=100&height=120',
 '201.6.52.117', 
 '160.0.0.0'];
-let paths=toscalar(Addresses | project p=parse_url(Address) | summarize l=makelist(p.Path) | project s=strcat(' ', replace(@'[^\w ]', '', tostring(l))) | project extract_all('(.)', s));
+let paths=toscalar(Addresses | project p=parse_url(Address) | summarize l=make_list(p.Path) | project s=strcat(' ', replace(@'[^\w ]', '', tostring(l))) | project extract_all('(.)', s));
 Addresses
 | project longIP=parse_ipv4(Address)
 | where longIP > 0
 | extend offsets=range(0,28,4)
-| mvexpand o=offsets to typeof(int64)
+| mv-expand o=offsets to typeof(int64)
 | extend p=tolong(pow(2, 28-o))
 | extend x=binary_and(longIP, p*15) / p
 | extend ch=paths[x]
-| summarize ch=makelist(ch)
+| summarize ch=make_list(ch)
 | project s=trim_end(' *', replace(@'[^\w ]', '', tostring(ch)))
 ```
 
@@ -614,13 +614,13 @@ print  M1 = 'dCxlcix0byxy'
 | extend M5 = pack_array(" "," "," "," ") 
 | extend z = zip(M1,M2,M3, M4,M5)
 | extend R = range(0, array_length(z)-1, 1)
-| mvexpand z, R to typeof(long)
+| mv-expand z, R to typeof(long)
 | order by R desc 
-| summarize zs = makelist(z)
+| summarize zs = make_list(z)
 | extend R = range(0, array_length(zs)-1, 1)
-| mvexpand zs, R to typeof(long)
+| mv-expand zs, R to typeof(long)
 | order by R desc 
-| summarize Message = replace(@'[\[\"\,\]]', '', tostring(makelist(zs)))
+| summarize Message = replace(@'[\[\"\,\]]', '', tostring(make_list(zs)))
 ```
 
 ## 15. Master of strings
@@ -630,10 +630,10 @@ This query uses un-obvious string manipulations, based on the sentence below.
 [*Click to run*](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA22RPW/bMBCG9/yKgxZLgCLUQNHNQOcWnTJksDycqJNFSCLZ4zG1jSC/PSdZzkcRAuRwH+/74GVg6wT+UIx4pF32Cy8XaNAMKQCav8lKBLRsGDupAOMAxrODhtB4B+iMJV1vxkSdjf2ygipIrc5GO9kRxXMFv4kbHAG16zAJYBP9mIQiCNs0hR5VRRUj8ROK9c5GtesxhDMM2CeHESYbW8tkBNo0NVE4mQECced5UhDVCr0X31ld7omrDO6eYXqiU0DXwoNy0jK1gxhGKzlTGNFQntV1BVkJWaWP7bp8DQPItfGflf7aiWn2tO5465fwTavCI7lbqYB72BblLc6iWFQL5aCTuv9HIWxQ8reSzsLLMvwG/ei5fQf+NJmptnUtnbTN6I6UKw0y41l5jtLnX+4sgKUygniQcyDf5fpdP77PtjFNE7K90I1/ll5D+rnZ1/s6q8v6cNiUsNErfs1jwoFG/bB8Dm9F3kH2ki2eH5NbmteQV/bdHOJ7jl9C78Ur43Xjflsc5li3xXzuXgESbVduvgIAAA==){:target="_blank"}
 ```
 print Message="Jazz backup acquits aircraft. ask corn beacon ancient bluefish acquainted assimilator. Kerbal aquanaut absolutes triumphant conservationist. happy kahunas misdirect dumbstruck performances photofinisher." 
-| mvexpand Sentences = split(replace("\\. ", ".", iff(Message endswith ".", substring(Message, 0, strlen(Message) - 1), Message)), ".")
+| mv-expand Sentences = split(replace("\\. ", ".", iff(Message endswith ".", substring(Message, 0, strlen(Message) - 1), Message)), ".")
 | extend Sentences = strcat(Sentences, " ~")
-| mvexpand Words = split(Sentences, " "), index = range(0, array_length(split(Sentences, " ")) - 1, 1) to typeof(int64)
-| summarize Message = replace(@'[\[\"\,\]]', '', tostring(makelist(iff(Words == "~", " ", substring(Words, iff(index == 0, 0, strlen(split(Sentences, " ")[toint(index-1)])), 1)))))
+| mv-expand Words = split(Sentences, " "), index = range(0, array_length(split(Sentences, " ")) - 1, 1) to typeof(int64)
+| summarize Message = replace(@'[\[\"\,\]]', '', tostring(make_list(iff(Words == "~", " ", substring(Words, iff(index == 0, 0, strlen(split(Sentences, " ")[toint(index-1)])), 1)))))
 ```
 
 ## 16. Order is the key
@@ -643,10 +643,10 @@ print Message="Jazz backup acquits aircraft. ask corn beacon ancient bluefish ac
 print Message = 'JaKhunuasosctttk hoe e r r      '
 | extend M = extract_all('(.)', Message)
 | extend L=range(0, array_length(M)-1, 1)
-| mvexpand M, L to typeof(long)
+| mv-expand M, L to typeof(long)
 | extend W = L%4
-| summarize  Message = replace(@'[\[\"\,\]]', '', tostring(makelist(M))) by W
-| summarize  Message = replace(@'[\[\"\,\]]', '', tostring(makelist(Message))) 
+| summarize  Message = replace(@'[\[\"\,\]]', '', tostring(make_list(M))) by W
+| summarize  Message = replace(@'[\[\"\,\]]', '', tostring(make_list(Message))) 
 | extend Message = replace(@'(\ )+',' ',Message)
 ```
 
@@ -669,7 +669,7 @@ let Data = datatable (Id:int, Key:string, Weight:int, Value: string)
 ];
 let Aggregated = Data
         | extend KeyTokens = extract_all('(\\w)', Key) 
-        | mvexpand (KeyTokens)
+        | mv-expand (KeyTokens)
         | summarize Freq = count() by tostring(KeyTokens), Weight
         | where binary_xor(binary_xor(Weight, Freq), 42) > 3
         | distinct Weight, Freq
@@ -678,7 +678,7 @@ Aggregated
 | join Data on Weight
 | extend Start = binary_xor(Weight + Freq, 42), Len = 4 * (Freq + 1)
 | project Results = base64_decodestring(substring(Value, Start, Len))
-| summarize Message = replace(@'[\[\"\]]', '', replace(@'\"\,', ' ', tostring(makelist(Results))))
+| summarize Message = replace(@'[\[\"\]]', '', replace(@'\"\,', ' ', tostring(make_list(Results))))
 ```
 
 ## 18. Kusto feedback
@@ -763,14 +763,14 @@ print "try"
 | extend z1 = extract_all("(.)",substring(x,0,4)), z2 = extract_all("(.)",substring(x,4,3)), z3 = extract_all("(.)",substring(x,7,2)), z4 = extract_all("(.)",substring(x,9,1))
 ) on print_0 
 | project-away print_0, x, y, print_01, x1
-| mvexpand z1, z2, z3, z11, z21, z31, z4
+| mv-expand z1, z2, z3, z11, z21, z31, z4
 | extend temp = tolower(strcat(z1,z2, z3, z11, z21, z31, z4))
 | extend len = strlen(temp) 
 | extend temp = iff(len<6, replace('k','K',temp),temp)
 | extend temp = iff(len<6, replace('j','J',temp),temp)
 | extend len = iff(len<5 or len >6, len-4, len)
 | order by len asc 
-| summarize Message = replace(@'[\[\"\]]', '', tostring(makelist(temp)))
+| summarize Message = replace(@'[\[\"\]]', '', tostring(make_list(temp)))
 | extend Message = replace(@',', ' ', Message)
 ```
 

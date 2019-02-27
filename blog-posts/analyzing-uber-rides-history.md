@@ -334,12 +334,12 @@ I've gone from or to, by their name length:
 ```
 UberRides
 | project Address = pack_array(BeginTripAddress, DropoffAddress)
-| mvexpand Address to typeof(string)
+| mv-expand Address to typeof(string)
 | where isnotempty(Address)
 | where Address has "St, San Francisco, CA" 
 | where Address matches regex @"^\d+" // places which start with a number
 | parse kind=regex Address with @"[^\s]+ " Street "St, San Francisco, CA" *
-| summarize dcount(Street), SampleNames = strcat_array(makeset(Street, 3), ", ") by strlen(Street)
+| summarize dcount(Street), SampleNames = strcat_array(make_set(Street, 3), ", ") by strlen(Street)
 | order by dcount_Street desc
 ```
 

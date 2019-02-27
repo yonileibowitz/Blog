@@ -286,7 +286,7 @@ FHV_Trips
 | where pickup_datetime between(datetime(2017-07-01) .. datetime(2018-07-01))
 | make-series RideCount = count() on pickup_datetime from datetime(2017-07-01) to datetime(2018-07-01) step 1d by Shared = Shared_Ride_Flag
 | extend series_fit_2lines(RideCount)
-| mvexpand RideCount to typeof(long), pickup_datetime to typeof(datetime), series_fit_2lines_RideCount_line_fit to typeof(long)
+| mv-expand RideCount to typeof(long), pickup_datetime to typeof(datetime), series_fit_2lines_RideCount_line_fit to typeof(long)
 | project pickup_datetime, Shared, RideCount, series_fit_2lines_RideCount_line_fit
 | render timechart 
 ```
