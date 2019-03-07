@@ -352,7 +352,8 @@ data prepared, before ingesting it.
 * The process is long - It took approximately 2 days to run on my VM.
     * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-05-billion-for-hire-vehicle-trips)).
 
-* If you do want to use the enriched data set, it's available in a public Azure blob storage container: https://kustosamplefiles.blob.core.windows.net/taxirides
+* If you do want to use the enriched data set, it's available in a public Azure blob storage container:
+[https://kustosamplefiles.blob.core.windows.net/taxirides](https://kustosamplefiles.blob.core.windows.net/taxirides)
 
 ---
 
