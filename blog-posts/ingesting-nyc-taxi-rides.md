@@ -51,6 +51,9 @@ on his [nyc-taxi-data GitHub repo](https://github.com/toddwschneider/nyc-taxi-da
 tricky and time consuming (using PostgreSQL on a single virtual machine), I've included a section with a few tips at the bottom of this post:
 [Appendix: Tips for preparing the Yellow/Green Taxi trips data set](#appendix-tips-for-preparing-the-yellowgreen-taxi-trips-data-set).
 
+***Update:** the enriched data set I used is now available in a public Azure blob storage container:
+[https://kustosamplefiles.blob.core.windows.net/taxirides](https://kustosamplefiles.blob.core.windows.net/taxirides)*
+
 ### Ingesting the files from Azure blob storage
 
 Once the data set was prepared in Azure blob storage, the easy part was getting it into Kusto.
@@ -351,9 +354,6 @@ data prepared, before ingesting it.
 
 * The process is long - It took approximately 2 days to run on my VM.
     * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-05-billion-for-hire-vehicle-trips)).
-
-* If you do want to use the enriched data set, it's available in a public Azure blob storage container:
-[https://kustosamplefiles.blob.core.windows.net/taxirides](https://kustosamplefiles.blob.core.windows.net/taxirides)
 
 ---
 
