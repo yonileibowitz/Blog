@@ -9,7 +9,7 @@ title: Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Ku
 
 # Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)
 
-*Last modified: 02/09/2019*
+*Last modified: 03/06/2019*
 
 The [NYC Taxi & Limousine Commission](https://www1.nyc.gov/site/tlc/index.page){:target="_blank"} makes
 historical data about taxi trips and for-hire-vehicle trips (such as [Uber](analyzing-uber-rides-history.md){:target="_blank"},
@@ -129,7 +129,7 @@ LightIngest.exe
    https://ingest-<myclustername>.<region>.kusto.windows.net;fed=true
    -database:TaxiRides
    -table:Trips
-   -source:https://taxirides.blob.core.windows.net/taxirides;<storage_key>
+   -source:https://kustosamplefiles.blob.core.windows.net/taxirides
    -pattern:*.csv.gz
    -format:csv
 ```
@@ -351,6 +351,8 @@ data prepared, before ingesting it.
 
 * The process is long - It took approximately 2 days to run on my VM.
     * If you're not interested in enriching the original data set, you might as well ingest it directly from the source (like I did for the [FHV trips](#ingesting-05-billion-for-hire-vehicle-trips)).
+
+* If you do want to use the enriched data set, it's available in a public Azure blob storage container: https://kustosamplefiles.blob.core.windows.net/taxirides
 
 ---
 
