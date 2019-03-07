@@ -122,7 +122,7 @@ All I need to know is:
 * The name of my database (`TaxiRides`)
 * The name of my table (`Trips`)
 * The name and region for my data management cluster (`ingest-myclustername.region`)
-* The path to my Azure blob container (`https://taxirides.blob.core.windows.net/taxirides;<storage_key>`)
+* The path to my Azure blob container (`https://kustosamplefiles.blob.core.windows.net/taxirides`)
 * The format my files were created with (`CSV`, Gzip-compressed).
 
 And then I run the command:
