@@ -144,7 +144,7 @@ On the client side, this runs in a matter of seconds, as it only queues the file
 
 *How long did it take the service to ingest these 1548 files with 1.55 billion records?*
 
-I actually ran this with 2 different configuration, to demonstrate Kusto's ability to scale
+I ran this with 2 different configurations, to demonstrate Kusto's ability to scale
 its ingestion capacity, depending on the number and kind of nods the cluster has.
 
 I ran the ingestion of the same set of blobs twice, while
