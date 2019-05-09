@@ -59,7 +59,7 @@ Why not start off with a couple of videos:
 #### //build, Seattle, May 2019
 
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/Fjfvz1HToek?t=2758){:target="_blank"}
-- [Uri Barash](https://www.linkedin.com/in/uri-barash-7820594/){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/chVFAGX8IYQ?t=468){:target="_blank"}
+- [Uri Barash](https://www.linkedin.com/in/uri-barash-7820594/){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/chVFAGX8IYQ){:target="_blank"}
 
 ---
 
