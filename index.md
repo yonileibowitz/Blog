@@ -105,7 +105,7 @@ I've closely witnessed how transformative, and in some cases addictive (in a
 good way 😊), this technology has become in the lives of tens of thousands of employees of all disciplines in our company, for our partners, and among
 our customers.
 
-They (and ourselves) are using it on a regular day-to-day basis, either for ah-hoc research and investigations, or as part of high volume &
+They (and ourselves) are using it on a regular day-to-day basis, either for ad-hoc research and investigations, or as part of high volume &
 high frequency automated flows.
 
 I believe others can leverage it in both similar and new manners, to transform their day to day work, enrich their (Big-)data-driven decision making processes, build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which
