@@ -2,7 +2,7 @@
 
 ---
 
-The posts below include examples and practices which combine the rich query and data management capabilities of **Azure Data Explorer (Kusto)**.
+The posts below include examples and practices which combine the rich query and data management capabilities of **Kusto (Azure Data Explorer)**.
 They will provide you with real-life best practices and methodologies, which have all been repeatedly proven in large-scale production environments,
 and will help you make sure you make the most out of your Kusto cluster.
 
@@ -18,29 +18,29 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 - **[Just another Kusto hacker *(JAKH)*](blog-posts/jakh.md){:target="_blank"}**
 
-- **[Analyzing Uber rides history in Azure Data Explorer (Kusto)](blog-posts/analyzing-uber-rides-history.md){:target="_blank"}**
+- **[Analyzing Uber rides history in Kusto (Azure Data Explorer)](blog-posts/analyzing-uber-rides-history.md){:target="_blank"}**
 
-- **[Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](blog-posts/analyzing-spotify-streaming-history.md){:target="_blank"}**
+- **[Analyzing Spotify streaming history in Kusto (Azure Data Explorer)](blog-posts/analyzing-spotify-streaming-history.md){:target="_blank"}**
 
-- **[Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)](blog-posts/analyzing-nyc-taxi-rides.md){:target="_blank"}**
+- **[Analyzing 2 Billion New York City Taxi rides in Kusto (Azure Data Explorer)](blog-posts/analyzing-nyc-taxi-rides.md){:target="_blank"}**
 
 ## **Data Ingestion & Management**
 
-- **[Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)](blog-posts/ingesting-nyc-taxi-rides.md){:target="_blank"}**
+- **[Ingesting 2 Billion New York City Taxi rides into Kusto (Azure Data Explorer)](blog-posts/ingesting-nyc-taxi-rides.md){:target="_blank"}**
 
-- **[Update policies for in-place ETL in Azure Data Explorer (Kusto)](blog-posts/update-policies.md){:target="_blank"}**
+- **[Update policies for in-place ETL in Kusto (Azure Data Explorer)](blog-posts/update-policies.md){:target="_blank"}**
 
 - **[Why filtering on datetime columns can save you time](blog-posts/datetime-columns.md){:target="_blank"}**
 
 - **[Specifying metadata at ingestion time](blog-posts/ingestion-time-metadata.md){:target="_blank"}**
 
-- **[Advanced data management in Azure Data Explorer (Kusto)](blog-posts/advanced-data-management.md){:target="_blank"}**
+- **[Advanced data management in Kusto (Azure Data Explorer)](blog-posts/advanced-data-management.md){:target="_blank"}**
     - [Committing multiple bulks of data in a single transaction](blog-posts/advanced-data-management.md#committing-multiple-bulks-of-data-in-a-single-transaction){:target="_blank"}
     - [Back-filling data](blog-posts/advanced-data-management.md#back-filling-data){:target="_blank"}
 
 ---
 
-## Wait, let's start over - what is Azure Data Explorer (Kusto)?
+## Wait, let's start over - what is Kusto (Azure Data Explorer)?
 
 ### Haven't seen it in action yet?
 
@@ -50,7 +50,7 @@ Why not start off with a couple of videos:
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott){:target="_blank"}'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s){:target="_blank"}
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s){:target="_blank"}
-- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32){:target="_blank"}'s introduction to Azure Data Explorer (Kusto) - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
+- [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32){:target="_blank"}'s introduction to Kusto (Azure Data Explorer) - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
 
 #### Techorama, The Netherlands, October 2018
 
@@ -87,7 +87,7 @@ Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/in
 
 ### Other things I think you should know
 
-### Highlights from Azure Data Explorer (Kusto) documentation
+### Highlights from Kusto (Azure Data Explorer) documentation
 
 - [Creating a cluster and databases](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal){:target="_blank"}
 - [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices){:target="_blank"}

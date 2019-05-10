@@ -1,5 +1,5 @@
 ---
-title: Advanced data management in Azure Data Explorer (Kusto)
+title: Advanced data management in Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Advanced data management in Azure Data Explorer (Kusto)
 
 ---
 
-# Advanced data management in Azure Data Explorer (Kusto)
+# Advanced data management in Kusto (Azure Data Explorer)
 
 *Last modified: 11/19/2018*
 

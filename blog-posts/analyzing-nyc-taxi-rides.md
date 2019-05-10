@@ -1,5 +1,5 @@
 ---
-title: Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)
+title: Analyzing 2 Billion New York City Taxi rides in Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kust
 
 ---
 
-# Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)
+# Analyzing 2 Billion New York City Taxi rides in Kusto (Azure Data Explorer)
 
 *Last modified: 02/10/2019*
 
@@ -18,7 +18,7 @@ for anyone to download and analyze. These records capture pick-up and drop-off d
 trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts.
 
 <p align="center">
-  <img title="Analyzing 2 Billion New York City Taxi rides in Azure Data Explorer (Kusto)" src="../resources/images/nyc-taxi-theme-2.png">
+  <img title="Analyzing 2 Billion New York City Taxi rides in Kusto (Azure Data Explorer)" src="../resources/images/nyc-taxi-theme-2.png">
 </p>
 
 I've detailed how simple and efficient it is to ingest this data set into **Kusto (Azure Data Explorer)** in [another post](ingesting-nyc-taxi-rides.md).
@@ -41,7 +41,7 @@ In this post, I will do some of both.
 
 For the purpose of this evaluation, I used:
 
-1. An **Azure Data Explorer (Kusto)** cluster with `D14_v2` nodes, which I've scaled gradually from 2 to 4, 6 and finally - 8 nodes.
+1. An **Kusto (Azure Data Explorer)** cluster with `D14_v2` nodes, which I've scaled gradually from 2 to 4, 6 and finally - 8 nodes.
     * These VMs have 16 vCPUs and 112GB of RAM.
         * I later on scaled down the cluster to 2 `D12_v2` (4 vCPUs, 28GB of RAM) nodes, and repeated the same query test run.
     * I created this cluster using the [Azure Portal](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal){:target="_blank"}

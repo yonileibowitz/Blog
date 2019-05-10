@@ -1,5 +1,5 @@
 ---
-title: Specifying metadata at ingestion time in Azure Data Explorer (Kusto)
+title: Specifying metadata at ingestion time in Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Specifying metadata at ingestion time in Azure Data Explorer (Kusto)
 
 ---
 
-# Specifying metadata at ingestion time in Azure Data Explorer (Kusto)
+# Specifying metadata at ingestion time in Kusto (Azure Data Explorer)
 
 *Last modified: 12/21/2018*
 

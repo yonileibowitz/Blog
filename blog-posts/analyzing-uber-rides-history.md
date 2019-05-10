@@ -1,5 +1,5 @@
 ---
-title: Analyzing Uber rides history in Azure Data Explorer (Kusto)
+title: Analyzing Uber rides history in Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Analyzing Uber rides history in Azure Data Explorer (Kusto)
 
 ---
 
-# Analyzing Uber rides history in Azure Data Explorer (Kusto)
+# Analyzing Uber rides history in Kusto (Azure Data Explorer)
 
 *Last modified: 02/09/2019*
 
@@ -23,7 +23,7 @@ Naturally, I chose **Kusto (Azure Data Explorer)** to look into it, and I took m
 *(Some of the data points in this post have been altered for the sake of privacy)*
 
 <p align="center">
-  <img title="Analyzing Uber rides history in Azure Data Explorer (Kusto)" src="../resources/images/uber-logo.jpg">
+  <img title="Analyzing Uber rides history in Kusto (Azure Data Explorer)" src="../resources/images/uber-logo.jpg">
 </p>
 
 * TOC
@@ -57,8 +57,8 @@ San Francisco,Express Pool: MATCHED,COMPLETED,2018-08-12 21:20:24 +0000 UTC,2018
 Even though it's possible to get this done super-easily using [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer){:target="_blank"},
 this time I decided to show a different way, super-easy as well, using Kusto's [externaldata operator](https://docs.microsoft.com/en-us/azure/kusto/query/externaldata-operator){:target="_blank"}.
 - Examples for ingestion using [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer){:target="_blank"} can be found in my other posts:
-    - [Analyzing Spotify streaming history in Azure Data Explorer (Kusto)](analyzing-spotify-streaming-history.md)
-    - [Update policies for in-place ETL in Azure Data Explorer (Kusto)](update-policies.md)
+    - [Analyzing Spotify streaming history in Kusto (Azure Data Explorer)](analyzing-spotify-streaming-history.md)
+    - [Update policies for in-place ETL in Kusto (Azure Data Explorer)](update-policies.md)
 
 *(The entire process literally took me less than 1 minute)*
 
