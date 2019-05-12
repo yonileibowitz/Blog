@@ -1,5 +1,5 @@
 ---
-title: Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)
+title: Ingesting 2 Billion New York City Taxi rides into Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Ku
 
 ---
 
-# Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)
+# Ingesting 2 Billion New York City Taxi rides into Kusto (Azure Data Explorer)
 
 *Last modified: 03/06/2019*
 
@@ -18,7 +18,7 @@ for anyone to download and analyze. These records capture pick-up and drop-off d
 trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts.
 
 <p align="center">
-  <img title="Ingesting 2 Billion New York City Taxi rides into Azure Data Explorer (Kusto)" src="../resources/images/nyc-taxi-theme.png">
+  <img title="Ingesting 2 Billion New York City Taxi rides into Kusto (Azure Data Explorer)" src="../resources/images/nyc-taxi-theme.png">
 </p>
 
 [Todd W. Schneider](https://github.com/toddwschneider){:target="_blank"} took this data to the next level, and in his

@@ -1,5 +1,5 @@
 ---
-title: Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
+title: Analyzing Spotify streaming history in Kusto (Azure Data Explorer)
 ---
 **[Go back home](../index.md)**
 
@@ -7,7 +7,7 @@ title: Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
 
 ---
 
-# Analyzing Spotify streaming history in Azure Data Explorer (Kusto)
+# Analyzing Spotify streaming history in Kusto (Azure Data Explorer)
 
 *Last modified: 01/19/2019*
 
@@ -15,7 +15,7 @@ Like many people out there, I love listening to music, wherever I go, whenever p
 And, like many others, I use a music streaming service to do so. My personal choice is [Spotify](https://www.spotify.com){:target="_blank"}. 
 
 <p align="center">
-  <img title="Analyzing Spotify streaming history in Azure Data Explorer (Kusto)" src="../resources/images/spotify-logo.png">
+  <img title="Analyzing Spotify streaming history in Kusto (Azure Data Explorer)" src="../resources/images/spotify-logo.png">
 </p>
 
 I usually just push 'Play' without paying too much attention to what's playing, but I thought it would be nice to make some sense of what I've been listening to. And, I couldn't think of a simpler or better way to do that than using Kusto (Azure Data Explorer).
@@ -72,7 +72,7 @@ from it:
 
 [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer){:target="_blank"}
 makes it super easy to [ingest](https://docs.microsoft.com/en-us/azure/kusto/tools/kusto-explorer#importing-a-local-file-into-a-kusto-table){:target="_blank"} this JSON file into a table in your Kusto database.
-[I've already demonstrated it in the [Update policies for in-place ETL in Azure Data Explorer (Kusto)](update-policies.md){:target="_blank"} post.
+[I've already demonstrated it in the [Update policies for in-place ETL in Kusto (Azure Data Explorer)](update-policies.md){:target="_blank"} post.
 
 *The entire process literally took me less than 1 minute.*
 
