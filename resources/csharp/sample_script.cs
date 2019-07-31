@@ -1,7 +1,7 @@
 public DataTable Process(DataTable inputTable, Dictionary<string, string> args)
 {
-	DataTable output = df; 
-	var n = df.Rows.Count; 
+	DataTable output = inputTable; 
+	var n = inputTable.Rows.Count; 
 	var g = int.Parse(args["gain"]); 
 	var f = int.Parse(args["cycles"]); 
 	output.Columns.Add(new DataColumn("fx", typeof(double))); 
@@ -10,5 +10,5 @@ public DataTable Process(DataTable inputTable, Dictionary<string, string> args)
 		row["fx"] = g * Math.Sin((long)row["x"] / (double)n * 2 * Math.PI * f); 
 	}
 	
-	return result;
+	return output;
 }
