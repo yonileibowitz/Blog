@@ -9,4 +9,6 @@ public DataTable Process(DataTable inputTable, Dictionary<string, string> args)
 	{ 
 		row["fx"] = g * Math.Sin((long)row["x"] / (double)n * 2 * Math.PI * f); 
 	}
+	
+	return result;
 }
