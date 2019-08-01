@@ -1,14 +1,19 @@
-public DataTable Process(DataTable inputTable, Dictionary<string, string> args)
+IEnumerable<TOutput> Process(IEnumerable<TInput> input, IContext context)
 {
-	DataTable output = inputTable; 
-	var n = inputTable.Rows.Count; 
-	var g = int.Parse(args["gain"]); 
-	var f = int.Parse(args["cycles"]); 
-	output.Columns.Add(new DataColumn("fx", typeof(double))); 
-	foreach (var row in output.AsEnumerable()) 
-	{ 
-		row["fx"] = g * Math.Sin((long)row["x"] / (double)n * 2 * Math.PI * f); 
-	}
-	
-	return output;
+    var n = context.GetArgument("count", int.Parse);
+    var g = context.GetArgument("gain", int.Parse);
+    var f = context.GetArgument("cycles", int.Parse);
+
+    foreach (var row in input) 
+    {
+        yield return new TOutput { x = row.x, fx = MyCalculator.Calculate(g, n, f, row.x) };
+    }
+}
+
+public static class MyCalculator
+{
+    public static double Calculate(int g, int n, int f, long value)
+    {
+        return g * Math.Sin((double)value / n * 2 * Math.PI * f);
+    }
 }
