@@ -12,7 +12,7 @@ IEnumerable<TOutput> Process(IEnumerable<TInput> input, IContext context)
 
 public static class MyCalculator
 {
-    public static double Calculate(int g, int n, int f, long value)
+    public static double Calculate(int g, int n, int f, long? value)
     {
         return value.HasValue ? g * Math.Sin((double)value / n * 2 * Math.PI * f) : 0.0;
     }
