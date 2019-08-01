@@ -14,6 +14,6 @@ public static class MyCalculator
 {
     public static double Calculate(int g, int n, int f, long value)
     {
-        return g * Math.Sin((double)value / n * 2 * Math.PI * f);
+        return value.HasValue ? g * Math.Sin((double)value / n * 2 * Math.PI * f) : 0.0;'
     }
 }
