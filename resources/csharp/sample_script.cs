@@ -1,4 +1,4 @@
-IEnumerable<TOutput> Process(IEnumerable<TInput> input, IContext context)
+IEnumerable<TOutput> Process(IEnumerable<TInput> input, ICSharpExecutionContext context)
 {
     var n = context.GetArgument("count", int.Parse);
     var g = context.GetArgument("gain", int.Parse);
