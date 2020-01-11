@@ -163,13 +163,13 @@ SpotifyStreamingHistory
 | project ArtistName
 ```
 
-| ArtistName   |
-|--------------|
-| Idan Raichel |
-| John Mayer   |
-| Hozier       |
-| Passenger    |
-| Elliot Moss  |
+| ArtistName        |
+|-------------------|
+| John Doe          |
+| Janice Williams   |
+| Jake Volk         |
+| Jane McAllister   |
+| Mickey Mouse      |
 
 ### Artists and songs I'm skipping
 
@@ -183,13 +183,13 @@ SpotifyStreamingHistory
 | project ArtistName
 ```
 
-| ArtistName   |
-|--------------|
-| Sigala       |
-| Idan Raichel |
-| R3HAB        |
-| Alesso       |
-| Clean Bandit |
+| ArtistName    |
+|---------------|
+| Captain McCain|
+| Jake Volk     |
+| Saul Burns    |
+| John Doe      |
+| Mike Ross     |
 
 ### Artist analytics
 
@@ -228,15 +228,15 @@ SpotifyStreamingHistory
 
 | ArtistName        | StreakLength |
 |-------------------|--------------|
-| Idan Raichel      | 50           |
-| Shlomi Shaban     | 40           |
+| Jake Volk         | 50           |
+| Janice Williams   | 40           |
 | Hozier            | 27           |
-| Amir Dadon        | 21           |
-| The Neighbourhood | 20           |
-| Billie Eilish     | 19           |
-| John Mayer        | 19           |
-| Passenger         | 14           |
-| Dudu Tassa        | 12           |
+| John Doe          | 21           |
+| Mike Ross         | 20           |
+| Captain McCain    | 19           |
+| Jane McAllister   | 19           |
+| Mickey Mouse      | 14           |
+| Saul Burns        | 12           |
 | Elliot Moss       | 11           |
 
 ### Activity days / hours
