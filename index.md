@@ -101,20 +101,14 @@ Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/in
 [I'm](https://www.linkedin.com/in/yonileibo/){:target="_blank"} a software engineer, fortunate and humbled to have the opportunity of being part of
 an amazing team, who is hard at work building an amazing Big Data platform.
 
-I've closely witnessed how transformative, and in some cases addictive (in a
-good way 😊), this technology has become in the lives of tens of thousands of employees of all disciplines in our company, for our partners, and among
-our customers.
+I've closely witnessed how transformative and addictive (in a good way), this technology has become in the lives of tens of thousands of people of
+all disciplines in our company, for our partners, and among our customers - companies at any scale.
 
 They (and ourselves) are using it on a regular day-to-day basis, either for ad-hoc research and investigations, or as part of high volume &
 high frequency automated flows.
 
-I believe others can leverage it in both similar and new manners, to transform their day to day work, enrich their (Big-)data-driven decision making processes, build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which
-makes all the above both fun, as well as simple.
-
-<p align="center">
-  <img src="resources/images/kusto-mojo.jpg">
-  <br><br>
-</p>
+I'm sure others can leverage it in both similar and new manners, to transform their day to day work, enrich their (Big-)data-driven decision-making processes,
+build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which makes all the above both fun, as well as simple.
 
 ---
 
