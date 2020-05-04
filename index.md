@@ -8,8 +8,6 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 <p align="center">
   <img src="resources/images/adx-logo.png">
-  <br><br>
-  <a href="#who-am-i-and-why-do-i-blog">Who am I, and why do I blog?</a>
 </p>
 
 ---
@@ -93,22 +91,6 @@ Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/in
 - [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices){:target="_blank"}
 - [Schema best practices](https://docs.microsoft.com/en-us/azure/kusto/management/best-practices){:target="_blank"}
 - [Ingestion best practices](https://docs.microsoft.com/en-us/azure/kusto/api/netfx/kusto-ingest-best-practices){:target="_blank"}
-
----
-
-#### Who am I, and why do I blog?
-
-[I'm](https://www.linkedin.com/in/yonileibo/){:target="_blank"} a software engineer, fortunate and humbled to have the opportunity of being part of
-an amazing team, who is hard at work building an amazing Big Data platform.
-
-I've closely witnessed how transformative and addictive (in a good way), this technology has become in the lives of tens of thousands of people of
-all disciplines in our company, for our partners, and among our customers - companies at any scale.
-
-They (and ourselves) are using it on a regular day-to-day basis, either for ad-hoc research and investigations, or as part of high volume &
-high frequency automated flows.
-
-I'm sure others can leverage it in both similar and new manners, to transform their day to day work, enrich their (Big-)data-driven decision-making processes,
-build new and exciting products and services on top of it, and perhaps most of all - enjoy a technology which makes all the above both fun, as well as simple.
 
 ---
 
