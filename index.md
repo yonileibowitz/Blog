@@ -59,6 +59,14 @@ Why not start off with a couple of videos:
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/Fjfvz1HToek?t=2758){:target="_blank"}
 - [Uri Barash](https://www.linkedin.com/in/uri-barash-7820594/){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/chVFAGX8IYQ){:target="_blank"}
 
+### Customer stories
+
+- [Mobile user acquisition PaaS converts terabytes of real-time data into user engagement](https://customers.microsoft.com/en-us/story/816542-zoomd-technologies-azure-professional-services-israel-en){:target="_blank"}
+- [Better forecasting, safer driving with Bosch](https://customers.microsoft.com/en-us/story/816933-bosch-automotive-azure-germany){:target="_blank"}
+- [Global software company Episerver uses Azure Data Explorer to gain enhanced consumer insight](https://customers.microsoft.com/en-us/story/817285-episerver-professional-services-azure-sweden){:target="_blank"}
+- [How Azure Data Explorer Was Able to Accelerate Namogoo’s Classification Processes 170X Faster](https://www.namogoo.com/blog/our-technology/how-azure-data-explorer-accelerates-namogoos-classification-processes-170x-faster/){:target="_blank"}
+- [How Azure Data Explorer Helped Us Make Sense of 1M Log Lines per Second](https://engineering.taboola.com/azure-data-explorer-helped-us-make-sense-1m-log-lines-per-second/){:target="_blank"}
+
 ---
 
 ### Read more about it
@@ -79,7 +87,14 @@ Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/in
 #### Official documentation
 
 - [Azure Data Explorer: Quickstarts and tutorials](https://docs.microsoft.com/en-us/azure/data-explorer){:target="_blank"}
-- [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/kusto){:target="_blank"}
+- [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/){:target="_blank"}
+
+#### StackOverflow questions
+
+- [kusto](https://stackoverflow.com/questions/tagged/kusto){:target="_blank"}
+- [kusto-query-language](https://stackoverflow.com/questions/tagged/kusto-query-language){:target="_blank"}
+- [kql](https://stackoverflow.com/questions/tagged/kql){:target="_blank"}
+- [azure-data-explorer](https://stackoverflow.com/questions/tagged/azure-data-explorer){:target="_blank"}
 
 ---
 
