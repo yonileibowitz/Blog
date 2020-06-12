@@ -2,7 +2,8 @@ remote_theme: pmarsceill/just-the-docs
 markdown: kramdown
 title: kusto.blog
 author: yonileibowitz
-logo: resources/images/adx-logo.png
+logo: "/resources/images/adx-logo.png"
+search_enabled: true
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
@@ -13,6 +14,9 @@ plugins:
   - jekyll-mentions
   - jekyll-include-cache
 google_site_verification: HtqjvGpOO7zMqHjzMmE6bM658bRZqGQewz_h-QyRnns
+aux_links:
+  "Official documentation":
+    - "https://aka.ms/kdocs"
 social:
   name: Yoni Leibowitz
   links:
