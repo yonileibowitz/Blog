@@ -2,8 +2,9 @@ remote_theme: pmarsceill/just-the-docs
 markdown: kramdown
 title: kusto.blog
 author: yonileibowitz
-logo: "/resources/images/adx-logo.png"
+logo: "resources/images/adx-logo.png"
 search_enabled: true
+heading_anchors: true
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
@@ -15,8 +16,12 @@ plugins:
   - jekyll-include-cache
 google_site_verification: HtqjvGpOO7zMqHjzMmE6bM658bRZqGQewz_h-QyRnns
 aux_links:
+  "About me":
+    - "https://www.linkedin.com/in/yonileibo/"
+  "GitHub":
+    - "https://github.com/yonileibowitz/kusto.blog"
   "Official documentation":
-    - "https://docs.microsoft.com/en-us/azure/data-explorer/"
+    - "https://docs.microsoft.com/en-us/azure/data-explorer"
 social:
   name: Yoni Leibowitz
   links:
