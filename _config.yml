@@ -16,7 +16,7 @@ plugins:
 google_site_verification: HtqjvGpOO7zMqHjzMmE6bM658bRZqGQewz_h-QyRnns
 aux_links:
   "Official documentation":
-    - "https://aka.ms/kdocs"
+    - "https://docs.microsoft.com/en-us/azure/data-explorer/"
 social:
   name: Yoni Leibowitz
   links:
