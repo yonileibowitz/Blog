@@ -2,7 +2,7 @@ remote_theme: pmarsceill/just-the-docs
 markdown: kramdown
 title: kusto.blog
 author: yonileibowitz
-logo: "resources/images/adx-logo.png"
+logo: "/resources/images/adx-logo.png"
 search_enabled: true
 heading_anchors: true
 plugins:
