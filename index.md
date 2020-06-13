@@ -38,28 +38,28 @@ and will help you make sure you make the most out of your Kusto cluster.
 
 ---
 
-## Wait, let's start over - what is Kusto (Azure Data Explorer)?
+## **Wait, let's start over - what is Kusto (Azure Data Explorer)?**
 
-### Haven't seen it in action yet?
+### **Haven't seen it in action yet?**
 
 Why not start off with a couple of videos:
 
-#### Microsoft Ignite, Orlando, September 2018
+#### **Microsoft Ignite, Orlando, September 2018**
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott){:target="_blank"}'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=xnmBu4oh7xk&t=1h08m12s){:target="_blank"}
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://www.youtube.com/watch?v=ZaiM89Z01r0&t=58m0s){:target="_blank"}
 - [Manoj Raheja](https://www.linkedin.com/in/manoj-raheja-a02b2b32){:target="_blank"}'s introduction to Kusto (Azure Data Explorer) - [watch on YouTube](https://www.youtube.com/watch?v=GT4C84yrb68){:target="_blank"}
 
-#### Techorama, The Netherlands, October 2018
+#### **Techorama, The Netherlands, October 2018**
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074){:target="_blank"}
 
-#### //build, Seattle, May 2019
+#### **//build, Seattle, May 2019**
 
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/Fjfvz1HToek?t=2758){:target="_blank"}
 - [Uri Barash](https://www.linkedin.com/in/uri-barash-7820594/){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/chVFAGX8IYQ){:target="_blank"}
 
-### Customer stories
+### **Customer stories**
 
 - [Mobile user acquisition PaaS converts terabytes of real-time data into user engagement](https://customers.microsoft.com/en-us/story/816542-zoomd-technologies-azure-professional-services-israel-en){:target="_blank"}
 - [Better forecasting, safer driving with Bosch](https://customers.microsoft.com/en-us/story/816933-bosch-automotive-azure-germany){:target="_blank"}
@@ -69,27 +69,27 @@ Why not start off with a couple of videos:
 
 ---
 
-### Read more about it
+### **Read more about it**
 
 There's lots to learn and read about. I'd recommend starting with the following links:
 
-#### General availability announcement (February 2019)
+#### **General availability announcement (February 2019)**
 
 - [Azure Data Explorer - The fast and highly scalable data analytics service (
 Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/individually-great-collectively-unmatched-announcing-updates-to-3-great-azure-data-services/){:target="_blank"}
 
-#### Public preview announcement (September 2018)
+#### **Public preview announcement (September 2018)**
 
 - [Introducing Azure Data Explorer (Uri Barash @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/introducing-azure-data-explorer){:target="_blank"}
 - [Azure Data Explorer Technology 101 (Ziv Caspi @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/azure-data-explorer-technology-101){:target="_blank"}
 - [Azure Data Explorer: Whitepaper (Evgeney Ryzhyk @ Microsoft Azure resource center)](https://azure.microsoft.com/en-us/resources/azure-data-explorer){:target="_blank"}
 
-#### Official documentation
+#### **Official documentation**
 
 - [Azure Data Explorer: Quickstarts and tutorials](https://docs.microsoft.com/en-us/azure/data-explorer){:target="_blank"}
 - [Azure Data Explorer: Reference material](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/){:target="_blank"}
 
-#### StackOverflow questions
+#### **StackOverflow questions**
 
 - [kusto](https://stackoverflow.com/questions/tagged/kusto){:target="_blank"}
 - [kusto-query-language](https://stackoverflow.com/questions/tagged/kusto-query-language){:target="_blank"}
@@ -98,9 +98,9 @@ Jurgen Willis @ Microsoft Azure blog)](https://azure.microsoft.com/en-us/blog/in
 
 ---
 
-### Other things I think you should know
+### **Other things I think you should know**
 
-### Highlights from Kusto (Azure Data Explorer) documentation
+### **Highlights from Kusto (Azure Data Explorer) documentation**
 
 - [Creating a cluster and databases](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal){:target="_blank"}
 - [Query best practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices){:target="_blank"}
