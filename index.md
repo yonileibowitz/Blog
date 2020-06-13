@@ -54,7 +54,7 @@ Why not start off with a couple of videos:
 
 - [Scott Guthrie](https://www.linkedin.com/in/guthriescott)'s keynote - [watch on YouTube](https://www.youtube.com/watch?v=YTWewM_UMOk&feature=youtu.be&t=3074){:target="_blank"}
 
-#### **//build, Seattle, May 2019**
+#### **Microsoft //build, Seattle, May 2019**
 
 - [Rohan Kumar](https://www.linkedin.com/in/rohankumar){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/Fjfvz1HToek?t=2758){:target="_blank"}
 - [Uri Barash](https://www.linkedin.com/in/uri-barash-7820594/){:target="_blank"}'s session - [watch on YouTube](https://youtu.be/chVFAGX8IYQ){:target="_blank"}
