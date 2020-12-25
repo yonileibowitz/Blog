@@ -1,5 +1,7 @@
 ---
 title: DateTime columns in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/datetime-columns.html
+
 ---
 **[Go back home](../index.md)**
 

@@ -1,5 +1,6 @@
 ---
 title: Analyzing Uber rides history in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/analyzing-uber-rides-history.html
 ---
 **[Go back home](../index.md)**
 
