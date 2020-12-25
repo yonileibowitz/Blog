@@ -1,5 +1,6 @@
 ---
 title: Specifying metadata at ingestion time in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/ingestion-time-metadata.html
 ---
 **[Go back home](../index.md)**
 

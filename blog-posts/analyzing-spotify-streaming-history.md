@@ -1,5 +1,6 @@
 ---
 title: Analyzing Spotify streaming history in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/analyzing-spotify-streaming-history.html
 ---
 **[Go back home](../index.md)**
 

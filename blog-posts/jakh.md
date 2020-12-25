@@ -1,5 +1,6 @@
 ---
 title: Just another Kusto hacker (JAKH)
+redirect_to: https://yonileibowitz.github.io/blog-posts/jakh.html
 ---
 **[Go back home](../index.md)**
 

@@ -1,5 +1,6 @@
 ---
 title: Analyzing 2 Billion New York City Taxi rides in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/analyzing-nyc-taxi-rides.html
 ---
 **[Go back home](../index.md)**
 

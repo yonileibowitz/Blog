@@ -1,5 +1,6 @@
 ---
 title: Advanced data management in Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/advanced-data-management.html
 ---
 **[Go back home](../index.md)**
 

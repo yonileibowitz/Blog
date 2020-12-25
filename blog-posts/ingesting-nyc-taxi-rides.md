@@ -1,5 +1,6 @@
 ---
 title: Ingesting 2 Billion New York City Taxi rides into Kusto (Azure Data Explorer)
+redirect_to: https://yonileibowitz.github.io/blog-posts/ingesting-nyc-taxi-rides.html
 ---
 **[Go back home](../index.md)**
 
