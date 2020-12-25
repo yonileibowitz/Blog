@@ -1,3 +1,8 @@
+---
+title: kusto.blog
+redirect_to: https://yonileibowitz.github.io
+---
+
 {% include  share.html %}
 
 ---
